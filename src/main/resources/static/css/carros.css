@@ -1,0 +1,23 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 5 ago. 2022, 15:59:19
+    Author     : Diana Jiménez
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Nuosu+SIL&family=Tai+Heritage+Pro:wght@700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0; 
+    box-sizing: border-box;
+    font-family: 'Nuosu SIL', serif;
+}
+
+body{   
+    background-image: url(../images/carro5.jpg);
+    overflow: hidden;   
+    height: 200vh;
+}

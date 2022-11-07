@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Nuosu+SIL&family=Oswald:wght@200&family=Roboto+Condensed:wght@300&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nuosu SIL', serif;
+   
+  
+}
+body{
+    background: linear-gradient(#0C1440,#18298C,#B0C6D9);
+    overflow: hidden;
+    height: 100vh;
+}
+.form-Registro {
+ width: 400px;
+ background: #0C1440;
+ padding: 30px;
+ margin: auto;
+ margin-top: 100px; 
+ border-radius: 10px;
+ font-family: 'Nuosu SIL', serif;
+ color: white;
+ 
+}
+
+.form-Registro h2{
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 15px;
+    
+    
+}
+
+.form-Registro p {
+    height: 40px;
+    text-align: center;
+    font-size: 18px;
+    line-height: 20px;
+}
+
+.form-Registro a {
+    color: white;
+    text-decoration: underline;
+}
+
+.form-Registro a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+
+.control {
+    width: 100%;
+    background: #0F1A59;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 16px;
+    border: 1px solid #18298C;
+    font-size: 18px;
+    color: white;
+    
+    
+}
+
+.boton{
+    width: 100%;
+    background: #B81801;
+    border: none;
+    padding: 12px;
+    color: white;
+    margin: 16px 0;
+    font-size: 20px;
+    border-radius: 10px;
+}
+
+

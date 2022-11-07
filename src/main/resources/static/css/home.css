@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Kaushan+Script&family=Roboto:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Kaushan+Script&family=Monda&family=Roboto:wght@100&display=swap');
+
+
+*{
+    font-family:'Bebas Neue', cursive;
+}
+
+
+/*Lo que hace el display el comportamiento de nuestros elementos en la cajita el flex hace que se acomoden en un nivel de bloque , align es que los queremos centrados
+*/
+.navbar1{
+    position:static;
+    padding-left: 10%;
+    padding-right: -40%;
+    background-color: #0F1A59;
+    position: relative;
+    top:-1%;
+    height:6.5vh;
+    width:116%;
+    left: -246px;
+    display:flex;
+    margin:auto;
+    align-items: center; 
+}
+
+.nav{
+    /*El flex que tanto va crecer como de uno a uno*/
+  flex:1;
+  padding-left: 70px;
+
+}
+
+.nav ul li{
+    position:relative;
+    display:inline-block;
+    list-style: none;
+    margin:0px 11px;
+    top:10px;
+    color: white;
+    font-size: 15px;
+    font-family: 'Monda', sans-serif;
+    left:600px;
+}
+
+
+.nav ul li img{
+   position:relative;
+   display:inline-block;
+   margin:0px 5px;
+   top:0px;
+}
+.logo{
+  width: 100px;  
+}
+
+.container-fluid{
+ 
+    background-color: white;
+}
+
+.nav-item{
+    position: relative;
+    display:inline-block;
+    margin:0px 30px;
+    font-size: 25px;
+    left: 200px;
+    font-family: 'Monda', sans-serif;
+}
+
+.carousel slide{
+    position:relative;
+   top:300px;
+   width: 100%;
+   height: 100%;
+}
+
+
+
+.content{
+    position:static;
+    padding-left: 82.6%;
+    padding-right: -40%;
+    background-color:#18298C;
+    position: relative;
+    top:-2%;
+    height:30vh;
+    width:148%;
+    left: -309px;
+    display:flex;
+    margin:auto;
+    align-items: center;
+    border-bottom-left-radius:  500px 100px;
+    border-bottom-right-radius: 500px 100px;
+    
+}
+
+.content h1{
+    position: absolute;
+    font-size: 40px;
+    margin: -50px;
+    color:black;
+    top:90px;
+    right:850px;
+ 
+}
+
+.content3{
+    position: relative;
+    background-color:white;
+    top:-0%;
+    height:5vh;
+    width:600px;
+    left: -530px;
+    display:flex;
+    margin:auto;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.content3 input{
+    position: absolute;
+    width: 94%;
+    top: 5px;
+    padding: 0 5px;
+    height: 40px;
+    left: 38px;
+    font-size: 15px;
+    border: none;
+    background: none;
+    border-radius: 10px;
+    color:black;
+}
+.content3 input:hover{
+    
+}
+
+
+
+
+.content3 img{
+    position:absolute;
+    left: 20px;
+}
+
+.barra h1{
+    position:absolute;
+    font-size: 35px;
+    color:#B81801;
+    left:500px;
+    top:120%;
+}
+
+.nav2{
+    max-height: 100%;
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    position: absolute;
+    top: 1450px;
+    bottom: 0;
+    left: -10px;
+    right: 0;
+    margin: auto;
+    border-radius: 5px;
+   
+}
+.nav2 ul li{
+    display:inline-block;
+    margin: 10px 2.7px;
+    cursor:pointer;
+     
+}
+.nav2 ul li img{
+    width: 250px;
+    
+}
+
+footer {
+   position:absolute;
+   bottom:0;
+   width:100%;
+   height:85px;   /* Height of the footer */
+   background:#0F1A59;
+}
+
+
+body{ height:100vh; margin:0; }
+
+
+
+header{ min-height:50px; background:lightcyan; }
+footer{ min-height:50px; background:PapayaWhip; }
+
+/* Trick */
+body{ 
+  display:flex; 
+  flex-direction:column; 
+}
+
+footer{
+  margin-top:auto; 
+}
+
+

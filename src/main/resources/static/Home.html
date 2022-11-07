@@ -1,0 +1,163 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" 
+    xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+    <head>
+        <title>Todo Autos</title>
+        <link rel="stylesheet" href="css/home.css"/>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    </head>
+
+
+    <body>
+        
+        <h1>Hola</h1>
+
+        <div class = 'container'>
+            
+            <div class='navbar1'>
+                <div class='nav'>
+                    
+                <ul> 
+                    <li><img src="images/telefono.png" alt="alt"/>+506 2222 5555</li>
+                    <li><img src="images/ubicacion.png" alt="alt"/>Oficinas centrales, Heredia</li>
+                    <li><img src="images/reloj.png" alt="alt"/>Lunes a Sabado: 8:00am - 4:00pm</li>
+                    <li><a href="https://www.instagram.com/"><img src="images/instagram.png" class ='image' alt="alt"/></a></li>
+                    <li><a href="https://www.facebook.com/"><img src="images/facebook.png" class ='image' alt="alt"/></a></li>
+                </ul>
+                </div>
+            </div>
+            
+            
+            <nav class="navbar navbar-expand-lg bg-light">
+                <div class="container-fluid">
+                    <img src="images/Logo.png" class='logo' alt="alt"/>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Vender mi vehiculo</a>
+                            </li>
+                            <li class="nav-item" sec:authorize="hasRole('ADMIN')">
+                                <a class="nav-link" href="login.html">Admin</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="login.html">User</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Carros
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                    <li><a class="dropdown-item" href="nissan.html">Nissan</a></li>
+                                    <li><a class="dropdown-item" href="kia.html">Kia</a></li>
+                                    <li><a class="dropdown-item" href="suzuki.html">Suzuki</a></li>
+                                    <li><a class="dropdown-item" href="#">Toyota</a></li>
+                                    <li><a class="dropdown-item" href="#">Volkswagen</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                </div>
+                <div class="carousel-inner">
+
+                    <div class="carousel-item active">
+                        <img src="images/Mi proyecto 4.jpg" class="d-block w-100" alt="...">    
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/Mi proyecto 3.jpg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/Mi proyecto 2.jpg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/Mi proyecto 1.jpg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/Mi proyecto.jpg" class="d-block w-100" alt="...">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button> 
+            </div>
+
+            <div class = 'content'>
+
+                <div class='content3'>
+                    <img src="images/Search2.png" alt="Es mi logo"/>
+                    <input  type="text" id="nombre" name="nombre" placeholder = "Buscar autos, modelo, agencia ....."> 
+                </div>    
+                <h1>Busque su carro deseado</h1>
+
+            </div>
+
+            <div class='barra'>
+                <h1>Agencias de vehiculos nuevos</h1>
+                <div class='nav2'>
+                    <ul>
+                        <li><a href="nissan.html"><img src="images/nissan.jpg" class = 'miImagen3' alt="alt"/></a></li>
+                        <li><img src="images/volkswagen.png" class = 'miImagen4' alt="alt"/></li>
+                        <li><a href="suzuki.html"><img src="images/Suzuki.png" class = 'miImagen5' alt="alt"/></a></li>
+                        <li><img src="images/Toyota.jpg" class = 'miImagen6' alt="alt"/></li>
+                        <li><a href="kia.html"><img src="images/kia.jpg" class = 'miImagen7' alt="alt"/></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>    
+
+    </body>
+    <div cla>
+        <footer th:fragment="footer" class="container2">
+            <div class="row">
+
+                <div class="col-md-6 offset-md-0 mb-3">
+                    <form>
+                        <h5 style='color:white'>Suscribete a nuestra p&Aacute;gina</h5>
+                        <p style='color:white'>Resumen mensual de lo que es nuevo y emocionante de nostros.</p>
+                        <div class="d-flex flex-column flex-sm-row w-100 gap-2">
+                            <label for="newsletter1" class="visually-hidden">Email address</label>
+                            <input id="newsletter1" type="text" class="form-control" placeholder="Email address">
+                            <button class="btn btn-primary" type="button">Suscribete</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="d-flex flex-column flex-sm-row justify-content-between py-2 my-2 border-top">
+                <p style='color:white'> &copy; 2022 Company, Inc. Todos los derechos reservados.</p>
+
+                <ul class="list-unstyled d-flex">
+                    <li><p style='color:white'>Aviso legal....</p></li>
+                    <li><p style='color:white'>Privacidad y Cookies</p></li>
+                    <li class="ms-3"><a class="link-dark" href="https://www.instagram.com/"><img src="images/instagram.png" class ='image' alt="alt"/></a></li>
+                    <li class="ms-3"><a class="link-dark" href="https://www.facebook.com/"><img src="images/facebook.png" class ='image' alt="alt"/></a></li>
+                    <li class="ms-3"><a class="link-dark" href="https://www.instagram.com/"><img src="images/whatsapp.png" class ='image' alt="alt"/></a></li>
+                    <li class="ms-3"><a class="link-dark" href="https://www.facebook.com/"><img src="images/twitter.png" class ='image' alt="alt"/></a></li>
+                </ul>
+            </div>
+        </footer>
+   </div>
+</html>

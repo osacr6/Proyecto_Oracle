@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Kaushan+Script&family=Roboto:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Kaushan+Script&family=Monda&family=Roboto:wght@100&display=swap');
+
+
+*{
+    margin:0;
+    padding:0;
+    font-family:'Bebas Neue', cursive;
+}
+.container{
+    height:100vh;
+    width:100%;
+    background-color: white;
+    background-position:center;
+    background-size: cover;
+    padding-left: 10%;
+    padding-right: 35%;
+    box-sizing: border-box;
+    position:relative;
+    
+}
+/*Lo que hace el display el comportamiento de nuestros elementos en la cajita el flex hace que se acomoden en un nivel de bloque , align es que los queremos centrados
+*/
+.navbar1{
+    position:static;
+    padding-left: 10%;
+    padding-right: -40%;
+    background-color: #0F1A59;
+    position: relative;
+    top:-1%;
+    height:6.5vh;
+    width:155%;
+    left: -320px;
+    display:flex;
+    margin:auto;
+    align-items: center; 
+}
+
+.nav{
+    /*El flex que tanto va crecer como de uno a uno*/
+  flex:1;
+  padding-left: 70px;
+
+}
+
+.nav ul li{
+    position:relative;
+    display:inline-block;
+    list-style: none;
+    margin:0px 11px;
+    top:10px;
+    color: white;
+    font-size: 15px;
+    font-family: 'Monda', sans-serif;
+    left:600px;
+}
+
+
+.nav ul li img{
+   position:relative;
+   display:inline-block;
+   margin:0px 5px;
+   top:0px;
+}
+.logo{
+  width: 100px;  
+}
+
+.container-fluid{
+ 
+    background-color: white;
+}
+
+.nav-item{
+    position: relative;
+    display:inline-block;
+    margin:0px 30px;
+    font-size: 25px;
+    left: 200px;
+    font-family: 'Monda', sans-serif;
+}
+
+
+.contenido p{
+    position:relative;
+    left:200px;
+    font-size: 20px;
+    top: 55px;
+    
+}
+
+.contenido a{
+    text-decoration: none;
+    color: black
+}
+.contenido a:hover{
+    text-decoration: underline;
+}
+
+.contenido2{
+    position: relative;
+    top:50px;
+    left: 180px;
+}
+
+.contenido3{
+    position: absolute;
+    top: 335px;
+    left: 700px;
+}
+
+.contenido h1{
+    position:relative;
+    top: 50px;
+    left: 200px;
+    color: #B81801;
+    font-size: 40px;
+}
+
+.contenido img{
+    top:100px;
+    position:relative;
+    left:190px;
+    margin:0px 10px;
+}
+
+
+
+.navbar3 {
+    position:static;
+    padding-left:75%;
+    padding-right: -40%;
+    background-color: #0C1440;
+    position: relative;
+    top:10%;
+    height:5vh;
+    width:155%;
+    left: -320px;
+    display:flex;
+    margin:auto;
+    align-items: center;
+    color:white;
+}
+
+.navbar3 ul li{
+    position:relative;
+    color:black;
+    top: 200px;
+    font-size: 20px;
+}
+
+.navbar3 p{
+padding-left: 1%;
+border-radius: 10px;
+padding-right: -15%;
+background-color: #0C1440;
+position: absolute;
+color: white;
+top: 450%;
+height:5vh;
+width: 5%;
+cursor: pointer;
+left: 300px;
+right: -600px;
+display:flex;
+margin: auto;
+align-items: center;
+}
+
+.navbar4 ul li{
+    position:relative;
+    color:black;
+    top: 100px;
+    font-size: 20px;
+    left: 230px;
+}
+
+.navbar4 p{
+padding-left: 1%;
+border-radius: 10px;
+padding-right: -15%;
+background-color: #0C1440;
+position: absolute;
+top: 92.8%;
+height:5vh;
+width: 5%;
+left: -850px;
+right: -600px;
+display:flex;
+margin: auto;
+align-items: center;
+}
+
+.navbar4 p a{
+    color:white;
+    text-decoration: none;
+}
+
+.container2{
+    position: relative;
+    top:350px;
+    background-color:#0F1A59;
+    font-family: 'Monda', sans-serif;
+    
+}
