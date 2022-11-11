@@ -1,0 +1,41 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev12c class="oracle.dbtools.crest.model.design.storage.oracle.v12c.TableProxyOraclev12c" name="T_ESTADO" directorySegmentName="seg_0" id="8E98C756-D8BF-6730-4488-C67A56CBE707">
+<createdBy>fidelitas</createdBy>
+<createdTime>2022-11-11 09:37:05 UTC</createdTime>
+<ownerDesignName>data-model</ownerDesignName>
+<schemaObject>A3C55508-2226-F9D6-B2F0-CF7C9F8175EF</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>3EB74624-E46D-61C6-6827-BF9A7BD0B8A5</segment>
+<tableSpace>C2DB9548-CAE7-1697-D63B-65C9B56FECFB</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<inMemory>NO</inMemory>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="ESTADO" id="8914AD1D-840A-023A-CD83-8DE4C7AAC70C">
+<createdBy>fidelitas</createdBy>
+<createdTime>2022-11-11 09:37:05 UTC</createdTime>
+<ownerDesignName>data-model</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="ESTADO_ID" id="AFDA71BA-0212-7898-F0C6-0B4537DF8D60">
+<createdBy>fidelitas</createdBy>
+<createdTime>2022-11-11 09:37:05 UTC</createdTime>
+<ownerDesignName>data-model</ownerDesignName>
+<autoIncrementDDL>IDENTITY_CLAUSE</autoIncrementDDL>
+</ColumnProxy>
+</columnProxies>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="T_ESTADO_PK" id="CD709394-4F61-AD79-03D1-CA67AB41F1A7">
+<createdBy>fidelitas</createdBy>
+<createdTime>2022-11-11 09:37:06 UTC</createdTime>
+<ownerDesignName>data-model</ownerDesignName>
+<schemaObject>A3C55508-2226-F9D6-B2F0-CF7C9F8175EF</schemaObject>
+<segment>305D6935-2467-9622-B3DD-79AF697AB7BE</segment>
+<tableSpace>C2DB9548-CAE7-1697-D63B-65C9B56FECFB</tableSpace>
+<indexSegment>305D6935-2467-9622-B3DD-79AF697AB7BE</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev12c>

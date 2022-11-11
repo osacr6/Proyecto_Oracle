@@ -1,0 +1,54 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev12c class="oracle.dbtools.crest.model.design.storage.oracle.v12c.TableProxyOraclev12c" name="T_TIPO_PAGO" directorySegmentName="seg_0" id="E27E0669-9813-86E8-C910-FB6243710A24">
+<createdBy>fidelitas</createdBy>
+<createdTime>2022-11-11 09:37:05 UTC</createdTime>
+<ownerDesignName>data-model</ownerDesignName>
+<schemaObject>A3C55508-2226-F9D6-B2F0-CF7C9F8175EF</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>3EB74624-E46D-61C6-6827-BF9A7BD0B8A5</segment>
+<tableSpace>C2DB9548-CAE7-1697-D63B-65C9B56FECFB</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<inMemory>NO</inMemory>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="TIPO_PAGO_ID" id="19D25AA0-68D9-8F01-4645-7FBEC6F9C7FD">
+<createdBy>fidelitas</createdBy>
+<createdTime>2022-11-11 09:37:05 UTC</createdTime>
+<ownerDesignName>data-model</ownerDesignName>
+<autoIncrementDDL>IDENTITY_CLAUSE</autoIncrementDDL>
+</ColumnProxy>
+<ColumnProxy name="TIPO_PAGO" id="7B869ABF-A7C8-E7E4-AA43-A17B45AEE2B9">
+<createdBy>fidelitas</createdBy>
+<createdTime>2022-11-11 09:37:05 UTC</createdTime>
+<ownerDesignName>data-model</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="T_TIPO_PAGO_PK" id="C8F28BC8-1274-755F-46CF-C368F21F058B">
+<createdBy>fidelitas</createdBy>
+<createdTime>2022-11-11 09:37:06 UTC</createdTime>
+<ownerDesignName>data-model</ownerDesignName>
+<schemaObject>A3C55508-2226-F9D6-B2F0-CF7C9F8175EF</schemaObject>
+<segment>305D6935-2467-9622-B3DD-79AF697AB7BE</segment>
+<tableSpace>C2DB9548-CAE7-1697-D63B-65C9B56FECFB</tableSpace>
+<indexSegment>305D6935-2467-9622-B3DD-79AF697AB7BE</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</PrimaryKey>
+</primaryKeys>
+<uniqueKeys>
+<UniqueKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.UniqueOraclev10g" name="T_TIPO_PAGO_TIPO_PAGO_UN" id="9A80E65F-1C62-92BE-F027-79C29E0DA590">
+<createdBy>fidelitas</createdBy>
+<createdTime>2022-11-11 09:37:06 UTC</createdTime>
+<ownerDesignName>data-model</ownerDesignName>
+<schemaObject>A3C55508-2226-F9D6-B2F0-CF7C9F8175EF</schemaObject>
+<segment>305D6935-2467-9622-B3DD-79AF697AB7BE</segment>
+<tableSpace>C2DB9548-CAE7-1697-D63B-65C9B56FECFB</tableSpace>
+<indexSegment>305D6935-2467-9622-B3DD-79AF697AB7BE</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</UniqueKey>
+</uniqueKeys>
+</TableProxyOraclev12c>

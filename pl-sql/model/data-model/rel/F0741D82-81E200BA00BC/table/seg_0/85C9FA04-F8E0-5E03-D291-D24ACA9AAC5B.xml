@@ -1,0 +1,88 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="85C9FA04-F8E0-5E03-D291-D24ACA9AAC5B" schemaObject="A3C55508-2226-F9D6-B2F0-CF7C9F8175EF" name="T_MOTOR">
+<sourceConnName>proyecto</sourceConnName>
+<sourceObjSchema>HR</sourceObjSchema>
+<sourceObjName>T_MOTOR</sourceObjName>
+<createdBy>fidelitas</createdBy>
+<createdTime>2022-11-11 09:37:05 UTC</createdTime>
+<ownerDesignName>data-model</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="MOTOR_ID" id="D2E87589-39D4-0341-B359-B54811340B03">
+<sourceConnName>proyecto</sourceConnName>
+<sourceObjSchema>T_MOTOR</sourceObjSchema>
+<sourceObjName>MOTOR_ID</sourceObjName>
+<createdBy>fidelitas</createdBy>
+<createdTime>2022-11-11 09:37:05 UTC</createdTime>
+<ownerDesignName>data-model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<identityColumn>true</identityColumn>
+<defaultOntNull>true</defaultOntNull>
+<autoIncrementCycle>false</autoIncrementCycle>
+<autoIncrementDisableCache>false</autoIncrementDisableCache>
+<autoIncrementCache>20</autoIncrementCache>
+<autoIncrementOrder>false</autoIncrementOrder>
+</Column>
+<Column name="CILINDRAJE" id="D42C4527-84C8-5DA2-300D-4DD6EC07C217">
+<sourceConnName>proyecto</sourceConnName>
+<sourceObjSchema>T_MOTOR</sourceObjSchema>
+<sourceObjName>CILINDRAJE</sourceObjName>
+<createdBy>fidelitas</createdBy>
+<createdTime>2022-11-11 09:37:05 UTC</createdTime>
+<ownerDesignName>data-model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="MARCA_ID" id="629779F0-2A27-5F0F-0466-9E7774467CF4">
+<sourceConnName>proyecto</sourceConnName>
+<sourceObjSchema>T_MOTOR</sourceObjSchema>
+<sourceObjName>MARCA_ID</sourceObjName>
+<createdBy>fidelitas</createdBy>
+<createdTime>2022-11-11 09:37:05 UTC</createdTime>
+<ownerDesignName>data-model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="42DE962E-B481-3B09-E31C-B6E56E697536" referredColumn="3DC841DC-1503-91AB-8615-345C2B333E96"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="67D65DCD-84C0-BB0B-B2D2-01C13A581701" schemaObject="A3C55508-2226-F9D6-B2F0-CF7C9F8175EF" name="T_MOTOR_PK">
+<sourceConnName>proyecto</sourceConnName>
+<sourceObjSchema>HR</sourceObjSchema>
+<sourceObjName>SYS_C009409</sourceObjName>
+<createdBy>fidelitas</createdBy>
+<createdTime>2022-11-11 09:37:06 UTC</createdTime>
+<ownerDesignName>data-model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D2E87589-39D4-0341-B359-B54811340B03"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="8F1C1950-B576-1600-7355-39E6BB4216C2" name="FK_MOTOR_MARCA">
+<createdBy>fidelitas</createdBy>
+<createdTime>2022-11-11 09:37:06 UTC</createdTime>
+<ownerDesignName>data-model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="629779F0-2A27-5F0F-0466-9E7774467CF4"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

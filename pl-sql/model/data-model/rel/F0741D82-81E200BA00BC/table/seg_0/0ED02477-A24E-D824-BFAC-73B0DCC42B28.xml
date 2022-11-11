@@ -1,0 +1,158 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="0ED02477-A24E-D824-BFAC-73B0DCC42B28" schemaObject="A3C55508-2226-F9D6-B2F0-CF7C9F8175EF" name="T_DIRECCION">
+<sourceConnName>proyecto</sourceConnName>
+<sourceObjSchema>HR</sourceObjSchema>
+<sourceObjName>T_DIRECCION</sourceObjName>
+<createdBy>fidelitas</createdBy>
+<createdTime>2022-11-11 09:37:05 UTC</createdTime>
+<ownerDesignName>data-model</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="DIRECCION_ID" id="D43C6493-9412-4542-1253-DCC2F6F56C69">
+<sourceConnName>proyecto</sourceConnName>
+<sourceObjSchema>T_DIRECCION</sourceObjSchema>
+<sourceObjName>DIRECCION_ID</sourceObjName>
+<createdBy>fidelitas</createdBy>
+<createdTime>2022-11-11 09:37:05 UTC</createdTime>
+<ownerDesignName>data-model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<identityColumn>true</identityColumn>
+<defaultOntNull>true</defaultOntNull>
+<autoIncrementCycle>false</autoIncrementCycle>
+<autoIncrementDisableCache>false</autoIncrementDisableCache>
+<autoIncrementCache>20</autoIncrementCache>
+<autoIncrementOrder>false</autoIncrementOrder>
+</Column>
+<Column name="PROVINCIA_ID" id="8262D78D-7832-5737-B938-1FA346890C66">
+<sourceConnName>proyecto</sourceConnName>
+<sourceObjSchema>T_DIRECCION</sourceObjSchema>
+<sourceObjName>PROVINCIA_ID</sourceObjName>
+<createdBy>fidelitas</createdBy>
+<createdTime>2022-11-11 09:37:05 UTC</createdTime>
+<ownerDesignName>data-model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="B36135AC-9985-D2A6-26FA-6C7BF7183F6F" referredColumn="BCD3DCB6-4FA7-9D71-7789-5DD9AD09BCEC"/>
+</associations>
+</Column>
+<Column name="CANTON_ID" id="4C9C3012-14F4-CAA1-524C-B6689D8905F1">
+<sourceConnName>proyecto</sourceConnName>
+<sourceObjSchema>T_DIRECCION</sourceObjSchema>
+<sourceObjName>CANTON_ID</sourceObjName>
+<createdBy>fidelitas</createdBy>
+<createdTime>2022-11-11 09:37:05 UTC</createdTime>
+<ownerDesignName>data-model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="65FA20D5-029A-68E5-4325-30ECEA8C09A1" referredColumn="B0BF6E5E-D862-C6B6-2573-735E48722358"/>
+</associations>
+</Column>
+<Column name="DISTRITO_ID" id="31A3DB92-B3C5-C96A-5878-F4943E6C160B">
+<sourceConnName>proyecto</sourceConnName>
+<sourceObjSchema>T_DIRECCION</sourceObjSchema>
+<sourceObjName>DISTRITO_ID</sourceObjName>
+<createdBy>fidelitas</createdBy>
+<createdTime>2022-11-11 09:37:05 UTC</createdTime>
+<ownerDesignName>data-model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="5A6365EB-1CA6-74EA-5A84-B5283366F16B" referredColumn="473872A5-2176-B688-02ED-8305E08A53F2"/>
+</associations>
+</Column>
+<Column name="DETALLES" id="878B0D9B-022B-968D-920D-1FDCE3209573">
+<sourceConnName>proyecto</sourceConnName>
+<sourceObjSchema>T_DIRECCION</sourceObjSchema>
+<sourceObjName>DETALLES</sourceObjName>
+<createdBy>fidelitas</createdBy>
+<createdTime>2022-11-11 09:37:05 UTC</createdTime>
+<ownerDesignName>data-model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>256 BYTE</dataTypeSize>
+<ownDataTypeParameters>256 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="UBICACION" id="3CA27073-72AA-4A51-019F-A734F2EA82F2">
+<sourceConnName>proyecto</sourceConnName>
+<sourceObjSchema>T_DIRECCION</sourceObjSchema>
+<sourceObjName>UBICACION</sourceObjName>
+<createdBy>fidelitas</createdBy>
+<createdTime>2022-11-11 09:37:05 UTC</createdTime>
+<ownerDesignName>data-model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>256 BYTE</dataTypeSize>
+<ownDataTypeParameters>256 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="D247FEA5-D2C2-7DE7-AC8B-31E723E25038" schemaObject="A3C55508-2226-F9D6-B2F0-CF7C9F8175EF" name="T_DIRECCION_PK">
+<sourceConnName>proyecto</sourceConnName>
+<sourceObjSchema>HR</sourceObjSchema>
+<sourceObjName>SYS_C009392</sourceObjName>
+<createdBy>fidelitas</createdBy>
+<createdTime>2022-11-11 09:37:06 UTC</createdTime>
+<ownerDesignName>data-model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D43C6493-9412-4542-1253-DCC2F6F56C69"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="9C48ABFC-6A66-3DB2-9078-475EFC60E4A6" name="FK_DIRECCION_CANTON">
+<createdBy>fidelitas</createdBy>
+<createdTime>2022-11-11 09:37:06 UTC</createdTime>
+<ownerDesignName>data-model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4C9C3012-14F4-CAA1-524C-B6689D8905F1"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="DFE40070-3986-F2E9-8194-F8C6A10F5808" name="FK_DIRECCION_DISTRITO">
+<createdBy>fidelitas</createdBy>
+<createdTime>2022-11-11 09:37:06 UTC</createdTime>
+<ownerDesignName>data-model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="31A3DB92-B3C5-C96A-5878-F4943E6C160B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="80FC41CA-4943-3EBA-92D8-ABC88D487F71" name="FK_DIRECCION_PROVINCIA">
+<createdBy>fidelitas</createdBy>
+<createdTime>2022-11-11 09:37:06 UTC</createdTime>
+<ownerDesignName>data-model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="8262D78D-7832-5737-B938-1FA346890C66"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

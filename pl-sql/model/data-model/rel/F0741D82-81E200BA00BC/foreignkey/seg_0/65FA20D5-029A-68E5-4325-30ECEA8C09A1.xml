@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="65FA20D5-029A-68E5-4325-30ECEA8C09A1" containerWithKeyObject="0ED02477-A24E-D824-BFAC-73B0DCC42B28" localFKIndex="9C48ABFC-6A66-3DB2-9078-475EFC60E4A6" name="FK_DIRECCION_CANTON">
+<sourceConnName>proyecto</sourceConnName>
+<sourceObjSchema>HR</sourceObjSchema>
+<sourceObjName>FK_DIRECCION_CANTON</sourceObjName>
+<createdBy>fidelitas</createdBy>
+<createdTime>2022-11-11 09:37:06 UTC</createdTime>
+<ownerDesignName>data-model</ownerDesignName>
+<referredTableLongName>HR.T_CANTON</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>7692E5F2-17FB-6096-ABFD-2C515405EC91</referredTableID>
+<keyObject>54E6FCAB-D09E-B44C-49DB-65EA7E8E430F</keyObject>
+<referredKeyID>54E6FCAB-D09E-B44C-49DB-65EA7E8E430F</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>CANTON_ID</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

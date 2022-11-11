@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="2079A0DE-E40A-B86A-041D-04DD84A015CA" containerWithKeyObject="C9FF37D9-4172-5B6A-A9D6-31EB3D5F5BF3" localFKIndex="0F44493F-5A63-291B-EDE6-39541C3C03B3" name="FK_FACTURA_SUCURSAL">
+<sourceConnName>proyecto</sourceConnName>
+<sourceObjSchema>HR</sourceObjSchema>
+<sourceObjName>FK_FACTURA_SUCURSAL</sourceObjName>
+<createdBy>fidelitas</createdBy>
+<createdTime>2022-11-11 09:37:06 UTC</createdTime>
+<ownerDesignName>data-model</ownerDesignName>
+<referredTableLongName>HR.T_SUCURSAL</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>E78D75CD-5E50-248E-7B0A-FAB6D7695753</referredTableID>
+<keyObject>82A6197A-959D-A3E9-501B-707F08AA47F2</keyObject>
+<referredKeyID>82A6197A-959D-A3E9-501B-707F08AA47F2</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>SUCURSAL_ID</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

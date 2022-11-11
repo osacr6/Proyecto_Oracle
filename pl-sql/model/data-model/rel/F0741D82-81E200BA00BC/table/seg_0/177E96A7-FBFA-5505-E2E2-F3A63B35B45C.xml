@@ -1,0 +1,146 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="177E96A7-FBFA-5505-E2E2-F3A63B35B45C" schemaObject="A3C55508-2226-F9D6-B2F0-CF7C9F8175EF" name="T_DETALLE">
+<sourceConnName>proyecto</sourceConnName>
+<sourceObjSchema>HR</sourceObjSchema>
+<sourceObjName>T_DETALLE</sourceObjName>
+<createdBy>fidelitas</createdBy>
+<createdTime>2022-11-11 09:37:05 UTC</createdTime>
+<ownerDesignName>data-model</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="DETALLE_ID" id="DAB9F269-AB0F-5D0B-EDBC-761C98EE592F">
+<sourceConnName>proyecto</sourceConnName>
+<sourceObjSchema>T_DETALLE</sourceObjSchema>
+<sourceObjName>DETALLE_ID</sourceObjName>
+<createdBy>fidelitas</createdBy>
+<createdTime>2022-11-11 09:37:05 UTC</createdTime>
+<ownerDesignName>data-model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<identityColumn>true</identityColumn>
+<defaultOntNull>true</defaultOntNull>
+<autoIncrementCycle>false</autoIncrementCycle>
+<autoIncrementDisableCache>false</autoIncrementDisableCache>
+<autoIncrementCache>20</autoIncrementCache>
+<autoIncrementOrder>false</autoIncrementOrder>
+</Column>
+<Column name="EQUIPAMIENDO_ID" id="3FC313B9-A300-6515-9821-31DF015A38E4">
+<sourceConnName>proyecto</sourceConnName>
+<sourceObjSchema>T_DETALLE</sourceObjSchema>
+<sourceObjName>EQUIPAMIENDO_ID</sourceObjName>
+<createdBy>fidelitas</createdBy>
+<createdTime>2022-11-11 09:37:05 UTC</createdTime>
+<ownerDesignName>data-model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="2037D99D-E41C-DF9B-138F-37E4110CC5C8" referredColumn="0CC7BD1E-FB0B-8995-354E-6FADE908AEDF"/>
+</associations>
+</Column>
+<Column name="SERVICIO_ID" id="E5F7DF17-0F24-4226-ED69-EDE904C204B3">
+<sourceConnName>proyecto</sourceConnName>
+<sourceObjSchema>T_DETALLE</sourceObjSchema>
+<sourceObjName>SERVICIO_ID</sourceObjName>
+<createdBy>fidelitas</createdBy>
+<createdTime>2022-11-11 09:37:05 UTC</createdTime>
+<ownerDesignName>data-model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="D864717A-69B0-8788-28BB-0FB481F45A3F" referredColumn="9C85E1F0-BBDC-4FDD-1F01-A2CA79CFBDD1"/>
+</associations>
+</Column>
+<Column name="DETALLE" id="57BA744F-99A0-94A2-00D9-CA32184B5213">
+<sourceConnName>proyecto</sourceConnName>
+<sourceObjSchema>T_DETALLE</sourceObjSchema>
+<sourceObjName>DETALLE</sourceObjName>
+<createdBy>fidelitas</createdBy>
+<createdTime>2022-11-11 09:37:05 UTC</createdTime>
+<ownerDesignName>data-model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>512 BYTE</dataTypeSize>
+<ownDataTypeParameters>512 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CANTIDAD" id="365C9F49-8F1F-646B-A23F-32768472133D">
+<sourceConnName>proyecto</sourceConnName>
+<sourceObjSchema>T_DETALLE</sourceObjSchema>
+<sourceObjName>CANTIDAD</sourceObjName>
+<createdBy>fidelitas</createdBy>
+<createdTime>2022-11-11 09:37:05 UTC</createdTime>
+<ownerDesignName>data-model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="IMPUESTO" id="5476EEE7-6EFF-8D95-B02D-1A4C097CFC32">
+<sourceConnName>proyecto</sourceConnName>
+<sourceObjSchema>T_DETALLE</sourceObjSchema>
+<sourceObjName>IMPUESTO</sourceObjName>
+<createdBy>fidelitas</createdBy>
+<createdTime>2022-11-11 09:37:05 UTC</createdTime>
+<ownerDesignName>data-model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<defaultValue>0</defaultValue>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="13B28586-DF48-E940-3878-BADC9C8FF876" schemaObject="A3C55508-2226-F9D6-B2F0-CF7C9F8175EF" name="T_DETALLE_PK">
+<sourceConnName>proyecto</sourceConnName>
+<sourceObjSchema>HR</sourceObjSchema>
+<sourceObjName>SYS_C009508</sourceObjName>
+<createdBy>fidelitas</createdBy>
+<createdTime>2022-11-11 09:37:06 UTC</createdTime>
+<ownerDesignName>data-model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="DAB9F269-AB0F-5D0B-EDBC-761C98EE592F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="448E06D8-9577-7F55-245A-316AABEE233E" name="FK_DETALLE_EQUIPAMIENTO">
+<createdBy>fidelitas</createdBy>
+<createdTime>2022-11-11 09:37:06 UTC</createdTime>
+<ownerDesignName>data-model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="3FC313B9-A300-6515-9821-31DF015A38E4"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="9DB00720-7109-6DCA-1E4A-6B8A4EE867F6" name="FK_DETALLE_SERVICIO">
+<createdBy>fidelitas</createdBy>
+<createdTime>2022-11-11 09:37:06 UTC</createdTime>
+<ownerDesignName>data-model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E5F7DF17-0F24-4226-ED69-EDE904C204B3"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,101 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="B134452C-09D5-91FB-6AB6-AABA5F440078" schemaObject="A3C55508-2226-F9D6-B2F0-CF7C9F8175EF" name="T_CARRO_SERVICIOS">
+<sourceConnName>proyecto</sourceConnName>
+<sourceObjSchema>HR</sourceObjSchema>
+<sourceObjName>T_CARRO_SERVICIOS</sourceObjName>
+<createdBy>fidelitas</createdBy>
+<createdTime>2022-11-11 09:37:05 UTC</createdTime>
+<ownerDesignName>data-model</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID" id="B9652681-610A-9122-1CB1-6704C0225209">
+<sourceConnName>proyecto</sourceConnName>
+<sourceObjSchema>T_CARRO_SERVICIOS</sourceObjSchema>
+<sourceObjName>ID</sourceObjName>
+<createdBy>fidelitas</createdBy>
+<createdTime>2022-11-11 09:37:05 UTC</createdTime>
+<ownerDesignName>data-model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<identityColumn>true</identityColumn>
+<defaultOntNull>true</defaultOntNull>
+<autoIncrementCycle>false</autoIncrementCycle>
+<autoIncrementDisableCache>false</autoIncrementDisableCache>
+<autoIncrementCache>20</autoIncrementCache>
+<autoIncrementOrder>false</autoIncrementOrder>
+</Column>
+<Column name="CARRO_ID" id="67F4888E-326A-9CD8-D44B-89B5809D552D">
+<sourceConnName>proyecto</sourceConnName>
+<sourceObjSchema>T_CARRO_SERVICIOS</sourceObjSchema>
+<sourceObjName>CARRO_ID</sourceObjName>
+<createdBy>fidelitas</createdBy>
+<createdTime>2022-11-11 09:37:05 UTC</createdTime>
+<ownerDesignName>data-model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="F7F0BB6F-8CF1-878A-1308-5F54F3A2CE78" referredColumn="0DF82A42-5144-E6BF-AF71-55B2BABDBB08"/>
+</associations>
+</Column>
+<Column name="SERVICIO_ID" id="F05701A1-CFD4-81B6-F553-FAE4E3F3E407">
+<sourceConnName>proyecto</sourceConnName>
+<sourceObjSchema>T_CARRO_SERVICIOS</sourceObjSchema>
+<sourceObjName>SERVICIO_ID</sourceObjName>
+<createdBy>fidelitas</createdBy>
+<createdTime>2022-11-11 09:37:05 UTC</createdTime>
+<ownerDesignName>data-model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="65765064-0C0B-F236-8B45-BB9ABCC5D308" referredColumn="9C85E1F0-BBDC-4FDD-1F01-A2CA79CFBDD1"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="6BE74B41-D9AC-8C72-9687-6E1A57280701" schemaObject="A3C55508-2226-F9D6-B2F0-CF7C9F8175EF" name="T_CARRO_SERVICIOS_PK">
+<sourceConnName>proyecto</sourceConnName>
+<sourceObjSchema>HR</sourceObjSchema>
+<sourceObjName>SYS_C009457</sourceObjName>
+<createdBy>fidelitas</createdBy>
+<createdTime>2022-11-11 09:37:06 UTC</createdTime>
+<ownerDesignName>data-model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B9652681-610A-9122-1CB1-6704C0225209"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="1E715CF2-0AD8-B6D7-5370-A98ADA44A3B1" name="FK_CARRO_SERVICIOS__CARRO">
+<createdBy>fidelitas</createdBy>
+<createdTime>2022-11-11 09:37:06 UTC</createdTime>
+<ownerDesignName>data-model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="67F4888E-326A-9CD8-D44B-89B5809D552D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="E4B2605A-E626-10CE-2746-7FAFE192972D" name="FK_CARRO_SERVICIOS__SERVICIO">
+<createdBy>fidelitas</createdBy>
+<createdTime>2022-11-11 09:37:06 UTC</createdTime>
+<ownerDesignName>data-model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F05701A1-CFD4-81B6-F553-FAE4E3F3E407"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

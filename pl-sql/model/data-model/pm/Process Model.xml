@@ -1,0 +1,7 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<ProcessModel class="oracle.dbtools.crest.model.design.process.ProcessModel" name="Process Model" id="8B712EEE-4589-C815-3409-30D7AFC78D36">
+<createdBy>fidelitas</createdBy>
+<createdTime>2022-11-11 09:36:04 UTC</createdTime>
+<ownerDesignName>data-model</ownerDesignName>
+<shouldBeOpen>false</shouldBeOpen>
+</ProcessModel>

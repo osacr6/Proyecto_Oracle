@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="F2C5F970-5821-552A-E791-37232CFFC41F" containerWithKeyObject="C9FF37D9-4172-5B6A-A9D6-31EB3D5F5BF3" localFKIndex="AC39EE68-B10F-5BCE-6EF5-E6F093E7D0C7" name="FK_FACTURA_USUARIO__EMISOR">
+<sourceConnName>proyecto</sourceConnName>
+<sourceObjSchema>HR</sourceObjSchema>
+<sourceObjName>FK_FACTURA_USUARIO__EMISOR</sourceObjName>
+<createdBy>fidelitas</createdBy>
+<createdTime>2022-11-11 09:37:06 UTC</createdTime>
+<ownerDesignName>data-model</ownerDesignName>
+<referredTableLongName>HR.T_USUARIO</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>5967D090-CD0D-5485-6FFC-131A3E3F59AC</referredTableID>
+<keyObject>9C8DCC5D-353F-AA4C-9CD9-1FFEC40187B7</keyObject>
+<referredKeyID>9C8DCC5D-353F-AA4C-9CD9-1FFEC40187B7</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>USUARIO_ID</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

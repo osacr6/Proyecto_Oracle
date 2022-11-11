@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="5A6365EB-1CA6-74EA-5A84-B5283366F16B" containerWithKeyObject="0ED02477-A24E-D824-BFAC-73B0DCC42B28" localFKIndex="DFE40070-3986-F2E9-8194-F8C6A10F5808" name="FK_DIRECCION_DISTRITO">
+<sourceConnName>proyecto</sourceConnName>
+<sourceObjSchema>HR</sourceObjSchema>
+<sourceObjName>FK_DIRECCION_DISTRITO</sourceObjName>
+<createdBy>fidelitas</createdBy>
+<createdTime>2022-11-11 09:37:06 UTC</createdTime>
+<ownerDesignName>data-model</ownerDesignName>
+<referredTableLongName>HR.T_DISTRITO</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>81F51C48-2457-E63D-2B47-8348884F918D</referredTableID>
+<keyObject>F6399679-9A2F-616A-B4D2-A164409C506C</keyObject>
+<referredKeyID>F6399679-9A2F-616A-B4D2-A164409C506C</referredKeyID>
+<mandatory>false</mandatory>
+<refColNames>DISTRITO_ID</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

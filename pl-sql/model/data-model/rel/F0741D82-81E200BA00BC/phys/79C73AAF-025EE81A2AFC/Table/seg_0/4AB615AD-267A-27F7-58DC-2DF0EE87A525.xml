@@ -1,0 +1,41 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev12c class="oracle.dbtools.crest.model.design.storage.oracle.v12c.TableProxyOraclev12c" name="T_MARCA" directorySegmentName="seg_0" id="4AB615AD-267A-27F7-58DC-2DF0EE87A525">
+<createdBy>fidelitas</createdBy>
+<createdTime>2022-11-11 09:37:05 UTC</createdTime>
+<ownerDesignName>data-model</ownerDesignName>
+<schemaObject>A3C55508-2226-F9D6-B2F0-CF7C9F8175EF</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>3EB74624-E46D-61C6-6827-BF9A7BD0B8A5</segment>
+<tableSpace>C2DB9548-CAE7-1697-D63B-65C9B56FECFB</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<inMemory>NO</inMemory>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="MARCA_ID" id="3DC841DC-1503-91AB-8615-345C2B333E96">
+<createdBy>fidelitas</createdBy>
+<createdTime>2022-11-11 09:37:05 UTC</createdTime>
+<ownerDesignName>data-model</ownerDesignName>
+<autoIncrementDDL>IDENTITY_CLAUSE</autoIncrementDDL>
+</ColumnProxy>
+<ColumnProxy name="MARCA" id="BB80A1BE-5BCA-7B72-C1BA-50622A197061">
+<createdBy>fidelitas</createdBy>
+<createdTime>2022-11-11 09:37:05 UTC</createdTime>
+<ownerDesignName>data-model</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="T_MARCA_PK" id="7F8EBCC3-03C0-B0D5-9A2D-CEBAAFCE3BC5">
+<createdBy>fidelitas</createdBy>
+<createdTime>2022-11-11 09:37:06 UTC</createdTime>
+<ownerDesignName>data-model</ownerDesignName>
+<schemaObject>A3C55508-2226-F9D6-B2F0-CF7C9F8175EF</schemaObject>
+<segment>305D6935-2467-9622-B3DD-79AF697AB7BE</segment>
+<tableSpace>C2DB9548-CAE7-1697-D63B-65C9B56FECFB</tableSpace>
+<indexSegment>305D6935-2467-9622-B3DD-79AF697AB7BE</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev12c>
