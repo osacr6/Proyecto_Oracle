@@ -24,6 +24,11 @@
 <ownerDesignName>data-model</ownerDesignName>
 <autoIncrementDDL>IDENTITY_CLAUSE</autoIncrementDDL>
 </ColumnProxy>
+<ColumnProxy name="DIRECCION_ID" id="345234C5-F170-93E6-6D1E-7342A745A7E5">
+<createdBy>fidelitas</createdBy>
+<createdTime>2022-11-11 10:07:15 UTC</createdTime>
+<ownerDesignName>data-model</ownerDesignName>
+</ColumnProxy>
 <ColumnProxy name="IDENTIFICACION" id="6EA356C9-105D-EE63-53FD-8782BD2A591E">
 <createdBy>fidelitas</createdBy>
 <createdTime>2022-11-11 09:37:05 UTC</createdTime>
@@ -54,6 +59,11 @@
 <ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="FK_USUARIO_ROL" id="CAA87891-576C-BE10-314A-FF8126CBF203">
 <createdBy>fidelitas</createdBy>
 <createdTime>2022-11-11 09:37:06 UTC</createdTime>
+<ownerDesignName>data-model</ownerDesignName>
+</ForeignKey>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="FK_USUARIO_DIRECCION" id="D21EAE42-E9A0-006F-8477-6B1B94715F6A">
+<createdBy>fidelitas</createdBy>
+<createdTime>2022-11-11 10:07:15 UTC</createdTime>
 <ownerDesignName>data-model</ownerDesignName>
 </ForeignKey>
 </foreignKeys>

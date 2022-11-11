@@ -1,7 +1,0 @@
-<?xml version = '1.0' encoding = 'UTF-8'?>
-<BusinessInfoDesign class="oracle.dbtools.crest.model.businessinfo.BusinessInfoDesign" name="Business Information" id="8C4A29D7-E844-9527-9DB9-756BD4610ED2">
-<createdBy>fidelitas</createdBy>
-<createdTime>2022-11-11 09:36:04 UTC</createdTime>
-<ownerDesignName>data-model</ownerDesignName>
-<shouldBeOpen>false</shouldBeOpen>
-</BusinessInfoDesign>

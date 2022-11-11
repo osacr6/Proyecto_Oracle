@@ -5,4 +5,9 @@
 <ownerDesignName>data-model</ownerDesignName>
 <capitalNames>false</capitalNames>
 <designId>797AD5A8-5865-2F24-1317-FB55177BC212</designId>
+<usedDesignStorageDescriptors>
+<designDescr class="oracle.dbtools.crest.model.design.Design$DesignStorageDesc" id="C8370EF3-FEF8-82FA-3E51-8D7B27070ED5">
+<designStoragePath>C:\Users\fidelitas\Desktop\proyecto\Proyecto_Oracle\pl-sql\model</designStoragePath>
+</designDescr>
+</usedDesignStorageDescriptors>
 </OSDM_Design>

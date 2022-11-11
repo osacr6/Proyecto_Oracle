@@ -361,9 +361,13 @@ CREATE TABLE T_USUARIO (
     apellidos VARCHAR2(128),
     email VARCHAR2(128) UNIQUE,
     telefono VARCHAR2(128) NOT NULL,
+    direccion_id NUMBER,
     CONSTRAINT FK_USUARIO_ROL
         FOREIGN KEY (rol_id)
-        REFERENCES T_ROL (rol_id)
+        REFERENCES T_ROL (rol_id),
+    CONSTRAINT FK_USUARIO_DIRECCION
+        FOREIGN KEY (direccion_id)
+        REFERENCES T_DIRECCION (direccion_id)
 );
 /
 --- T_TIPO_FACTURA

@@ -117,6 +117,24 @@
 <ownDataTypeParameters>128 BYTE,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
+<Column name="DIRECCION_ID" id="345234C5-F170-93E6-6D1E-7342A745A7E5">
+<sourceConnName>proyecto</sourceConnName>
+<sourceObjSchema>T_USUARIO</sourceObjSchema>
+<sourceObjName>DIRECCION_ID</sourceObjName>
+<createdBy>fidelitas</createdBy>
+<createdTime>2022-11-11 10:07:15 UTC</createdTime>
+<ownerDesignName>data-model</ownerDesignName>
+<importedID>D18DEE09-0E1C-E490-D384-30326FC5B5F2</importedID>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="1FC7AAAE-DBE7-156C-F32D-915D796FD28C" referredColumn="D43C6493-9412-4542-1253-DCC2F6F56C69"/>
+</associations>
+</Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
 <ind_PK_UK id="9C8DCC5D-353F-AA4C-9CD9-1FFEC40187B7" schemaObject="A3C55508-2226-F9D6-B2F0-CF7C9F8175EF" name="T_USUARIO_PK">
@@ -154,6 +172,16 @@
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
 <colUsage columnID="B9253F0F-D938-A8C5-AD84-13C893819B30"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="D21EAE42-E9A0-006F-8477-6B1B94715F6A" name="FK_USUARIO_DIRECCION">
+<createdBy>fidelitas</createdBy>
+<createdTime>2022-11-11 10:07:15 UTC</createdTime>
+<ownerDesignName>data-model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="345234C5-F170-93E6-6D1E-7342A745A7E5"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

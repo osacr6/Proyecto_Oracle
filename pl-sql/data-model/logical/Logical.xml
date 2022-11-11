@@ -1,7 +1,0 @@
-<?xml version = '1.0' encoding = 'UTF-8'?>
-<LogicalDesign class="oracle.dbtools.crest.model.design.logical.LogicalDesign" name="Logical" id="EA939A7B-BA7E-2E1C-4F17-C66118F3CC60" mainViewID="CA09F73F-2B1A-37DC-3811-5514FF3EFC01">
-<createdBy>fidelitas</createdBy>
-<createdTime>2022-11-11 09:36:04 UTC</createdTime>
-<ownerDesignName>data-model</ownerDesignName>
-<shouldBeOpen>false</shouldBeOpen>
-</LogicalDesign>
