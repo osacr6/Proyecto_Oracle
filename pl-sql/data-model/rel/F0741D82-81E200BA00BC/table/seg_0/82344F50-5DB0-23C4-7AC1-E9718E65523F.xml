@@ -1,0 +1,116 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="82344F50-5DB0-23C4-7AC1-E9718E65523F" schemaObject="A3C55508-2226-F9D6-B2F0-CF7C9F8175EF" name="T_COTIZACION">
+<sourceConnName>proyecto</sourceConnName>
+<sourceObjSchema>HR</sourceObjSchema>
+<sourceObjName>T_COTIZACION</sourceObjName>
+<createdBy>fidelitas</createdBy>
+<createdTime>2022-11-11 09:37:05 UTC</createdTime>
+<ownerDesignName>data-model</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="COTIZACION_ID" id="C8ACB059-C755-7CD3-8FED-D84A4C54F1CE">
+<sourceConnName>proyecto</sourceConnName>
+<sourceObjSchema>T_COTIZACION</sourceObjSchema>
+<sourceObjName>COTIZACION_ID</sourceObjName>
+<createdBy>fidelitas</createdBy>
+<createdTime>2022-11-11 09:37:05 UTC</createdTime>
+<ownerDesignName>data-model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<identityColumn>true</identityColumn>
+<defaultOntNull>true</defaultOntNull>
+<autoIncrementCycle>false</autoIncrementCycle>
+<autoIncrementDisableCache>false</autoIncrementDisableCache>
+<autoIncrementCache>20</autoIncrementCache>
+<autoIncrementOrder>false</autoIncrementOrder>
+</Column>
+<Column name="FACTURA_ID" id="ACE85E06-6C2E-8D1C-FDE7-38B353039EB9">
+<sourceConnName>proyecto</sourceConnName>
+<sourceObjSchema>T_COTIZACION</sourceObjSchema>
+<sourceObjName>FACTURA_ID</sourceObjName>
+<createdBy>fidelitas</createdBy>
+<createdTime>2022-11-11 09:37:05 UTC</createdTime>
+<ownerDesignName>data-model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="A9276724-ECC5-5A07-9128-9885A3B7A25E" referredColumn="34F857EC-AF42-C752-E0F5-965F9899EF5B"/>
+</associations>
+</Column>
+<Column name="BANCO_ID" id="86EF3035-6F00-6FD0-1E2F-B17FF6600E9A">
+<sourceConnName>proyecto</sourceConnName>
+<sourceObjSchema>T_COTIZACION</sourceObjSchema>
+<sourceObjName>BANCO_ID</sourceObjName>
+<createdBy>fidelitas</createdBy>
+<createdTime>2022-11-11 09:37:05 UTC</createdTime>
+<ownerDesignName>data-model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="A96A63BC-675E-2E01-157F-FE29C64C878F" referredColumn="AF39B641-AC5F-7248-21A2-2F80668BB872"/>
+</associations>
+</Column>
+<Column name="PRIMA" id="BFFF2084-92B9-ACBC-3115-7659CE82EF9D">
+<sourceConnName>proyecto</sourceConnName>
+<sourceObjSchema>T_COTIZACION</sourceObjSchema>
+<sourceObjName>PRIMA</sourceObjName>
+<createdBy>fidelitas</createdBy>
+<createdTime>2022-11-11 09:37:05 UTC</createdTime>
+<ownerDesignName>data-model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<defaultValue>0</defaultValue>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="AE3BCF7C-DDDB-FFB7-98C1-DD5F542641AB" schemaObject="A3C55508-2226-F9D6-B2F0-CF7C9F8175EF" name="T_COTIZACION_PK">
+<sourceConnName>proyecto</sourceConnName>
+<sourceObjSchema>HR</sourceObjSchema>
+<sourceObjName>SYS_C009524</sourceObjName>
+<createdBy>fidelitas</createdBy>
+<createdTime>2022-11-11 09:37:06 UTC</createdTime>
+<ownerDesignName>data-model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C8ACB059-C755-7CD3-8FED-D84A4C54F1CE"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="C230D203-B186-9FE0-4229-640165339C2C" name="FK_COTIZACION_BANCO">
+<createdBy>fidelitas</createdBy>
+<createdTime>2022-11-11 09:37:06 UTC</createdTime>
+<ownerDesignName>data-model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="86EF3035-6F00-6FD0-1E2F-B17FF6600E9A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="F232055D-8800-784E-C531-1DCCB8173224" name="FK_COTIZACION_FACTURA">
+<createdBy>fidelitas</createdBy>
+<createdTime>2022-11-11 09:37:06 UTC</createdTime>
+<ownerDesignName>data-model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="ACE85E06-6C2E-8D1C-FDE7-38B353039EB9"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

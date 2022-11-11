@@ -1,0 +1,63 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev12c class="oracle.dbtools.crest.model.design.storage.oracle.v12c.TableProxyOraclev12c" name="T_SUCURSAL" directorySegmentName="seg_0" id="E78D75CD-5E50-248E-7B0A-FAB6D7695753">
+<createdBy>fidelitas</createdBy>
+<createdTime>2022-11-11 09:37:05 UTC</createdTime>
+<ownerDesignName>data-model</ownerDesignName>
+<schemaObject>A3C55508-2226-F9D6-B2F0-CF7C9F8175EF</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>3EB74624-E46D-61C6-6827-BF9A7BD0B8A5</segment>
+<tableSpace>C2DB9548-CAE7-1697-D63B-65C9B56FECFB</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<inMemory>NO</inMemory>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="DIRECCION_ID" id="0944B673-3E2B-E569-C9FA-93AF218D054E">
+<createdBy>fidelitas</createdBy>
+<createdTime>2022-11-11 09:37:05 UTC</createdTime>
+<ownerDesignName>data-model</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="SUCURSAL_ID" id="55F860CC-E62D-BBC3-9986-003EC524FB46">
+<createdBy>fidelitas</createdBy>
+<createdTime>2022-11-11 09:37:05 UTC</createdTime>
+<ownerDesignName>data-model</ownerDesignName>
+<autoIncrementDDL>IDENTITY_CLAUSE</autoIncrementDDL>
+</ColumnProxy>
+<ColumnProxy name="NOMBRE" id="907534DD-C6E7-8B65-2B03-702B2341DE71">
+<createdBy>fidelitas</createdBy>
+<createdTime>2022-11-11 09:37:05 UTC</createdTime>
+<ownerDesignName>data-model</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="TELEFONO" id="C00A9CD3-F987-AE1E-16A1-3A707BD5C8AC">
+<createdBy>fidelitas</createdBy>
+<createdTime>2022-11-11 09:37:05 UTC</createdTime>
+<ownerDesignName>data-model</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="NUMERO" id="D12DD013-B1D6-02A3-891C-0DA9F30DA961">
+<createdBy>fidelitas</createdBy>
+<createdTime>2022-11-11 09:37:05 UTC</createdTime>
+<ownerDesignName>data-model</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<foreignKeys>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="FK_SUCURSAL_DIRECCION" id="3B4B9F51-ABB7-7B8A-BC91-73599D27DAE1">
+<createdBy>fidelitas</createdBy>
+<createdTime>2022-11-11 09:37:06 UTC</createdTime>
+<ownerDesignName>data-model</ownerDesignName>
+</ForeignKey>
+</foreignKeys>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="T_SUCURSAL_PK" id="82A6197A-959D-A3E9-501B-707F08AA47F2">
+<createdBy>fidelitas</createdBy>
+<createdTime>2022-11-11 09:37:06 UTC</createdTime>
+<ownerDesignName>data-model</ownerDesignName>
+<schemaObject>A3C55508-2226-F9D6-B2F0-CF7C9F8175EF</schemaObject>
+<segment>305D6935-2467-9622-B3DD-79AF697AB7BE</segment>
+<tableSpace>C2DB9548-CAE7-1697-D63B-65C9B56FECFB</tableSpace>
+<indexSegment>305D6935-2467-9622-B3DD-79AF697AB7BE</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev12c>

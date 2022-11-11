@@ -1,0 +1,41 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev12c class="oracle.dbtools.crest.model.design.storage.oracle.v12c.TableProxyOraclev12c" name="T_EQUIPAMIENTO" directorySegmentName="seg_0" id="D4A97A80-CFDE-FE9C-04DD-4DF0E43F8B0D">
+<createdBy>fidelitas</createdBy>
+<createdTime>2022-11-11 09:37:05 UTC</createdTime>
+<ownerDesignName>data-model</ownerDesignName>
+<schemaObject>A3C55508-2226-F9D6-B2F0-CF7C9F8175EF</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>3EB74624-E46D-61C6-6827-BF9A7BD0B8A5</segment>
+<tableSpace>C2DB9548-CAE7-1697-D63B-65C9B56FECFB</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<inMemory>NO</inMemory>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="EQUIPAMIENDO_ID" id="0CC7BD1E-FB0B-8995-354E-6FADE908AEDF">
+<createdBy>fidelitas</createdBy>
+<createdTime>2022-11-11 09:37:05 UTC</createdTime>
+<ownerDesignName>data-model</ownerDesignName>
+<autoIncrementDDL>IDENTITY_CLAUSE</autoIncrementDDL>
+</ColumnProxy>
+<ColumnProxy name="EQUIPAMIENDO" id="1D9CDDCF-F0A8-B021-4A3C-35F06CF990C4">
+<createdBy>fidelitas</createdBy>
+<createdTime>2022-11-11 09:37:05 UTC</createdTime>
+<ownerDesignName>data-model</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="T_EQUIPAMIENTO_PK" id="81AE2C85-8A8F-90D6-7283-13C58544CC9B">
+<createdBy>fidelitas</createdBy>
+<createdTime>2022-11-11 09:37:06 UTC</createdTime>
+<ownerDesignName>data-model</ownerDesignName>
+<schemaObject>A3C55508-2226-F9D6-B2F0-CF7C9F8175EF</schemaObject>
+<segment>305D6935-2467-9622-B3DD-79AF697AB7BE</segment>
+<tableSpace>C2DB9548-CAE7-1697-D63B-65C9B56FECFB</tableSpace>
+<indexSegment>305D6935-2467-9622-B3DD-79AF697AB7BE</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev12c>

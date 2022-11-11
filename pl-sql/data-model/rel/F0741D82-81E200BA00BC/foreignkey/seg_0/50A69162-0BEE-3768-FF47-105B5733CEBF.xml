@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="50A69162-0BEE-3768-FF47-105B5733CEBF" containerWithKeyObject="C9FF37D9-4172-5B6A-A9D6-31EB3D5F5BF3" localFKIndex="55919B9F-D22F-7C2D-5B08-3018BE3B539A" name="FK_FACTURA_MONEDA">
+<sourceConnName>proyecto</sourceConnName>
+<sourceObjSchema>HR</sourceObjSchema>
+<sourceObjName>FK_FACTURA_MONEDA</sourceObjName>
+<createdBy>fidelitas</createdBy>
+<createdTime>2022-11-11 09:37:06 UTC</createdTime>
+<ownerDesignName>data-model</ownerDesignName>
+<referredTableLongName>HR.T_MONEDA</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>D0414E06-1963-2D29-4889-DE7610547B46</referredTableID>
+<keyObject>1AC4EC7B-D95A-2CC7-3850-50497E02B5C1</keyObject>
+<referredKeyID>1AC4EC7B-D95A-2CC7-3850-50497E02B5C1</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>MONEDA_ID</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

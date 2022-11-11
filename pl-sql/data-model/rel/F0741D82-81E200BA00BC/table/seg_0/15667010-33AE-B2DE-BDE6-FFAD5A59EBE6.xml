@@ -1,0 +1,305 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="15667010-33AE-B2DE-BDE6-FFAD5A59EBE6" schemaObject="A3C55508-2226-F9D6-B2F0-CF7C9F8175EF" name="T_CARRO">
+<sourceConnName>proyecto</sourceConnName>
+<sourceObjSchema>HR</sourceObjSchema>
+<sourceObjName>T_CARRO</sourceObjName>
+<createdBy>fidelitas</createdBy>
+<createdTime>2022-11-11 09:37:05 UTC</createdTime>
+<ownerDesignName>data-model</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="CARRO_ID" id="0DF82A42-5144-E6BF-AF71-55B2BABDBB08">
+<sourceConnName>proyecto</sourceConnName>
+<sourceObjSchema>T_CARRO</sourceObjSchema>
+<sourceObjName>CARRO_ID</sourceObjName>
+<createdBy>fidelitas</createdBy>
+<createdTime>2022-11-11 09:37:05 UTC</createdTime>
+<ownerDesignName>data-model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<identityColumn>true</identityColumn>
+<defaultOntNull>true</defaultOntNull>
+<autoIncrementCycle>false</autoIncrementCycle>
+<autoIncrementDisableCache>false</autoIncrementDisableCache>
+<autoIncrementCache>20</autoIncrementCache>
+<autoIncrementOrder>false</autoIncrementOrder>
+</Column>
+<Column name="PLACA" id="2392C6B6-812F-F591-28C9-F2BB04D42F22">
+<sourceConnName>proyecto</sourceConnName>
+<sourceObjSchema>T_CARRO</sourceObjSchema>
+<sourceObjName>PLACA</sourceObjName>
+<createdBy>fidelitas</createdBy>
+<createdTime>2022-11-11 09:37:05 UTC</createdTime>
+<ownerDesignName>data-model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>128 BYTE</dataTypeSize>
+<ownDataTypeParameters>128 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="MARCA_ID" id="A297FDD7-C1AD-72E4-FC76-103FDEF74FC6">
+<sourceConnName>proyecto</sourceConnName>
+<sourceObjSchema>T_CARRO</sourceObjSchema>
+<sourceObjName>MARCA_ID</sourceObjName>
+<createdBy>fidelitas</createdBy>
+<createdTime>2022-11-11 09:37:05 UTC</createdTime>
+<ownerDesignName>data-model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="523B9539-FFC7-E0A0-D2EE-4ECFEE4BF47C" referredColumn="3DC841DC-1503-91AB-8615-345C2B333E96"/>
+</associations>
+</Column>
+<Column name="MODELO_ID" id="303DD7B8-40A6-A0D1-D761-7C933B8CC32D">
+<sourceConnName>proyecto</sourceConnName>
+<sourceObjSchema>T_CARRO</sourceObjSchema>
+<sourceObjName>MODELO_ID</sourceObjName>
+<createdBy>fidelitas</createdBy>
+<createdTime>2022-11-11 09:37:05 UTC</createdTime>
+<ownerDesignName>data-model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="E6BDC3C9-8450-437B-CD9D-ED86457DB730" referredColumn="974B7D5B-EA1A-CD90-9DB4-03941DEE2303"/>
+</associations>
+</Column>
+<Column name="TRIM_ID" id="604FA980-DB68-84AD-CB49-8F980E6073AF">
+<sourceConnName>proyecto</sourceConnName>
+<sourceObjSchema>T_CARRO</sourceObjSchema>
+<sourceObjName>TRIM_ID</sourceObjName>
+<createdBy>fidelitas</createdBy>
+<createdTime>2022-11-11 09:37:05 UTC</createdTime>
+<ownerDesignName>data-model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="BC1FF925-3456-77AC-F912-5ED588519E10" referredColumn="8DC9C34C-8DFE-10FB-CDAC-E74D8138E8C7"/>
+</associations>
+</Column>
+<Column name="COLOR_INTERIOR" id="A19FB3C6-463D-9F4D-8E39-99C4678B47A4">
+<sourceConnName>proyecto</sourceConnName>
+<sourceObjSchema>T_CARRO</sourceObjSchema>
+<sourceObjName>COLOR_INTERIOR</sourceObjName>
+<createdBy>fidelitas</createdBy>
+<createdTime>2022-11-11 09:37:05 UTC</createdTime>
+<ownerDesignName>data-model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="A84A862D-D9AF-227F-5692-A5F4A72B6297" referredColumn="2A2BEA94-33C1-EA2A-7BDB-E92AB2109B22"/>
+</associations>
+</Column>
+<Column name="COLOR_EXTERIOR" id="51BF111C-EA5C-7912-1EBE-B6AF1827C6DD">
+<sourceConnName>proyecto</sourceConnName>
+<sourceObjSchema>T_CARRO</sourceObjSchema>
+<sourceObjName>COLOR_EXTERIOR</sourceObjName>
+<createdBy>fidelitas</createdBy>
+<createdTime>2022-11-11 09:37:05 UTC</createdTime>
+<ownerDesignName>data-model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="F29DEC8A-078E-5A31-C6EC-EAD91060BB88" referredColumn="2A2BEA94-33C1-EA2A-7BDB-E92AB2109B22"/>
+</associations>
+</Column>
+<Column name="SUCURSAL_ID" id="326641B1-7014-10D6-5486-136ABF92BCB7">
+<sourceConnName>proyecto</sourceConnName>
+<sourceObjSchema>T_CARRO</sourceObjSchema>
+<sourceObjName>SUCURSAL_ID</sourceObjName>
+<createdBy>fidelitas</createdBy>
+<createdTime>2022-11-11 09:37:05 UTC</createdTime>
+<ownerDesignName>data-model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="0E274687-E25C-61FD-4047-AC3A7DAA1317" referredColumn="55F860CC-E62D-BBC3-9986-003EC524FB46"/>
+</associations>
+</Column>
+<Column name="ESTADO_ID" id="1418C5CE-196C-9028-6C7E-46AB492B0F8C">
+<sourceConnName>proyecto</sourceConnName>
+<sourceObjSchema>T_CARRO</sourceObjSchema>
+<sourceObjName>ESTADO_ID</sourceObjName>
+<createdBy>fidelitas</createdBy>
+<createdTime>2022-11-11 09:37:05 UTC</createdTime>
+<ownerDesignName>data-model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="B1851AEC-9EBA-30F6-236A-782F199C10AD" referredColumn="AFDA71BA-0212-7898-F0C6-0B4537DF8D60"/>
+</associations>
+</Column>
+<Column name="KILOMETRAJE" id="C6108918-C9E9-EF11-469A-F3A029CEC3F7">
+<sourceConnName>proyecto</sourceConnName>
+<sourceObjSchema>T_CARRO</sourceObjSchema>
+<sourceObjName>KILOMETRAJE</sourceObjName>
+<createdBy>fidelitas</createdBy>
+<createdTime>2022-11-11 09:37:05 UTC</createdTime>
+<ownerDesignName>data-model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PRECIO" id="83594CDD-B6AF-4C31-9D8C-9BEA72B203FC">
+<sourceConnName>proyecto</sourceConnName>
+<sourceObjSchema>T_CARRO</sourceObjSchema>
+<sourceObjName>PRECIO</sourceObjName>
+<createdBy>fidelitas</createdBy>
+<createdTime>2022-11-11 09:37:05 UTC</createdTime>
+<ownerDesignName>data-model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="VIN" id="31B5F93B-F860-8AAF-BF1E-E39C91974227">
+<sourceConnName>proyecto</sourceConnName>
+<sourceObjSchema>T_CARRO</sourceObjSchema>
+<sourceObjName>VIN</sourceObjName>
+<createdBy>fidelitas</createdBy>
+<createdTime>2022-11-11 09:37:05 UTC</createdTime>
+<ownerDesignName>data-model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>128 BYTE</dataTypeSize>
+<ownDataTypeParameters>128 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="8BD26B04-454C-A5BD-3711-352B6A67020E" schemaObject="A3C55508-2226-F9D6-B2F0-CF7C9F8175EF" name="T_CARRO_PK">
+<sourceConnName>proyecto</sourceConnName>
+<sourceObjSchema>HR</sourceObjSchema>
+<sourceObjName>SYS_C009439</sourceObjName>
+<createdBy>fidelitas</createdBy>
+<createdTime>2022-11-11 09:37:06 UTC</createdTime>
+<ownerDesignName>data-model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="0DF82A42-5144-E6BF-AF71-55B2BABDBB08"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="0C0304D6-30CB-E19B-2169-DD03DD1A7C5E" schemaObject="A3C55508-2226-F9D6-B2F0-CF7C9F8175EF" name="T_CARRO_VIN_UN">
+<sourceConnName>proyecto</sourceConnName>
+<sourceObjSchema>HR</sourceObjSchema>
+<sourceObjName>SYS_C009440</sourceObjName>
+<createdBy>fidelitas</createdBy>
+<createdTime>2022-11-11 09:37:06 UTC</createdTime>
+<ownerDesignName>data-model</ownerDesignName>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="31B5F93B-F860-8AAF-BF1E-E39C91974227"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="2DFC4E54-5A78-AF47-0C64-1EC361E2D23F" name="FK_CARRO_COLOR_EXTERIOR">
+<createdBy>fidelitas</createdBy>
+<createdTime>2022-11-11 09:37:06 UTC</createdTime>
+<ownerDesignName>data-model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="51BF111C-EA5C-7912-1EBE-B6AF1827C6DD"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="C1FFC215-9DF3-8E76-393D-248D02C1CB3F" name="FK_CARRO_COLOR_INTERIOR">
+<createdBy>fidelitas</createdBy>
+<createdTime>2022-11-11 09:37:06 UTC</createdTime>
+<ownerDesignName>data-model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A19FB3C6-463D-9F4D-8E39-99C4678B47A4"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="34BDD9BA-BF64-36C0-6108-899900CDC46B" name="FK_CARRO_ESTADO">
+<createdBy>fidelitas</createdBy>
+<createdTime>2022-11-11 09:37:06 UTC</createdTime>
+<ownerDesignName>data-model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="1418C5CE-196C-9028-6C7E-46AB492B0F8C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="69A9E573-3819-598F-D512-7991C9B806DB" name="FK_CARRO_MARCA">
+<createdBy>fidelitas</createdBy>
+<createdTime>2022-11-11 09:37:06 UTC</createdTime>
+<ownerDesignName>data-model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A297FDD7-C1AD-72E4-FC76-103FDEF74FC6"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="4C1C466A-35C9-508C-7433-172FFEDC2D23" name="FK_CARRO_MODELO">
+<createdBy>fidelitas</createdBy>
+<createdTime>2022-11-11 09:37:06 UTC</createdTime>
+<ownerDesignName>data-model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="303DD7B8-40A6-A0D1-D761-7C933B8CC32D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="7A9F7190-3A30-0C0A-82C9-83CAC1DCCC85" name="FK_CARRO_SUCURSAL">
+<createdBy>fidelitas</createdBy>
+<createdTime>2022-11-11 09:37:06 UTC</createdTime>
+<ownerDesignName>data-model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="326641B1-7014-10D6-5486-136ABF92BCB7"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="4B5255EF-B457-49B2-9F22-5A7203A5936E" name="FK_CARRO_TRIM">
+<createdBy>fidelitas</createdBy>
+<createdTime>2022-11-11 09:37:06 UTC</createdTime>
+<ownerDesignName>data-model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="604FA980-DB68-84AD-CB49-8F980E6073AF"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
