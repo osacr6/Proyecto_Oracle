@@ -1,5 +1,8 @@
 <html xmlns:th="http://www.thymeleaf.org">
-    <head th:replace="plantilla/template::head"></head>
+    <head>
+        <title>Login</title>
+        <link th:replace="plantilla/layout :: imports"/>
+    </head>
     <body>      
         <section>
             <div class="container h-100">
@@ -11,11 +14,10 @@
                         </div>
                         <div class="card" style="background: whitesmoke">                                   
                             <div class="card-body p-5"> 
-                                <h1 class="fs-4 card-title fw-bold mb-4 text-center">Sign In</h1>
+                                <h1 class="fs-4 card-title fw-bold mb-4 text-center">Inicio de Sesiòn</h1>
                                 <form name="f" th:action="@{/login}" method="post">     
                                     <fieldset>
                                         <!-- Thymeleaf + Spring Security error display -->
-
                                         <div th:if="${param.error}" class="alert alert-danger">                                    
                                             Invalid username and password.
                                         </div>
@@ -26,26 +28,20 @@
 
                                         <!-- Login Controls -->
                                         <div class="form-group">
-                                            <label for="txtUsername">Username</label>
+                                            <label for="txtUsername">Usuario</label>
                                             <input type="text" class="form-control" id="username" name="username"
-                                                   placeholder="Username">
+                                                   placeholder="Usuario">
                                         </div>
                                         <br>
                                         <div class="form-group">
-                                            <label for="txtPassword">Password</label>
+                                            <label for="txtPassword">Contraseña</label>
                                             <input type="password" class="form-control" id="password" name="password"
-                                                   placeholder="Password">
+                                                   placeholder="Contraseña">
                                         </div>    
-                                        <!-- 
-                                        <div class="form-check">
-                                            <input type="checkbox" class="form-check-input" id="checkRememberMe" name="checkRememberMe">
-                                            <label class="form-check-label" for="checkRememberMe">Remember me?</label>
-                                        </div>  
-                                        -->
                                         <hr>
                                         <!-- Login Button -->
                                         <div class="form-actions" style="margin-top: 12px;">
-                                            <button type="submit" class="btn btn-success">Log in</button>   
+                                            <button type="submit" class="btn btn-success">Ingresar</button>   
                                         </div>
                                     </fieldset>
                                 </form>

@@ -41,7 +41,7 @@ public class CarroController {
     public String index(Model model) {
         List<Carro> listaCarro = carroService.getAllCarro();        
         model.addAttribute("carros", listaCarro);
-        return "getAllCarro";
+        return "getAllCarros";
     }
     
     @GetMapping("/carro/getAll")
@@ -52,9 +52,9 @@ public class CarroController {
             List<Carro> listaCarro = carroService.getAllCarro();
             model.addAttribute("titulo", "Tabla Carros");
             model.addAttribute("carros", listaCarro);
-            return "getAllCarro";
+            return "getAllCarros";
         }        
-        return "redirect:/Home/index";  
+        return "redirect:/home";  
     }
     
     @GetMapping("/carro/misCarros")
