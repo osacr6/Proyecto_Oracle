@@ -8,6 +8,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,6 +18,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 
 
 @Controller
@@ -36,10 +38,13 @@ public class CarroController {
     
     @Autowired
     private IEstadoVehiculoService estadoVehiculoService;
-    
+    //funcion de JDBC
+    @Autowired
+    private JdbcTemplate jdbcTemplete;
+    //prueba con el JDBC
     @GetMapping("/carro")
     public String index(Model model) {
-        List<Carro> listaCarro = carroService.getAllCarro();        
+        List<Carro> listaCarro = jdbcTemplete.query("SELECT * FROM T_CARRO", BeanPropertyRowMapper.newInstance(Carro.class));        
         model.addAttribute("carros", listaCarro);
         return "getAllCarros";
     }
