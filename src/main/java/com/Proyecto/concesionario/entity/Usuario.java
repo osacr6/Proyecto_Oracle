@@ -1,89 +1,67 @@
 package com.Proyecto.concesionario.entity;
 
-import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import java.util.*;
+
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+
+// https://github.com/vijaysrj/spring-boot-postgresql-dbauthentication/tree/master/src/main/java/com/springboot/dbauthentication
 
 @Entity
-@Table(name="usuario")
-public class Usuario implements Serializable{
+@Table(name = "T_USUARIO")
+public class Usuario implements UserDetails {
+
     @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
-    private long id;
-    private String nombre;
-    private String apellido1;
-    private String apellido2;
-    private String email;
-    private String telefono;    
-    
+    private long usuario_id;
+    private String username;
     private String password;
+    private String rol_id;
     private int active;
-    private String permissions = "";
-    private String roles = "";
-    
-   
-    public long getId() {
-        return id;
+
+    public Usuario(long usuario_id, String username, String password, String rol_id, int active) {
+        this.usuario_id = usuario_id;
+        this.username = username;
+        this.password = password;
+        this.rol_id = rol_id;
+        this.active = active;
     }
 
-    public void setId(long id) {
-        this.id = id;
+    public long getUsuario_id() {
+        return usuario_id;
     }
 
-    public String getNombre() {
-        return nombre;
+    public void setUsuario_id(long usuario_id) {
+        this.usuario_id = usuario_id;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public String getUsername() {
+        return username;
     }
 
-    public String getApellido1() {
-        return apellido1;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
-    public void setApellido1(String apellido1) {
-        this.apellido1 = apellido1;
-    }
-
-    public String getApellido2() {
-        return apellido2;
-    }
-
-    public void setApellido2(String apellido2) {
-        this.apellido2 = apellido2;
-    }
-
-    public String getTelefono() {
-        return telefono;
-    }
-
-    public void setTelefono(String telefono) {
-        this.telefono = telefono;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-    
     public String getPassword() {
         return password;
     }
 
     public void setPassword(String password) {
         this.password = password;
+    }
+    
+    public String getRol() {
+        return rol_id;
+    }
+
+    public void setRol(String rol) {
+        this.rol_id = rol;
     }
 
     public int getActive() {
@@ -94,45 +72,42 @@ public class Usuario implements Serializable{
         this.active = active;
     }
 
-    public String getPermissions() {
-        return permissions;
+    public List<String> getRoleList() {
+        return new ArrayList<>();
     }
 
-    public void setPermissions(String permissions) {
-        this.permissions = permissions;
+    public List<String> getPermissionList() {
+        return new ArrayList<>();
     }
 
-    public String getRoles() {
-        return roles;
+    public boolean hasRole(String rol) {
+        return true;
     }
 
-    public void setRoles(String roles) {
-        this.roles = roles;
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        List<SimpleGrantedAuthority> authorities = new ArrayList<>();
+        authorities.add(new SimpleGrantedAuthority("ROLE_ADMIN"));
+        return authorities;
     }
-    
-    
-    public List<String> getRoleList(){
-    if(this.roles.length()>0){
-    return Arrays.asList(this.roles.split(","));
+
+    @Override
+    public boolean isAccountNonExpired() {
+        return true;
     }
-    return new ArrayList<>();
+
+    @Override
+    public boolean isAccountNonLocked() {
+        return true;
     }
-    
-    
-    public List<String> getPermissionList(){
-    
-    if(this.permissions.length()>0){
-    return Arrays.asList(this.permissions.split(","));
-    
+
+    @Override
+    public boolean isCredentialsNonExpired() {
+        return true;
     }
-    return new ArrayList<>();
+
+    @Override
+    public boolean isEnabled() {
+        return true;
     }
-    
-    public boolean hasRole(String rol){
-        if(roles.equals(rol)){
-            return true;
-        }
-        return false;
-    }
-    
 }

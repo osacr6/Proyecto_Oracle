@@ -10,11 +10,11 @@ public class LoginController {
     
     @GetMapping("/login")
     public String index(){
-        return "/login";     //Este login si es el de nuestro html
+        return "/login";
     }
     
-    @PostMapping("/login")
-    public String login() {
-        return "redirect:/home";
-    }
+    //@PostMapping("/login")
+    //public String login() {
+    //    return "redirect:/home";
+    //}
 }

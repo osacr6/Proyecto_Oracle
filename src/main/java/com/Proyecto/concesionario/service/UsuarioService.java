@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class UsuarioService implements IUsuarioService{
+public class UsuarioService implements IUsuarioService {
     
     @Autowired
     private UsuarioRepository usuarioRepository;
@@ -31,10 +31,9 @@ public class UsuarioService implements IUsuarioService{
     public void delete(long id) {
         usuarioRepository.deleteById(id);
     }
+    
     @Override
-    public Usuario findByNombre(String nombre){
-    return usuarioRepository.findByNombre(nombre);
-    
+    public List<Usuario> findByUsername(String username){
+        return usuarioRepository.findByUsername(username);
     }
-    
 }

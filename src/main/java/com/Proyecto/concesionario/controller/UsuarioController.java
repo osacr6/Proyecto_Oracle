@@ -15,10 +15,10 @@ public class UsuarioController {
     private IUsuarioService usuarioService;
     
     @GetMapping("/usuario") 
-    public String index (Model model){
-    List <Usuario> listarUsuario = usuarioService.getAllUsuario();
-    model.addAttribute("titulo","Tabla Usuarios");
-    model.addAttribute("usuarios",listarUsuario);
-    return "usuarios";
+        public String index (Model model){
+        List <Usuario> listarUsuario = usuarioService.getAllUsuario();
+        model.addAttribute("titulo","Tabla Usuarios");
+        model.addAttribute("usuarios",listarUsuario);
+        return "usuarios";
     }
 }

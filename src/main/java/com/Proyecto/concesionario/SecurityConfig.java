@@ -1,7 +1,6 @@
 package com.Proyecto.concesionario;
 
-
-import com.Proyecto.concesionario.service.UserService;
+import com.Proyecto.concesionario.service.SecurityConfigService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -13,56 +12,55 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 
-
 @Configuration
 @EnableWebSecurity
-public class SecurityConfig extends WebSecurityConfigurerAdapter{
-    
+public class SecurityConfig extends WebSecurityConfigurerAdapter {
+
     @Autowired
-    private UserService userDetailsService;
-    
+    private SecurityConfigService securityConfigService;
+
     @Bean
-    public BCryptPasswordEncoder passwordEncoder(){
-    return new BCryptPasswordEncoder();
+    public BCryptPasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
     }
+
     @Bean
-    public UserService getUserService(){
-    return new UserService();
+    public SecurityConfigService getUserService() {
+        return new SecurityConfigService();
     }
+
     @Bean
-    DaoAuthenticationProvider authenticationProvider(){
-    DaoAuthenticationProvider daoAuthenticationProvider = new DaoAuthenticationProvider();
-    daoAuthenticationProvider.setPasswordEncoder(passwordEncoder());
-    daoAuthenticationProvider.setUserDetailsService(getUserService());
-    return daoAuthenticationProvider;
+    DaoAuthenticationProvider authenticationProvider() {
+        DaoAuthenticationProvider daoAuthenticationProvider = new DaoAuthenticationProvider();
+        daoAuthenticationProvider.setPasswordEncoder(passwordEncoder());
+        daoAuthenticationProvider.setUserDetailsService(getUserService());
+        return daoAuthenticationProvider;
     }
-    
+
     @Bean
-    public AuthenticationSuccessHandler appAuthenticationSuccessHandler(){
-      return new  AppAuthenticationSuccessHandler();
+    public AuthenticationSuccessHandler appAuthenticationSuccessHandler() {
+        return new AppAuthenticationSuccessHandler();
     }
-    
-    public SecurityConfig (UserService userPrincipalDetailsService){
-    this.userDetailsService = userPrincipalDetailsService;
+
+    public SecurityConfig(SecurityConfigService loginService) {
+        this.securityConfigService = loginService;
     }
-    
+
     @Override
-    protected void configure(AuthenticationManagerBuilder auth){
-    auth.authenticationProvider(authenticationProvider());
+    protected void configure(AuthenticationManagerBuilder auth) {
+        auth.authenticationProvider(authenticationProvider());
     }
-    
+
     @Override
-    protected void configure(HttpSecurity http) throws Exception{       
-    /*
+    protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                .antMatchers("/carro","/login","/carroN")
+                .antMatchers("/carro", "/login", "/carroN")
                 .hasRole("ADMIN")
-                .antMatchers("/carro","/","/login")
-                .hasAnyRole("USER","VENDEDOR","ADMIN")
+                .antMatchers("/carro", "/", "/login")
+                .hasAnyRole("USER", "VENDEDOR", "ADMIN")
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
-                .loginPage("/login").permitAll().defaultSuccessUrl("/Home/index",true);
-    */
+                .loginPage("/login").permitAll().defaultSuccessUrl("/Home/index", true);
     }
 }

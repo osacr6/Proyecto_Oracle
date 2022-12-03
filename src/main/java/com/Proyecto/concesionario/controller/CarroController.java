@@ -52,7 +52,7 @@ public class CarroController {
     @GetMapping("/carro/getAll")
     public String getAllCarro(Model model) {
         //tomar la info del usuario logueado para validar si es administrador
-        Userprincipal usuario = (Userprincipal) SecurityContextHolder.getContext().getAuthentication().getPrincipal();                
+        Usuario usuario = (Usuario) SecurityContextHolder.getContext().getAuthentication().getPrincipal();                
         if(usuario.hasRole("ADMIN")){
             List<Carro> listaCarro = carroService.getAllCarro();
             model.addAttribute("titulo", "Tabla Carros");
@@ -65,8 +65,8 @@ public class CarroController {
     @GetMapping("/carro/misCarros")
     public String getMyCars(Model model) {
         //tomar el id del usuario logueado
-        Userprincipal usuario = (Userprincipal) SecurityContextHolder.getContext().getAuthentication().getPrincipal();           
-        long idUsuario = usuario.getId();
+        Usuario usuario = (Usuario) SecurityContextHolder.getContext().getAuthentication().getPrincipal();           
+        long idUsuario = usuario.getUsuario_id();
         List<Carro> listaCarro = carroService.getAllCarro(); 
         List<Carro> carrosUsuario = new ArrayList<>();
         if(!listaCarro.isEmpty()){
@@ -160,8 +160,8 @@ public class CarroController {
     @PostMapping("/carro/create")
     public String create(@ModelAttribute Carro carro, @RequestParam("image") MultipartFile multipartFile) throws IOException {        
         //tomar el id del usuario logueado
-        Userprincipal usuario = (Userprincipal) SecurityContextHolder.getContext().getAuthentication().getPrincipal();        
-        long idUsuario = usuario.getId();
+        Usuario usuario = (Usuario) SecurityContextHolder.getContext().getAuthentication().getPrincipal();        
+        long idUsuario = usuario.getUsuario_id();
         //Nuevo registro
         if(carro.getId() == 0){
             carro.setIdUsuario(idUsuario); 
@@ -188,8 +188,8 @@ public class CarroController {
     @GetMapping("/carro/cotizar/{id}")
     public String createCotizacion(@PathVariable("id") Long idCarro, Model model) {        
         //tomar el id del usuario logueado
-        Userprincipal usuario = (Userprincipal) SecurityContextHolder.getContext().getAuthentication().getPrincipal();        
-        long idUsuario = usuario.getId();
+        Usuario usuario = (Usuario) SecurityContextHolder.getContext().getAuthentication().getPrincipal();        
+        long idUsuario = usuario.getUsuario_id();
         Carro car = carroService.getCarroById(idCarro); 
         List<Cotizacion> cotizaciones = cotizacionService.getCotizaciones(); 
         //si el carro no pertenece al usuario que quiere cotizar
@@ -220,8 +220,8 @@ public class CarroController {
     @GetMapping("/carro/misCotizaciones")
     public String getMisCotizaciones(Model model) {
         //tomar el id del usuario logueado
-        Userprincipal usuario = (Userprincipal) SecurityContextHolder.getContext().getAuthentication().getPrincipal();           
-        long idUsuario = usuario.getId();
+        Usuario usuario = (Usuario) SecurityContextHolder.getContext().getAuthentication().getPrincipal();           
+        long idUsuario = usuario.getUsuario_id();
         //consulta todos los carros
         List<Carro> listaCarro = carroService.getAllCarro(); 
         List<Carro> carrosUsuario = new ArrayList<>();
@@ -266,8 +266,8 @@ public class CarroController {
     @GetMapping("/carro/deleteCotizacion/{id}")
     public String deleteCotizacion(@PathVariable("id") Long idCarro) {
         //tomar el id del usuario logueado
-        Userprincipal usuario = (Userprincipal) SecurityContextHolder.getContext().getAuthentication().getPrincipal();           
-        long idUsuario = usuario.getId();
+        Usuario usuario = (Usuario) SecurityContextHolder.getContext().getAuthentication().getPrincipal();           
+        long idUsuario = usuario.getUsuario_id();
         List<Cotizacion> listaCotizaciones = cotizacionService.getCotizaciones();
         for(int i = 0; i<listaCotizaciones.size(); i++){
             if(listaCotizaciones.get(i).getIdCarro() == idCarro && listaCotizaciones.get(i).getIdUsuario()== idUsuario){
