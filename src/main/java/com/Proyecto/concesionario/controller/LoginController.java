@@ -13,8 +13,8 @@ public class LoginController {
         return "/login";
     }
     
-    //@PostMapping("/login")
-    //public String login() {
-    //    return "redirect:/home";
-    //}
+    @PostMapping("/login")
+    public String login() {
+        return "redirect:/home";
+    }
 }

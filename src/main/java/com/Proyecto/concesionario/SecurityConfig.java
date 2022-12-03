@@ -16,51 +16,51 @@ import org.springframework.security.web.authentication.AuthenticationSuccessHand
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
-    @Autowired
-    private SecurityConfigService securityConfigService;
+//    @Autowired;
+//    private SecurityConfigService securityConfigService;
+//
+//    @Bean
+//    public BCryptPasswordEncoder passwordEncoder() {
+//        return new BCryptPasswordEncoder();
+//    }
+//
+//    @Bean
+//    public SecurityConfigService getUserService() {
+//        return new SecurityConfigService();
+//    }
+//
+//    @Bean
+//    DaoAuthenticationProvider authenticationProvider() {
+//        DaoAuthenticationProvider daoAuthenticationProvider = new DaoAuthenticationProvider();
+//        daoAuthenticationProvider.setPasswordEncoder(passwordEncoder());
+//        daoAuthenticationProvider.setUserDetailsService(getUserService());
+//        return daoAuthenticationProvider;
+//    }
 
-    @Bean
-    public BCryptPasswordEncoder passwordEncoder() {
-        return new BCryptPasswordEncoder();
-    }
-
-    @Bean
-    public SecurityConfigService getUserService() {
-        return new SecurityConfigService();
-    }
-
-    @Bean
-    DaoAuthenticationProvider authenticationProvider() {
-        DaoAuthenticationProvider daoAuthenticationProvider = new DaoAuthenticationProvider();
-        daoAuthenticationProvider.setPasswordEncoder(passwordEncoder());
-        daoAuthenticationProvider.setUserDetailsService(getUserService());
-        return daoAuthenticationProvider;
-    }
-
-    @Bean
-    public AuthenticationSuccessHandler appAuthenticationSuccessHandler() {
-        return new AppAuthenticationSuccessHandler();
-    }
-
-    public SecurityConfig(SecurityConfigService loginService) {
-        this.securityConfigService = loginService;
-    }
-
-    @Override
-    protected void configure(AuthenticationManagerBuilder auth) {
-        auth.authenticationProvider(authenticationProvider());
-    }
+//    @Bean
+//    public AuthenticationSuccessHandler appAuthenticationSuccessHandler() {
+//        return new AppAuthenticationSuccessHandler();
+//    }
+//
+//    public SecurityConfig(SecurityConfigService loginService) {
+//        this.securityConfigService = loginService;
+//    }
+//
+//    @Override
+//    protected void configure(AuthenticationManagerBuilder auth) {
+//        auth.authenticationProvider(authenticationProvider());
+//    }
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.authorizeRequests()
-                .antMatchers("/carro", "/login", "/carroN")
-                .hasRole("ADMIN")
-                .antMatchers("/carro", "/", "/login")
-                .hasAnyRole("USER", "VENDEDOR", "ADMIN")
-                .anyRequest().authenticated()
-                .and()
-                .formLogin()
-                .loginPage("/login").permitAll().defaultSuccessUrl("/Home/index", true);
+//        http.authorizeRequests()
+//                .antMatchers("/carro", "/login", "/carroN")
+//                .hasRole("ADMIN")
+//                .antMatchers("/carro", "/", "/login")
+//                .hasAnyRole("USER", "VENDEDOR", "ADMIN")
+//                .anyRequest().authenticated()
+//                .and()
+//                .formLogin()
+//                .loginPage("/login").permitAll().defaultSuccessUrl("/Home/index", true);
     }
 }
