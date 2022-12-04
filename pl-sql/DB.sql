@@ -1,3 +1,7 @@
+-- USANDO SQL PLUS PERMITIR AL USUARIO USAR LA BD
+-- usuario: conn /as sysdba
+-- SQL > GRAND ALL PRIVILEGES TO HR;
+
 --- T_PROVINCIA
 --
 BEGIN

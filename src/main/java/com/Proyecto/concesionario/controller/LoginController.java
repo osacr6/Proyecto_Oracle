@@ -9,12 +9,12 @@ import org.springframework.web.bind.annotation.PostMapping;
 public class LoginController {
     
     @GetMapping("/login")
-    public String index(){
+    public String login(){
         return "/login";
     }
     
-//    @PostMapping("/login")
-//    public String login() {
-//        return "redirect:/home";
-//    }
+    @GetMapping("/registro")
+    public String registro(){
+        return "/registro";
+    }
 }
