@@ -18,18 +18,13 @@ public class SecurityConfigService implements UserDetailsService {           //u
 
     @Autowired
     private UsuarioRepository usuarioRepository;
-    
-    @Autowired
-    private JdbcTemplate jdbcTemplete;
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {  //Cargando la info del username
-        // List<Usuario> usuario = usuarioRepository.findByUsername(username);
-        //List<Usuario> usuario = (List<Usuario>)usuarioRepository.findAll();
-         List<Usuario> usuario = jdbcTemplete.query("SELECT * FROM T_USUARIO", BeanPropertyRowMapper.newInstance(Usuario.class));        
+        Usuario usuario = usuarioRepository.findByUsername(username);      
         if (usuario == null) {
             throw new UsernameNotFoundException(username);
-        }   //Toda la informacion de la persona
-        return null;
+        }   
+        return usuario;
     }
 }

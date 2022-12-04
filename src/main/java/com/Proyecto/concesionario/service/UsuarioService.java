@@ -33,7 +33,7 @@ public class UsuarioService implements IUsuarioService {
     }
     
     @Override
-    public List<Usuario> findByUsername(String username){
+    public Usuario findByUsername(String username){
         return usuarioRepository.findByUsername(username);
     }
 }

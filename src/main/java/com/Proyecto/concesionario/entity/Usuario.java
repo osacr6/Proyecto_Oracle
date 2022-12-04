@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import java.util.*;
+import javax.persistence.*;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -16,28 +17,32 @@ import org.springframework.security.core.userdetails.UserDetails;
 @Entity
 @Table(name = "T_USUARIO")
 public class Usuario implements UserDetails {
-
     @Id
-    private long usuario_id;
+    @Column(name = "usuario_id")
+    private long usuarioId;
     private String username;
     private String password;
-    private String rol_id;
+    @Column(name = "rol_id")
+    private String rolId;
     private int active;
 
+    public Usuario() {
+    }
+    
     public Usuario(long usuario_id, String username, String password, String rol_id, int active) {
-        this.usuario_id = usuario_id;
+        this.usuarioId = usuario_id;
         this.username = username;
         this.password = password;
-        this.rol_id = rol_id;
+        this.rolId = rolId;
         this.active = active;
     }
 
     public long getUsuario_id() {
-        return usuario_id;
+        return usuarioId;
     }
 
     public void setUsuario_id(long usuario_id) {
-        this.usuario_id = usuario_id;
+        this.usuarioId = usuario_id;
     }
 
     public String getUsername() {
@@ -57,11 +62,11 @@ public class Usuario implements UserDetails {
     }
     
     public String getRol() {
-        return rol_id;
+        return rolId;
     }
 
     public void setRol(String rol) {
-        this.rol_id = rol;
+        this.rolId = rol;
     }
 
     public int getActive() {
