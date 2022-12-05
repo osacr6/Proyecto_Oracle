@@ -13,9 +13,16 @@ public class HomeController {
     
     @Autowired
     private ICarroService carroService;
+    
+    @GetMapping("/")
+    public String index(Model model) { 
+        List<Carro> listaCarro = carroService.getAllCarro();        
+        model.addAttribute("carros", listaCarro);
+        return "home";
+    }
 
     @GetMapping("/home")
-    public String index(Model model) { 
+    public String home(Model model) { 
         List<Carro> listaCarro = carroService.getAllCarro();        
         model.addAttribute("carros", listaCarro);
         return "home";

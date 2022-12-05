@@ -55,11 +55,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
             .antMatchers(
-                "/",
                 "/login", 
                 "/registro"
             ).permitAll()
             .antMatchers(
+                "/",
+                "/home",
                 "/carro"
             ).hasAnyRole(
                 "USER",
@@ -70,6 +71,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             .and()
             .formLogin()
             .loginPage("/login").permitAll()
-            .defaultSuccessUrl("/home", true);
+            .defaultSuccessUrl("/", true);
     }
 }

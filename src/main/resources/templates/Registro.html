@@ -1,23 +1,67 @@
 <html xmlns:th="http://www.thymeleaf.org">
     <head>
-        <link rel="stylesheet" href="css/Registro.css" type="text/css"/>
-        <title>Registro de Usuario</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Registro</title>
+        <link th:replace="plantilla/layout :: imports"/>
     </head>
-    <body>
-        <div>
-            
-            <section class = "form-Registro">
-                <h2>Registro</h2>
-                <input class= "control" type="text" id="nombre" name="nombre" placeholder = "Ingrese su nombre:">  
-                <input class= "control" type="text" id="apellido" name="apellido" placeholder = "Ingrese su primer apellido:">  
-                <input class= "control" type="email" id="correo" name="correo" placeholder = "Ingrese su correo electronico:">  
-                <input class= "control" type="password" id="contraseña" name="contraseña" placeholder = "Ingrese su contraseña:"> 
-                <p>Estoy de acuerdo con los <a href= "#" >terminos y condiciones</a></p>
-                <input  class= "boton" type="submit" value="Registrar"> 
-                <p><a href= "/login" >¿Ya tengo cuenta?</a></p>
-            </section>   
-        </div>
+    <body>      
+        <section>
+            <div class="container h-100">
+                <div class="row justify-content-sm-center h-100">
+                    <div class="col-xxl-4 col-xl-5 col-lg-5 col-md-7 col-sm-9">
+                        <div class="text-center my-5">
+                            <img src="data:image/png;base64,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" 
+                                 width=200px height=175px style="border-radius: 10px"/>
+                        </div>
+                        <div class="card" style="background: whitesmoke">                                   
+                            <div class="card-body p-5"> 
+                                <h1 class="fs-4 card-title fw-bold mb-4 text-center">Formulario de registro</h1>
+                                <form name="f" th:action="@{/registro}" method="post"> 
+                                    <fieldset>
+                                        <!-- Thymeleaf + Spring Security error display -->
+                                        <div th:if="${param.error}" class="alert alert-danger">                                    
+                                            Invalid username or password.
+                                        </div>
+
+                                        <div th:if="${param.logout}" class="alert alert-success">
+                                            You have been logged out.
+                                        </div>  
+
+                                        <!-- Login Controls -->
+                                        <div class="form-group">
+                                            <label for="txtUsername">Usuario</label>
+                                            <input type="text" class="form-control" id="username" name="username"
+                                                   placeholder="Usuario">
+                                        </div>
+                                        <br>
+                                        <div class="form-group">
+                                            <label for="txtPassword">Contraseña</label>
+                                            <input type="password" class="form-control" id="password" name="password"
+                                                   placeholder="Contraseña">
+                                        </div>
+                                        <br>
+                                        <div class="form-group">
+                                            <label for="passwordcheck">Repita la Contraseña</label>
+                                            <input type="password" class="form-control" id="passwordcheck" name="passwordcheck"
+                                                   placeholder="Contraseña">
+                                        </div>  
+                                        <hr>
+                                        <div class="form-check d-flex justify-content-center mb-5">
+                                            <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3c">
+                                            <label class="form-check-label" for="form2Example3">
+                                                I agree all statements in <a href="#!">Terms of service</a>
+                                            </label>
+                                        </div>
+
+                                        <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                                            <button type="submit" class="btn btn-primary btn-lg">Register</button>
+                                        </div>
+                                    </fieldset>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </body>
 </html>
