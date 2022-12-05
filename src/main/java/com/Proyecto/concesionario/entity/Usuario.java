@@ -69,6 +69,24 @@ public class Usuario implements UserDetails {
         this.rolId = rol;
     }
 
+    public long getUsuarioId() {
+        return usuarioId;
+    }
+
+    public void setUsuarioId(long usuarioId) {
+        this.usuarioId = usuarioId;
+    }
+
+    public String getRolId() {
+        return rolId;
+    }
+
+    public void setRolId(String rolId) {
+        this.rolId = rolId;
+    }
+    
+    
+
     public int getActive() {
         return active;
     }

@@ -363,9 +363,13 @@ CREATE TABLE T_USUARIO (
     password VARCHAR2(128) NOT NULL,
     rol_id NUMBER NOT NULL,
     active NUMBER NOT NULL,
+    persona_id NUMBER,
     CONSTRAINT FK_USUARIO_ROL
         FOREIGN KEY (rol_id)
-        REFERENCES T_ROL (rol_id)
+        REFERENCES T_ROL (rol_id),
+    CONSTRAINT FK_USUARIO_PERSONA
+        FOREIGN KEY (persona_id)
+        REFERENCES T_PERSONA (persona_id)
 );
 /
 --- T_PERSONA

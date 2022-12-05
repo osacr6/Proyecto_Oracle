@@ -11,17 +11,10 @@
 /*Lo que hace el display el comportamiento de nuestros elementos en la cajita el flex hace que se acomoden en un nivel de bloque , align es que los queremos centrados
 */
 .navbar1{
-    //position:static;
-    //padding-left: 10%;
-    //padding-right: -40%;
+
     background-color: #0F1A59;
-    //position: relative;
-    //top:-1%;
     height: 80px;
-    //width:116%;
-    //left: -246px;
     display:flex;
-    //margin:auto;
     align-items: center; 
 }
 

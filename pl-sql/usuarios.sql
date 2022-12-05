@@ -27,4 +27,6 @@ BEGIN
         );
 END;
 /
+CALL sp_crear_usuario('test', 'test', '1', '1');
+/
 SELECT * FROM T_USUARIO;
