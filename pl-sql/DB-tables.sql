@@ -348,6 +348,14 @@ CREATE TABLE T_ROL (
     rol VARCHAR2(128) NOT NULL
 );
 /
+INSERT ALL
+    INTO T_ROL(rol_id, rol) VALUES ('1', 'ADMIN')
+    INTO T_ROL(rol_id, rol) VALUES ('2', 'VENDEDOR')
+    INTO T_ROL(rol_id, rol) VALUES ('3', 'USER')
+SELECT 1 FROM DUAL;
+/
+SELECT * FROM T_ROL;
+/
 --- T_USUARIO
 --
 BEGIN
