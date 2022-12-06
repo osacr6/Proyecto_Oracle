@@ -7,6 +7,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 //https://www.baeldung.com/spring-data-jpa-query
+
 @Repository
 public interface CarroRepository extends JpaRepository<Carro, Long> {
 
@@ -15,7 +16,7 @@ public interface CarroRepository extends JpaRepository<Carro, Long> {
 
     @Query(value = "insert into T_CARRO (marca_id, modelo_id, trim_id,sucursal_id,estado_id,placa,color_interior,color_exterior,kilometraje,precio,vin)"
             + "values (:marca_id, :modelo_id, :trim_id,:sucursal_id,:estado_id,:placa,:color_interior,:color_exterior,:kilometraje,:precio,:vin)",
-             nativeQuery = true)
+            nativeQuery = true)
     public Carro save(@Param("marca_id") long marca_id, @Param("modelo_id") long modelo_id,
             @Param("trim_id") long trim_id, @Param("sucursal_id") long sucursal_id, @Param("estado_id") long estado_id,
             @Param("placa") String placa, @Param("color_interior") int color_interior, @Param("color_exterior") int color_exterior,
