@@ -60,7 +60,23 @@ public class CarroController {
             return "getAllCarros";
         }        
         return "redirect:/home";  
+        
+        
     }
+   
+        @GetMapping("/marca/getAll")
+    public String getAllMarca(Model model) {
+        //tomar la info del usuario logueado para validar si es administrador
+        Usuario usuario = (Usuario) SecurityContextHolder.getContext().getAuthentication().getPrincipal();                
+        if(usuario.hasRole("ADMIN")){
+            List<Marca> listaMarcas = marcaService.listMarcas();
+            model.addAttribute("titulo", "Tabla Carros");
+            model.addAttribute("marcas", listaMarcas);
+            return "getAllMarca";
+      }          
+        return "redirect:/home";  
+        
+     } 
     
     @GetMapping("/carro/misCarros")
     public String getMyCars(Model model) {
@@ -147,7 +163,7 @@ public class CarroController {
 
     @GetMapping("/carro/create")
     public String create(Model model) {
-        List<Marca> listaMarcas = marcaService.listMarcs(); 
+        List<Marca> listaMarcas = marcaService.listMarcas(); 
         model.addAttribute("marcas", listaMarcas);     
         List<EstadoVehiculo> listaMarcas2 = estadoVehiculoService.getAll(); 
         model.addAttribute("marcas2", listaMarcas2);    
@@ -277,7 +293,7 @@ public class CarroController {
     
     @GetMapping("/carro/edit/{id}")
     public String edit(@PathVariable("id") Long idCarro, Model model) {
-        List<Marca> listaMarcas = marcaService.listMarcs(); 
+        List<Marca> listaMarcas = marcaService.listMarcas(); 
         model.addAttribute("marcas", listaMarcas);     
         List<EstadoVehiculo> listaMarcas2 = estadoVehiculoService.getAll(); 
         model.addAttribute("marcas2", listaMarcas2);    

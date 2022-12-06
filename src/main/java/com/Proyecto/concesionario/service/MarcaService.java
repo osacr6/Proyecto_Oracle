@@ -13,6 +13,6 @@ public class MarcaService implements IMarcaService {
     private MarcaRepository marcaRepository;
     
     @Override
-    public List<Marca> listMarcs(){
+    public List<Marca> listMarcas(){
         return (List<Marca>)marcaRepository.findAll();}
 }
