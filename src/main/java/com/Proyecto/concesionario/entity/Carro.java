@@ -10,90 +10,25 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="carro")
+@Table(name="T_CARRO")
 public class Carro implements Serializable {
    
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
-    private long id;         
-    private String modelo; 
-    private String transmision;
-    private String tipo;
-    private String color;
-    private String motor;
-    private String precio;    
-    private String direccion;
-    private long idUsuario;
+    private long carro_id;     
+    private long marca_id; 
+    private long modelo_id; 
+    private long trim_id; 
+    private long sucursal_id; 
+    private long estado_id;     
+    private String placa;
+    private int color_interior;
+    private int color_exterior;
+    private int kilometraje;
+    private int precio;
+    private String vin;
     private String ruta_Imagen;
-    
-    @ManyToOne 
-    @JoinColumn(name="id_marca")
-    private Marca marca;      
 
-    @ManyToOne 
-    @JoinColumn(name="id_estado")
-    private EstadoVehiculo estadoVehiculo;  
-    
-    @ManyToOne 
-    @JoinColumn(name="id_provincia")
-    private Provincia provincia;  
-    
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    public String getModelo() {
-        return modelo;
-    }
-
-    public void setModelo(String modelo) {
-        this.modelo = modelo;
-    }
-
-    public String getTransmision() {
-        return transmision;
-    }
-
-    public void setTransmision(String transmision) {
-        this.transmision = transmision;
-    }
-
-    public String getTipo() {
-        return tipo;
-    }
-
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
-    }
-
-    public String getColor() {
-        return color;
-    }
-
-    public void setColor(String color) {
-        this.color = color;
-    }
-
-    public String getMotor() {
-        return motor;
-    }
-
-    public void setMotor(String motor) {
-        this.motor = motor;
-    }
-
-    public String getPrecio() {
-        return precio;
-    }
-
-    public void setPrecio(String precio) {
-        this.precio = precio;
-    }
-    
     public String getRuta_Imagen() {
         return ruta_Imagen;
     }
@@ -102,12 +37,108 @@ public class Carro implements Serializable {
         this.ruta_Imagen = ruta_Imagen;
     }
     
-    public String getDireccion() {
-        return direccion;
+    @ManyToOne 
+    @JoinColumn(name="marca_id")
+    private Marca marca;      
+
+    @ManyToOne 
+    @JoinColumn(name="estado_id")
+    private EstadoVehiculo estadoVehiculo;  
+
+    public long getCarro_id() {
+        return carro_id;
     }
 
-    public void setDireccion(String direccion) {
-        this.direccion = direccion;
+    public void setCarro_id(long carro_id) {
+        this.carro_id = carro_id;
+    }
+
+    public long getMarca_id() {
+        return marca_id;
+    }
+
+    public void setMarca_id(long marca_id) {
+        this.marca_id = marca_id;
+    }
+
+    public long getModelo_id() {
+        return modelo_id;
+    }
+
+    public void setModelo_id(long modelo_id) {
+        this.modelo_id = modelo_id;
+    }
+
+    public long getTrim_id() {
+        return trim_id;
+    }
+
+    public void setTrim_id(long trim_id) {
+        this.trim_id = trim_id;
+    }
+
+    public long getSucursal_id() {
+        return sucursal_id;
+    }
+
+    public void setSucursal_id(long sucursal_id) {
+        this.sucursal_id = sucursal_id;
+    }
+
+    public long getEstado_id() {
+        return estado_id;
+    }
+
+    public void setEstado_id(long estado_id) {
+        this.estado_id = estado_id;
+    }
+
+    public String getPlaca() {
+        return placa;
+    }
+
+    public void setPlaca(String placa) {
+        this.placa = placa;
+    }
+
+    public int getColor_interior() {
+        return color_interior;
+    }
+
+    public void setColor_interior(int color_interior) {
+        this.color_interior = color_interior;
+    }
+
+    public int getColor_exterior() {
+        return color_exterior;
+    }
+
+    public void setColor_exterior(int color_exterior) {
+        this.color_exterior = color_exterior;
+    }
+
+    public int getKilometraje() {
+        return kilometraje;
+    }
+
+    public void setKilometraje(int kilometraje) {
+        this.kilometraje = kilometraje;
+    }
+
+    public int getPrecio() {
+        return precio;
+    }
+
+    public void setPrecio(int precio) {
+        this.precio = precio;
+    }
+
+    public String getVin() {
+        return vin;
+    }
+
+    public void setVin(String vin) {
+        this.vin = vin;
     }
 
     public Marca getMarca() {
@@ -117,15 +148,7 @@ public class Carro implements Serializable {
     public void setMarca(Marca marca) {
         this.marca = marca;
     }
-    
-    public long getIdUsuario() {
-        return idUsuario;
-    }
 
-    public void setIdUsuario(long idUsuario) {
-        this.idUsuario = idUsuario;
-    }
-    
     public EstadoVehiculo getEstadoVehiculo() {
         return estadoVehiculo;
     }
@@ -133,13 +156,7 @@ public class Carro implements Serializable {
     public void setEstadoVehiculo(EstadoVehiculo estadoVehiculo) {
         this.estadoVehiculo = estadoVehiculo;
     }
-    
-    public Provincia getProvincia() {
-        return provincia;
-    }
-
-    public void setProvincia(Provincia provincia) {
-        this.provincia = provincia;
-    }
+     
+ 
     
 }

@@ -1,4 +1,4 @@
-package com.Proyecto.concesionario.entity;
+ package com.Proyecto.concesionario.entity;
 
 import java.io.Serializable;
 import javax.persistence.Entity;
@@ -8,27 +8,29 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity 
-@Table(name="marca")
+@Table(name="T_MARCA")
 public class Marca implements Serializable {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id; 
-    private String nombre;  
+    private long marca_id; 
+    private String marca;  
 
-    public long getId() {
-        return id;
+    public long getMarca_id() {
+        return marca_id;
     }
 
-    public void setId(long id) {
-        this.id = id;
+    public void setMarca_id(long marca_id) {
+        this.marca_id = marca_id;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getMarca() {
+        return marca;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setMarca(String marca) {
+        this.marca = marca;
     }
+
+
 }

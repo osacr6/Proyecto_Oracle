@@ -8,26 +8,28 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-   @Table(name ="estado_vehiculo")
+   @Table(name ="T_ESTADO")
 public class EstadoVehiculo implements Serializable {
    @Id
    @GeneratedValue(strategy = GenerationType.IDENTITY)
-   private long id; 
-   private String nombre;
+   private long estado_id; 
+   private String estado;
 
-    public long getId() {
-        return id;
+    public long getEstado_id() {
+        return estado_id;
     }
 
-    public void setId(long id) {
-        this.id = id;
+    public void setEstado_id(long estado_id) {
+        this.estado_id = estado_id;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getEstado() {
+        return estado;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setEstado(String estado) {
+        this.estado = estado;
     }
+
+   
 }

@@ -8,26 +8,28 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-   @Table(name ="provincia")
+@Table(name = "T_PROVINCIA")
 public class Provincia implements Serializable {
-   @Id
-   @GeneratedValue(strategy = GenerationType.IDENTITY)
-   private long id; 
-   private String nombre;
 
-    public long getId() {
-        return id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long provincia_id;
+    private String provincia;
+
+    public long getProvincia_id() {
+        return provincia_id;
     }
 
-    public void setId(long id) {
-        this.id = id;
+    public void setProvincia_id(long provincia_id) {
+        this.provincia_id = provincia_id;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getProvincia() {
+        return provincia;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setProvincia(String provincia) {
+        this.provincia = provincia;
     }
+
 }

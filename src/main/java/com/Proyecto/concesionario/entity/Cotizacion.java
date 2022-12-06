@@ -9,45 +9,47 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity 
-@Table(name="cotizacion")
+@Table(name="T_COTIZACION")
 public class Cotizacion implements Serializable {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
-    private long idUsuario;
-    private long idCarro;
-    private Date fecha;  
+    private long cotizacion_id;
+    private long factura_id;
+    private long banco_id;
+    private int prima;  
 
-    public long getId() {
-        return id;
+    public long getCotizacion_id() {
+        return cotizacion_id;
     }
 
-    public void setId(long id) {
-        this.id = id;
+    public void setCotizacion_id(long cotizacion_id) {
+        this.cotizacion_id = cotizacion_id;
     }
 
-    public long getIdUsuario() {
-        return idUsuario;
+    public long getFactura_id() {
+        return factura_id;
     }
 
-    public void setIdUsuario(long idUsuario) {
-        this.idUsuario = idUsuario;
+    public void setFactura_id(long factura_id) {
+        this.factura_id = factura_id;
     }
 
-    public long getIdCarro() {
-        return idCarro;
+    public long getBanco_id() {
+        return banco_id;
     }
 
-    public void setIdCarro(long idCarro) {
-        this.idCarro = idCarro;
+    public void setBanco_id(long banco_id) {
+        this.banco_id = banco_id;
     }
 
-    public Date getFecha() {
-        return fecha;
+    public int getPrima() {
+        return prima;
     }
 
-    public void setFecha(Date fecha) {
-        this.fecha = fecha;
-    }        
+    public void setPrima(int prima) {
+        this.prima = prima;
+    }
+
+      
 }

@@ -72,7 +72,7 @@ public class CarroController {
         if(!listaCarro.isEmpty()){
             for(int i = 0; i<listaCarro.size(); i++){
                 Carro c = listaCarro.get(i);
-                if(c.getIdUsuario() == idUsuario){
+                if(c.getCarro_id()== idUsuario){
                     carrosUsuario.add(c);
                 }
             } 
@@ -88,7 +88,7 @@ public class CarroController {
         if(!listaCarro.isEmpty()){
             for(int i = 0; i<listaCarro.size(); i++){
                 Carro c = listaCarro.get(i);
-                if(c.getEstadoVehiculo().getId() == 1){
+                if(c.getEstadoVehiculo().getEstado_id()== 1){
                     carrosUsuario.add(c);
                 }
             } 
@@ -104,7 +104,7 @@ public class CarroController {
         if(!listaCarro.isEmpty()){
             for(int i = 0; i<listaCarro.size(); i++){
                 Carro c = listaCarro.get(i);
-                if(c.getEstadoVehiculo().getId() == 2){
+                if(c.getEstadoVehiculo().getEstado_id()== 2){
                     carrosUsuario.add(c);
                 }
             } 
@@ -120,7 +120,7 @@ public class CarroController {
         if(!listaCarro.isEmpty()){
             for(int i = 0; i<listaCarro.size(); i++){
                 Carro c = listaCarro.get(i);
-                if(c.getEstadoVehiculo().getId() == 3){
+                if(c.getEstadoVehiculo().getEstado_id()== 3){
                     carrosUsuario.add(c);
                 }
             } 
@@ -136,7 +136,7 @@ public class CarroController {
         if(!listaCarro.isEmpty()){
             for(int i = 0; i<listaCarro.size(); i++){
                 Carro c = listaCarro.get(i);
-                if(c.getMarca().getId() == idMarca){
+                if(c.getMarca().getMarca_id()== idMarca){
                     carrosUsuario.add(c);
                 }
             } 
@@ -163,21 +163,19 @@ public class CarroController {
         Usuario usuario = (Usuario) SecurityContextHolder.getContext().getAuthentication().getPrincipal();        
         long idUsuario = usuario.getUsuario_id();
         //Nuevo registro
-        if(carro.getId() == 0){
-            carro.setIdUsuario(idUsuario); 
+        if(carro.getCarro_id()== 0){
             carro.setRuta_Imagen(multipartFile.getOriginalFilename());   
             carroService.saveCarro(carro,multipartFile); 
         }//Actualizar registro
         else{
             //si no seleccionó imagen
             if(multipartFile.getOriginalFilename().equals("")){
-                Carro c = carroService.getCarroById(carro.getId()); 
-                carro.setIdUsuario(c.getIdUsuario());
+                Carro c = carroService.getCarroById(carro.getCarro_id()); 
+              //  carro.setIdUsuario(c.getCarro_id());
                 carro.setRuta_Imagen(c.getRuta_Imagen());
                 carroService.saveCarro(carro,multipartFile);  
             }else{
-                Carro c = carroService.getCarroById(carro.getId()); 
-                carro.setIdUsuario(c.getIdUsuario());
+                Carro c = carroService.getCarroById(carro.getCarro_id()); 
                 carro.setRuta_Imagen(multipartFile.getOriginalFilename());   
                 carroService.saveCarro(carro,multipartFile);  
             } 
@@ -193,27 +191,27 @@ public class CarroController {
         Carro car = carroService.getCarroById(idCarro); 
         List<Cotizacion> cotizaciones = cotizacionService.getCotizaciones(); 
         //si el carro no pertenece al usuario que quiere cotizar
-        if(car.getIdUsuario() != idUsuario){
-            boolean cotizado = false;
-            for(int i = 0; i<cotizaciones.size(); i++){                                            
-                if(cotizaciones.get(i).getIdUsuario() == idUsuario){
-                    cotizado = true;
-                }
-            }
-            //si el carro no ha sido cotizado anteriormente por el usuario
-            if(!cotizado){
-                //obtener fecha actual
-                java.util.Date currDate = Calendar.getInstance().getTime();
-                Date todaysDate = new Date(currDate.getTime()); 
-                
-                Cotizacion cotizacion = new Cotizacion();
-                cotizacion.setIdCarro(idCarro);
-                cotizacion.setIdUsuario(idUsuario);
-                cotizacion.setFecha(todaysDate);
-                cotizacionService.saveCotizacion(cotizacion);
-                return "redirect:/carro/cotizacionRealizada";        
-            }
-        }    
+//        if(car.getCarro_id()!= idUsuario){
+//            boolean cotizado = false;
+//            for(int i = 0; i<cotizaciones.size(); i++){                                            
+//                if(cotizaciones.get(i).getIdUsuario() == idUsuario){
+//                    cotizado = true;
+//                }
+//            }
+//            //si el carro no ha sido cotizado anteriormente por el usuario
+//            if(!cotizado){
+//                //obtener fecha actual
+//                java.util.Date currDate = Calendar.getInstance().getTime();
+//                Date todaysDate = new Date(currDate.getTime()); 
+//                
+//                Cotizacion cotizacion = new Cotizacion();
+//                cotizacion.setIdCarro(idCarro);
+//                cotizacion.setIdUsuario(idUsuario);
+//                cotizacion.setFecha(todaysDate);
+//                cotizacionService.saveCotizacion(cotizacion);
+//                return "redirect:/carro/cotizacionRealizada";        
+//            }
+//        }    
         return "redirect:/carro/errorCotizacion";  
     }
     
@@ -229,26 +227,26 @@ public class CarroController {
         List<Cotizacion> listaCotizaciones = cotizacionService.getCotizaciones(); 
         List<Cotizacion> cotizacionesUsuario = new ArrayList<>();
         //si existen cotizaciones
-        if(!listaCotizaciones.isEmpty()){
-            //se recorren las cotizaciones y se almacenan en una lista las del usuario
-            for(int i = 0; i<listaCotizaciones.size(); i++){
-                Cotizacion c = listaCotizaciones.get(i);
-                if(c.getIdUsuario() == idUsuario){
-                    cotizacionesUsuario.add(c);
-                }
-            } 
-        } 
-        //si el usuario tiene cotizaciones
-        if(!cotizacionesUsuario.isEmpty()){            
-            for(int i = 0; i<listaCarro.size(); i++){
-                for(int y = 0; y<cotizacionesUsuario.size(); y++){
-                    Carro c = listaCarro.get(i);
-                    if(c.getId() == cotizacionesUsuario.get(y).getIdCarro()){
-                        carrosUsuario.add(c);
-                    }
-                }                
-            } 
-        }                           
+//        if(!listaCotizaciones.isEmpty()){
+//            //se recorren las cotizaciones y se almacenan en una lista las del usuario
+//            for(int i = 0; i<listaCotizaciones.size(); i++){
+//                Cotizacion c = listaCotizaciones.get(i);
+//                if(c.getIdUsuario() == idUsuario){
+//                    cotizacionesUsuario.add(c);
+//                }
+//            } 
+//        } 
+//        //si el usuario tiene cotizaciones
+//        if(!cotizacionesUsuario.isEmpty()){            
+//            for(int i = 0; i<listaCarro.size(); i++){
+//                for(int y = 0; y<cotizacionesUsuario.size(); y++){
+//                    Carro c = listaCarro.get(i);
+//                    if(c.getId() == cotizacionesUsuario.get(y).getIdCarro()){
+//                        carrosUsuario.add(c);
+//                    }
+//                }                
+//            } 
+//        }                           
         model.addAttribute("carros", carrosUsuario);
         return "misCotizaciones";
     }
@@ -270,9 +268,9 @@ public class CarroController {
         long idUsuario = usuario.getUsuario_id();
         List<Cotizacion> listaCotizaciones = cotizacionService.getCotizaciones();
         for(int i = 0; i<listaCotizaciones.size(); i++){
-            if(listaCotizaciones.get(i).getIdCarro() == idCarro && listaCotizaciones.get(i).getIdUsuario()== idUsuario){
-                cotizacionService.delete(listaCotizaciones.get(i).getId());
-            }
+//            if(listaCotizaciones.get(i).getIdCarro() == idCarro && listaCotizaciones.get(i).getIdUsuario()== idUsuario){
+//                cotizacionService.delete(listaCotizaciones.get(i).getId());
+//            }
         }        
         return "redirect:/carro/misCotizaciones";
     }

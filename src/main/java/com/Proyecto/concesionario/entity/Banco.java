@@ -8,19 +8,20 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name ="banco")
+@Table(name ="T_BANCO")
 public class Banco implements Serializable {
    @Id
    @GeneratedValue(strategy = GenerationType.IDENTITY)
-   private long id; 
+   private long banco_id; 
    private String banco;
+   private float tasa;
 
-    public long getId() {
-        return id;
+    public long getBanco_id() {
+        return banco_id;
     }
 
-    public void setId(long id) {
-        this.id = id;
+    public void setBanco_id(long banco_id) {
+        this.banco_id = banco_id;
     }
 
     public String getBanco() {
@@ -30,4 +31,13 @@ public class Banco implements Serializable {
     public void setBanco(String banco) {
         this.banco = banco;
     }
+
+    public float getTasa() {
+        return tasa;
+    }
+
+    public void setTasa(float tasa) {
+        this.tasa = tasa;
+    }
+
 }

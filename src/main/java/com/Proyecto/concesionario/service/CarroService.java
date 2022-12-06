@@ -23,7 +23,7 @@ public class CarroService implements ICarroService{
 
     @Override
     public Carro getCarroById(long id) {
-       return carroRepository.findById(id).orElse(null);
+       return carroRepository.findById(id);
     }
 
     @Override
@@ -31,12 +31,16 @@ public class CarroService implements ICarroService{
         int res = 0;        
         //si no se seleccionó imagen
         if(file.getOriginalFilename().equals("")){
-            Carro c = carroRepository.save(carro);     
+            Carro c = carroRepository.save(carro.getMarca_id(), carro.getModelo_id(), carro.getTrim_id()
+                    , carro.getSucursal_id(), carro.getEstado_id(), carro.getPlaca(), carro.getColor_interior()
+                    , carro.getColor_exterior(), carro.getKilometraje(), carro.getPrecio(), carro.getVin());
             if(!c.equals(null)){
                 res = 1;
             } 
         }else{
-            Carro c = carroRepository.save(carro);
+            Carro c = carroRepository.save(carro.getMarca_id(), carro.getModelo_id(), carro.getTrim_id()
+                    , carro.getSucursal_id(), carro.getEstado_id(), carro.getPlaca(), carro.getColor_interior()
+                    , carro.getColor_exterior(), carro.getKilometraje(), carro.getPrecio(), carro.getVin());
             uploadImageCarro(file);
             if(!c.equals(null)){
                 res = 1;
@@ -47,7 +51,7 @@ public class CarroService implements ICarroService{
 
     @Override
     public void delete(long id) {
-       carroRepository.deleteById(id);
+       carroRepository.delete(id);
     }
         
     public void uploadImageCarro(MultipartFile file) throws IllegalStateException, IOException{
