@@ -37,13 +37,13 @@ public class Carro implements Serializable {
         this.ruta_Imagen = ruta_Imagen;
     }
     
-    @ManyToOne 
-    @JoinColumn(name="marca_id")
-    private Marca marca;      
-
-    @ManyToOne 
-    @JoinColumn(name="estado_id")
-    private EstadoVehiculo estadoVehiculo;  
+//    @ManyToOne 
+//    @JoinColumn(name="marca_id")
+//    private Marca marca;      
+//
+//    @ManyToOne 
+//    @JoinColumn(name="estado_id")
+//    private EstadoVehiculo estadoVehiculo;  
 
     public long getCarro_id() {
         return carro_id;
@@ -141,21 +141,21 @@ public class Carro implements Serializable {
         this.vin = vin;
     }
 
-    public Marca getMarca() {
-        return marca;
-    }
-
-    public void setMarca(Marca marca) {
-        this.marca = marca;
-    }
-
-    public EstadoVehiculo getEstadoVehiculo() {
-        return estadoVehiculo;
-    }
-
-    public void setEstadoVehiculo(EstadoVehiculo estadoVehiculo) {
-        this.estadoVehiculo = estadoVehiculo;
-    }
+//    public Marca getMarca() {
+//        return marca;
+//    }
+//
+//    public void setMarca(Marca marca) {
+//        this.marca = marca;
+//    }
+//
+//    public EstadoVehiculo getEstadoVehiculo() {
+//        return estadoVehiculo;
+//    }
+//
+//    public void setEstadoVehiculo(EstadoVehiculo estadoVehiculo) {
+//        this.estadoVehiculo = estadoVehiculo;
+//    }
      
  
     

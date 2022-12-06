@@ -88,7 +88,7 @@ public class CarroController {
         if(!listaCarro.isEmpty()){
             for(int i = 0; i<listaCarro.size(); i++){
                 Carro c = listaCarro.get(i);
-                if(c.getEstadoVehiculo().getEstado_id()== 1){
+                if(c.getEstado_id()== 1){
                     carrosUsuario.add(c);
                 }
             } 
@@ -104,7 +104,7 @@ public class CarroController {
         if(!listaCarro.isEmpty()){
             for(int i = 0; i<listaCarro.size(); i++){
                 Carro c = listaCarro.get(i);
-                if(c.getEstadoVehiculo().getEstado_id()== 2){
+                if(c.getEstado_id()== 2){
                     carrosUsuario.add(c);
                 }
             } 
@@ -120,7 +120,7 @@ public class CarroController {
         if(!listaCarro.isEmpty()){
             for(int i = 0; i<listaCarro.size(); i++){
                 Carro c = listaCarro.get(i);
-                if(c.getEstadoVehiculo().getEstado_id()== 3){
+                if(c.getEstado_id()== 3){
                     carrosUsuario.add(c);
                 }
             } 
@@ -136,7 +136,7 @@ public class CarroController {
         if(!listaCarro.isEmpty()){
             for(int i = 0; i<listaCarro.size(); i++){
                 Carro c = listaCarro.get(i);
-                if(c.getMarca().getMarca_id()== idMarca){
+                if(c.getMarca_id()== idMarca){
                     carrosUsuario.add(c);
                 }
             } 
