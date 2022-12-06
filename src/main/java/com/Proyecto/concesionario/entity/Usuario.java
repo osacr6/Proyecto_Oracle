@@ -28,7 +28,7 @@ public class Usuario implements UserDetails {
 
     public Usuario() {
     }
-    
+
     public Usuario(long usuario_id, String username, String password, String rol_id, int active) {
         this.usuarioId = usuario_id;
         this.username = username;
@@ -87,8 +87,8 @@ public class Usuario implements UserDetails {
     
     
 
-    public int getActive() {
-        return active;
+    public boolean getActive() {
+        return active == 1;
     }
 
     public void setActive(int active) {
