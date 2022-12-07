@@ -8,7 +8,7 @@
         <!-- Header -->
         <div th:replace="plantilla/layout :: header">            
         </div>
-        <br>
+        
         <div class="container">
             <div class="card">                            
                 <div class="card-header" th:text="#{dos}"></div>
@@ -30,13 +30,13 @@
                             <tbody>
                             <th:block th:each="carro:${carros}">  
                                 <tr>
-                                    <td class="text-center align-middle" th:text="${carro.getId}"></td>  
+                                    <td class="text-center align-middle" th:text="${carro.getCarro_id}"></td>  
                                     <td class="text-center align-middle">
                                         <img th:src="@{../Images/} + ${carro.getRuta_Imagen}" alt="alt" style="width: 300px; height: 175px"/>
                                     </td>  
-                                    <td class="text-center align-middle" th:text="${carro.getMarca.getNombre}"></td>
-                                    <td class="text-center align-middle" th:text="${carro.getModelo}"></td>  
-                                    <td class="text-center align-middle" th:text="${carro.getTransmision}"></td>                                     
+                                    <td class="text-center align-middle" th:text="${carro.getMarca_id}"></td>
+                                    <td class="text-center align-middle" th:text="${carro.getModelo_id}"></td>  
+                                    <td class="text-center align-middle" th:text="${carro.getKilometraje}"></td>                                     
                                     <td class="text-center align-middle" th:text="@{₡} + ${carro.getPrecio}"></td>                                     
                                     <td class="text-center align-middle">
                                         <div class="row">

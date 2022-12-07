@@ -1,6 +1,7 @@
 package com.Proyecto.concesionario.entity;
 
 import java.io.Serializable;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -15,7 +16,7 @@ public class Carro implements Serializable {
    
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
-    private long carro_id;     
+    private long carro_id;
     private long marca_id; 
     private long modelo_id; 
     private long trim_id; 
@@ -27,15 +28,15 @@ public class Carro implements Serializable {
     private int kilometraje;
     private int precio;
     private String vin;
-    private String ruta_Imagen;
+   // private String ruta_Imagen;
 
-    public String getRuta_Imagen() {
-        return ruta_Imagen;
-    }
+    //public String getRuta_Imagen() {
+    //    return ruta_Imagen;
+    //}
 
-    public void setRuta_Imagen(String ruta_Imagen) {
-        this.ruta_Imagen = ruta_Imagen;
-    }
+    //public void setRuta_Imagen(String ruta_Imagen) {
+    //    this.ruta_Imagen = ruta_Imagen;
+    //}
     
 //    @ManyToOne 
 //    @JoinColumn(name="marca_id")

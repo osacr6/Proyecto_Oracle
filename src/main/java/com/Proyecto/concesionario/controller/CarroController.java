@@ -42,13 +42,13 @@ public class CarroController {
     @Autowired
     private JdbcTemplate jdbcTemplete;
     //prueba con el JDBC
-    @GetMapping("/carro")
+    /*@GetMapping("/carro")
     public String index(Model model) {
         List<Carro> listaCarro = jdbcTemplete.query("SELECT * FROM T_CARRO", BeanPropertyRowMapper.newInstance(Carro.class));        
         model.addAttribute("carros", listaCarro);
         return "getAllCarros";
     }
-    
+    */
     @GetMapping("/carro/getAll")
     public String getAllCarro(Model model) {
         //tomar la info del usuario logueado para validar si es administrador
@@ -170,7 +170,7 @@ public class CarroController {
         return "createCarro";
     }
 
-    @PostMapping("/carro/create")
+   /* @PostMapping("/carro/create")
     public String create(@ModelAttribute Carro carro, @RequestParam("image") MultipartFile multipartFile) throws IOException {        
         //tomar el id del usuario logueado
         Usuario usuario = (Usuario) SecurityContextHolder.getContext().getAuthentication().getPrincipal();        
@@ -319,6 +319,7 @@ public class CarroController {
         carroService.delete(idCarro);
         return "redirect:/carro/misCarros";
     }
+*/
 }
     
 

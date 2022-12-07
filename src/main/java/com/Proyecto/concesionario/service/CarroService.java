@@ -20,7 +20,7 @@ public class CarroService implements ICarroService{
     public List<Carro> getAllCarro() {
       return (List<Carro>)carroRepository.findAll();             //Devuelve toda la lista de carros
     }   
-
+/*
     @Override
     public Carro getCarroById(long id) {
        return carroRepository.findById(id);
@@ -57,4 +57,5 @@ public class CarroService implements ICarroService{
     public void uploadImageCarro(MultipartFile file) throws IllegalStateException, IOException{
         //file.transferTo(new File("\\src\\main\\resources\\static\\images\\" + file.getOriginalFilename()));
     }
+*/
 }
