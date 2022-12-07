@@ -26,13 +26,15 @@ public class UsuarioController {
     
     @GetMapping("/usuarios") 
     public String index (Model model){
+        List <Usuario> listaUsuario = usuarioService.getAllUsuario();
         List <Usuario> listarUsuario = usuarioService.getAllUsuario();
+        
         model.addAttribute("titulo","Tabla Usuarios");
         model.addAttribute("usuarios",listarUsuario);
         return "usuarios";
     }
         
-    @PostMapping("//usuario/update")
+    @PostMapping("/usuario/update")
     public ModelAndView update(
         @RequestBody String payload,
         @RequestParam("id") String id,

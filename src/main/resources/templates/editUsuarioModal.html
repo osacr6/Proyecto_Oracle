@@ -31,12 +31,15 @@
                                     placeholder="Contraseña"
                                     >
                                 <br/>
+                                <select   class="form-control">
+                                    <option value> </option>
+                                </select>
                                 <input 
                                     type="text" 
                                     class="form-control" 
                                     name="rol"
                                     placeholder="Rol"
-                                    th:value="${usuario.getUsername}"
+                                    th:value="${usuario.getRol}"
                                     >
                                 <br/>
                                 <input
@@ -44,7 +47,7 @@
                                     class="form-control" 
                                     name="active"
                                     placeholder="estado"
-                                    th:value="${usuario.getUsername}"
+                                    th:value="${usuario.getActive ? 'Activo' : 'Innactivo'}"
                                     >
                                <br/>
                                 <button type="submit" class="btn btn-primary">Actulizar</button>

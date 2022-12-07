@@ -3,13 +3,14 @@ package com.Proyecto.concesionario.repository;
 import com.Proyecto.concesionario.entity.Banco;
 import com.Proyecto.concesionario.entity.Cotizacion;
 import java.util.List;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface CotizacionRepository extends CrudRepository<Cotizacion, Long> {
+public interface CotizacionRepository extends JpaRepository<Cotizacion, Long> {
 
     @Query(value = "SELECT * FROM T_COTIZACION", nativeQuery = true)
     public List<Cotizacion> findAll();
