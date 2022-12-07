@@ -1,6 +1,7 @@
  package com.Proyecto.concesionario.entity;
 
 import java.io.Serializable;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -13,7 +14,8 @@ public class Canton implements Serializable {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long canton_id; 
+    private long canton_id;
+    @Column(name = "canton")
     private String canton;  
 
     public long getCanton_id() {

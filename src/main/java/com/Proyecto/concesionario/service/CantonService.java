@@ -24,13 +24,18 @@ public class CantonService implements ICantonService {
     }
 
     @Override
-    public void saveCanton(Canton canton) {
+    public void saveCanton(String canton) {
         cantonRepository.save(canton);
     }
 
     @Override
     public void delete(long id) {
         cantonRepository.deleteById(id);
+    }
+
+    @Override
+    public void update(long canton_id, String canton) {
+        cantonRepository.update(canton_id, canton);
     }
     
 }

@@ -13,7 +13,27 @@ public class ProvinciaService implements IProvinciaService {
     private ProvinciaRepository provinciaRepository;
     
     @Override
-    public List<Provincia> getAll(){
+    public List<Provincia> getAllProvincia(){
         return (List<Provincia>)provinciaRepository.findAll();
+    }
+
+    @Override
+    public void saveProvincia(String provincia) {
+         provinciaRepository.save(provincia);
+    }
+
+    @Override
+    public Provincia getProvinciaById(long id) {
+        return provinciaRepository.findById(id);
+    }
+
+    @Override
+    public void delete(long id) {
+          provinciaRepository.deleteById(id);
+    }
+
+    @Override
+    public void update(long provincia_id, String provincia) {
+        provinciaRepository.update(provincia_id, provincia);
     }
 }

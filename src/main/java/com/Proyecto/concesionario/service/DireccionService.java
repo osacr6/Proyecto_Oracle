@@ -24,13 +24,18 @@ public class DireccionService implements IDireccionService {
     }
 
     @Override
-    public void saveDireccion(Direccion direccion) {
-        direccionRepository.save(direccion);
+    public void delete(long id) {
+        direccionRepository.deleteById(id);
     }
 
     @Override
-    public void delete(long id) {
-        direccionRepository.deleteById(id);
+    public void saveDireccion(long provincia_id, long canton_id, long distrito_id, String detalles, String ubicacion) {
+        direccionRepository.save(provincia_id, canton_id, distrito_id, detalles, ubicacion);
+    }
+
+    @Override
+    public void update(long direccion_id, long provincia_id, long canton_id, long distrito_id, String detalles, String ubicacion) {
+        direccionRepository.update(direccion_id, provincia_id, canton_id, distrito_id, detalles, ubicacion);
     }
 
 }

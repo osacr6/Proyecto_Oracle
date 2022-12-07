@@ -25,13 +25,18 @@ public class SucursalService implements ISucursalService {
     }
 
     @Override
-    public void saveSucursal(Sucursal sucursal) {
-        sucursalRepository.save(sucursal);
+    public void delete(long id) {
+        sucursalRepository.deleteById(id);
     }
 
     @Override
-    public void delete(long id) {
-        sucursalRepository.deleteById(id);
+    public void saveSucursal(long direccion_id, int numero, String nombre, String telefono) {
+        sucursalRepository.save(direccion_id, numero, nombre, telefono);
+    }
+
+    @Override
+    public void update(long sucursal_id, long direccion_id, int numero, String nombre, String telefono) {
+        sucursalRepository.update(sucursal_id, direccion_id, numero, nombre, telefono);
     }
 
 }

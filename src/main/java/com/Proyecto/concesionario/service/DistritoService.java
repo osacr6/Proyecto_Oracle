@@ -23,13 +23,18 @@ public class DistritoService implements IDistritoService {
     }
 
     @Override
-    public void saveDistrito(Distrito distrito) {
+    public void saveDistrito(String distrito) {
         distritoRepository.save(distrito);
     }
 
     @Override
     public void delete(long id) {
         distritoRepository.deleteById(id);
+    }
+
+    @Override
+    public void update(long distrito_id, String distrito) {
+        distritoRepository.update(distrito_id, distrito);
     }
 
 }

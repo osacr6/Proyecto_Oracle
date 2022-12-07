@@ -164,7 +164,7 @@ public class CarroController {
         model.addAttribute("marcas", listaMarcas);     
         List<EstadoVehiculo> listaMarcas2 = estadoVehiculoService.getAll(); 
         model.addAttribute("marcas2", listaMarcas2);    
-        List<Provincia> provincias = provinciaService.getAll(); 
+        List<Provincia> provincias = provinciaService.getAllProvincia(); 
         model.addAttribute("provincias", provincias);   
         model.addAttribute("carro", new Carro());           
         return "createCarro";
