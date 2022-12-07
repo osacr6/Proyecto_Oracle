@@ -60,8 +60,6 @@ public class CarroController {
             return "getAllCarros";
         }        
         return "redirect:/home";  
-        
-        
     }
    
         @GetMapping("/marca/getAll")
@@ -73,10 +71,9 @@ public class CarroController {
             model.addAttribute("titulo", "Tabla Carros");
             model.addAttribute("marcas", listaMarcas);
             return "getAllMarca";
-      }          
+        }          
         return "redirect:/home";  
-        
-     } 
+     }
     
     @GetMapping("/carro/misCarros")
     public String getMyCars(Model model) {
