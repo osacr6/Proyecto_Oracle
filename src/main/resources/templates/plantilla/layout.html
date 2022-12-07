@@ -65,22 +65,22 @@
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                 <li><a class="dropdown-item" th:href="@{/carro/misCarros}" th:text="#{cuatro_1}"></a></li>
-                                <li><a class="dropdown-item" th:href="@{/carro/misCotizaciones}" th:text="#{cuatro_2}"></a></li>   
+                                <li><a class="dropdown-item" th:href="@{/carro/misCotizaciones}">Manage</a></li>   
                             </ul>
                         </li>
                         <li class="nav-item dropdown" sec:authorize="isAuthenticated()">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLinkCars" role="button" data-bs-toggle="dropdown" aria-expanded="false">manage Cars</a>
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLinkCars" role="button" data-bs-toggle="dropdown" aria-expanded="false">Manage</a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLinkCars">
                                 <li sec:authorize="hasRole('ROLE_ADMIN')">
                                     <a class="dropdown-item" th:href="@{/carro/getAll}" th:text="#{cinco}"></a>
                                 </li>
                                 <li sec:authorize="hasRole('ROLE_ADMIN')">
                                     <a class="dropdown-item" th:href="@{/marca/getAll}">Manage Brand</a>
-                                </li>  
+                                </li>
+                                <li sec:authorize="hasRole('ROLE_ADMIN')">
+                                    <a class="dropdown-item" th:href="@{/usuarios}">Manage Users</a>
+                                </li>
                             </ul>
-                        </li>
-                        <li class="nav-item" sec:authorize="hasRole('ROLE_ADMIN')">
-                            <a class="nav-link" th:href="@{/usuarios}">Manage Users</a>
                         </li>
                         <li class="nav-item" sec:authorize="isAuthenticated()">
                             <a class="nav-link" href="/login" th:text="#{seis}"></a>

@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface MarcaRepository extends CrudRepository<Marca, Long> { 
-        @Query(value = "SELECT * FROM T_MARCA", nativeQuery = true)
+    @Query(value = "SELECT * FROM T_MARCA", nativeQuery = true)
     public List<Marca> findAll();
     
     @Query(value = "insert into T_MARCA (marca) values (:marca)", nativeQuery = true)
