@@ -18,7 +18,6 @@ public class Rol implements Serializable {
     @Column(name = "rol_id")
     long rolId;
     String rol;
-
     
     public long getRolId() {
         return rolId;

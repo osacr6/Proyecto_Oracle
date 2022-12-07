@@ -1,6 +1,8 @@
 package com.Proyecto.concesionario.controller;
 
+import com.Proyecto.concesionario.entity.Rol;
 import com.Proyecto.concesionario.entity.Usuario;
+import com.Proyecto.concesionario.repository.RolRepository;
 import com.Proyecto.concesionario.service.IUsuarioService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,14 +25,17 @@ public class UsuarioController {
     private JdbcTemplate jdbcTemplate;
     @Autowired
     private IUsuarioService usuarioService;
+    @Autowired
+    private RolRepository rolRepository;
     
     @GetMapping("/usuarios") 
     public String index (Model model){
         List <Usuario> listaUsuario = usuarioService.getAllUsuario();
-        List <Usuario> listarUsuario = usuarioService.getAllUsuario();
+        List <Rol> listaRoles = rolRepository.findAll();
         
         model.addAttribute("titulo","Tabla Usuarios");
-        model.addAttribute("usuarios",listarUsuario);
+        model.addAttribute("usuarios",listaUsuario);
+        model.addAttribute("roles",listaRoles);
         return "usuarios";
     }
         

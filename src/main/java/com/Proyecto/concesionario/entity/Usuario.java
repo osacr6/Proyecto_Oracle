@@ -19,8 +19,6 @@ import org.springframework.security.core.userdetails.UserDetails;
 @Entity
 @Table(name = "T_USUARIO")
 public class Usuario implements UserDetails {
-    //@Autowired
-    //private RolRepository rolRepository;
     
     @Id
     @Column(name = "usuario_id")
@@ -68,11 +66,6 @@ public class Usuario implements UserDetails {
     
     public String getRol() {
        return this.rolId;
-    }
-    
-    public List<Rol> getAllRoles() {
-        //return this.rolRepository.findAll();
-        return null;
     }
 
     public void setRol(String rol) {
