@@ -11,7 +11,7 @@
         <br>
         <div class="container">
             <div class="card">                            
-                <div class="card-header" th:text="#{c_2}"></div>
+                <div class="card-header" >Registrar vehículo</div>
                 <div class="card-body">
                     <!--------------- Esto es un formulario --------------->
                     <div class="p-4">
@@ -23,7 +23,7 @@
                             <div class="row">
                                 <div class="col-6">
                                     <div id="marcaHelpBlock" class="form-text">
-                                        <label for="marca" class="form-label" th:text="#{c_3}"></label>
+                                        <label for="marca" class="form-label">Marca</label>
                                         <select th:field="*{marca}" class="form-control form-control-sm col-md-6" id="marca" aria-describedby="marcaHelp" required>
                                             <option th:each= "x:${marcas}"
                                                     accesskey=""th:value= "${x.id}"
@@ -33,7 +33,7 @@
                                 </div>
                                 <div class="col-6">
                                     <div id="modeloHelpBlock" class="form-text">
-                                        <label for="inputmodelo" class="form-label" th:text="#{c_4}"></label>
+                                        <label for="inputmodelo" class="form-label">Modelo</label>
                                         <input type="text" id="inputmodelo" class="form-control" th:field="*{modelo}" aria-describedby="modeloHelpBlock" required>
                                     </div>
                                 </div>                                                                                               
@@ -41,39 +41,45 @@
                             <div class="row">
                                 <div class="col-3">
                                     <div id="transmisionHelpBlock" class="form-text">
-                                        <label for="inputtransmision" class="form-label" th:text="#{c_5}"></label>
-                                        <input type="text" id="inputtransmision" class="form-control" th:field="*{transmision}" aria-describedby="transmisionHelpBlock" required>
+                                        <label for="inputtrim" class="form-label" >Trim</label>
+                                        <input type="text" id="inputtrim" class="form-control" th:field="*{trim}" aria-describedby="trimHelpBlock" required>
                                     </div>
                                 </div> 
                                 <div class="col-3">                                    
                                     <div id="tipoHelpBlock" class="form-text">
-                                        <label for="inputtipo" class="form-label" th:text="#{c_6}"></label>
-                                        <input type="text" id="inputtipo" class="form-control" th:field="*{tipo}" aria-describedby="tipoHelpBlock" required>
+                                        <label for="inputplaca" class="form-label" >Placa</label>
+                                        <input type="text" id="inputplaca" class="form-control" th:field="*{placa}" aria-describedby="placaHelpBlock" required>
                                     </div>                                    
                                 </div>
                                 <div class="col-3">
                                     <div id="colorHelpBlock" class="form-text">
-                                        <label for="inputcolor" class="form-label" th:text="#{c_7}"></label>
-                                        <input type="text" id="inputcolor" class="form-control" th:field="*{color}" aria-describedby="colorHelpBlock" required>
+                                        <label for="inputcolor_interior" class="form-label" >Color_interior</label>
+                                        <input type="text" id="inputcolor_interior" class="form-control" th:field="*{color_interior}" aria-describedby="color_interiorHelpBlock" required>
+                                    </div>
+                                </div>
+                                <div class="col-3">
+                                    <div id="colorHelpBlock" class="form-text">
+                                        <label for="inputcolor_exterior" class="form-label" >Color_exterior</label>
+                                        <input type="text" id="inputcolor_exterior" class="form-control" th:field="*{color_exterior}" aria-describedby="color_exteriorHelpBlock" required>
                                     </div>
                                 </div>
                                 <div class="col-3">
                                     <div id="motorHelpBlock" class="form-text">
-                                        <label for="inputmotor" class="form-label" th:text="#{c_8}"></label>
-                                        <input type="text" id="inputmotor" class="form-control" th:field="*{motor}" aria-describedby="motorHelpBlock" required>
+                                        <label for="inputkilometraje" class="form-label" >kilometraje</label>
+                                        <input type="text" id="inputkilometraje" class="form-control" th:field="*{kilometraje}" aria-describedby="kilometrajeHelpBlock" required>
                                     </div>
                                 </div>
                             </div>                            
                             <div class="row">                                
                                 <div class="col-4">
                                     <div id="precioHelpBlock" class="form-text">
-                                        <label for="inputprecio" class="form-label" th:text="#{c_9}"></label>
+                                        <label for="inputprecio" class="form-label" >Precio</label>
                                         <input type="text" id="inputprecio" class="form-control" th:field="*{precio}" aria-describedby="precioHelpBlock" required>
                                     </div>
                                 </div>
                                 <div class="col-4">    
                                     <div id="estadoHelpBlock" class="form-text">
-                                       <label for="estado" class="form-label" th:text="#{c_10}"></label>
+                                       <label for="estado" class="form-label" >Estado</label>
                                         <select th:field="*{estadoVehiculo}" class="form-control form-control-sm col-md-6" id="estadoVehiculo" aria-describedby="marcaHelp" required>
                                             <option th:each= "x:${marcas2}"
                                                     accesskey=""th:value= "${x.id}"
@@ -91,9 +97,9 @@
                             <div class="row">                                                                
                                 <div class="col-6">    
                                     <div id="provinciaHelpBlock" class="form-text">
-                                       <label for="provincia" class="form-label" th:text="#{c_12}"></label>
-                                        <select th:field="*{provincia}" class="form-control form-control-sm col-md-6" id="provincia" aria-describedby="provinciaHelp" required>
-                                            <option th:each= "x:${provincias}"
+                                       <label for="sucursal" class="form-label" >Sucursal</label>
+                                        <select th:field="*{sucursal}" class="form-control form-control-sm col-md-6" id="sucursal" aria-describedby="sucursalHelp" required>
+                                            <option th:each= "x:${sucursales}"
                                                     accesskey=""th:value= "${x.id}"
                                                     class=""th:text= "${x.nombre}"/> 
                                         </select>                                        
@@ -101,14 +107,14 @@
                                 </div>
                                 <div class="col-6">
                                      <div id="imagenHelpBlock" class="form-text">
-                                        <label for="inputDireccion" class="form-label" th:text="#{c_13}"></label>
-                                        <textarea name="direccion" th:field="*{direccion}" rows="2" cols="10" id="inputDireccion" class="form-control" aria-describedby="direccionHelpBlock"></textarea>
+                                        <label for="inputVin" class="form-label" >Vin</label>
+                                        <textarea name="vin" th:field="*{vin}" rows="2" cols="10" id="inputVin" class="form-control" aria-describedby="vinHelpBlock"></textarea>
                                     </div>                                   
                                 </div>
                             </div> 
                             <hr>
                             <div class="btn-group float-end" role="group" aria-label="Basic example">
-                                <a class="btn btn-default" th:href="@{/carro/misCarros}" th:text="#{cuatro}"></a>
+                                <a class="btn btn-default" th:href="@{/carro/misCarros}" >Mis vehiculos</a>
                                 <!-- Button trigger modal -->
                                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                   Guardar
@@ -119,15 +125,15 @@
                                   <div class="modal-dialog">
                                     <div class="modal-content">
                                       <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel" th:text="#{c_2}"></h5>
+                                        <h5 class="modal-title" id="exampleModalLabel" >Registrar Vehiculo</h5>
                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                       </div>
-                                      <div class="modal-body" th:text="#{c_14}">
-                                        
+                                      <div class="modal-body" >
+                                        ¿Estás seguro de que quieres registrar este vehículo?
                                       </div>
                                       <div class="modal-footer">
-                                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal" th:text="#{c_15}"></button>
-                                        <button type="submit" class="btn btn-success" th:text="#{c_16}"></button>
+                                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+                                        <button type="submit" class="btn btn-success" >Confirmar</button>
                                       </div>
                                     </div>
                                   </div>

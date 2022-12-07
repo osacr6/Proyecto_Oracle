@@ -4,5 +4,5 @@ import com.Proyecto.concesionario.entity.Marca;
 import java.util.List;
 
 public interface IMarcaService {
-    public List<Marca> listMarcs();
+    public List<Marca> listMarcas();
 }
