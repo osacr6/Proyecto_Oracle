@@ -1,5 +1,5 @@
 <html xmlns:th="http://www.thymeleaf.org"
-      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5" xmlns="http://www.w3.org/1999/xhtml">
     <head th:fragment="imports">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,14 +13,14 @@
     </head>
     <!-- NAV BAR-->
     <header th:fragment="header">                     
-        <div class='navbar1'>
-            <div class='nav'>                    
+        <div class='navbar1 '>
+            <div class='nav container'>                    
                 <ul> 
                     <li><img src="/images/telefono.png" alt="alt" th:text="#{nav_tel}"/></li>
                     <li><img src="/images/ubicacion.png" alt="alt" th:text="#{nav_oficinas}"/></li>
                     <li><img src="/images/reloj.png" alt="alt" th:text="#{nav_horario}"/></li>
-                    <li><a href="https://www.instagram.com/"><img src="/images/instagram.png" class ='image' alt="alt"/></a></li>
-                    <li><a href="https://www.facebook.com/"><img src="/images/facebook.png" class ='image' alt="alt"/></a></li>
+                    <li><a href="https://www.instagram.com/"><img src="/images/instagram.png" class ='image' alt="alt" width="20" height="20"/></a></li>
+                    <li><a href="https://www.facebook.com/"><img src="/images/facebook.png" class ='image' alt="alt" width="20" height="20"/></a></li>
                     <li> <button style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" 
                                  type="button" class="btn btn-outline-secondary"> <a style='color:white; font-size: 13px;' href="#" th:href="@{''(lang=es_ES)}" th:text="#{lang.es}">Español</a> </button> </li>
                     <li> <button style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" 
@@ -74,6 +74,9 @@
                         <li class="nav-item" sec:authorize="hasRole('ROLE_ADMIN')">
                             <a class="nav-link" th:href="@{/usuarios}">Manage Users</a>
                         </li>
+                        <li class="nav-item" sec:authorize="hasRole('ROLE_ADMIN')">
+                            <a class="nav-link" th:href="@{/office}">Office Management </a>
+                        </li>
                         <li class="nav-item" sec:authorize="isAuthenticated()">
                             <a class="nav-link" href="/login" th:text="#{seis}"></a>
                         </li>                            
@@ -83,20 +86,54 @@
         </nav>            
     </header>
 
-    <footer th:fragment="footer" style="background-color:#0F1A59;font-family: 'Monda', sans-serif;">            
-        <div class="d-flex flex-column flex-sm-row justify-content-between py-2 my-2 border-top">
-            <p style='color:white'  th:text="#{footer1}"> </p>  
-            <p sec:authorize="hasRole('ROLE_USER')" style="color:white; position:relative; left:500px; top:-0px;" th:text="#{footer3}"></p>
-            <p sec:authorize="hasRole('ROLE_ADMIN')" style="color:white; position:relative; left:500px; top:-0px;" th:text="#{footer2}"></p>
+  <footer class="text-center text-white fixed-bottom" style="background-color:#0F1A59;font-family: 'Monda', sans-serif" th:fragment="footer">
+    <div class="container p-1">
+      <section class="mb-1">
+        <a
+           class="btn btn-primary btn-floating m-1"
+           style="background-color: #0F1A59;"
+           href="https://www.facebook.com/"
+           role="button"
+           ><img src="/images/facebook.png" class ='image' alt="facebook" width="20" height="20"/></a>
 
-            <ul class="list-unstyled d-flex">                    
-                <li class="ms-3"><a class="link-dark" href="https://www.instagram.com/"><img src="/images/instagram.png" class ='image' alt="alt"/></a></li>
-                <li class="ms-3"><a class="link-dark" href="https://www.facebook.com/"><img src="/images/facebook.png" class ='image' alt="alt"/></a></li>
-                <li class="ms-3"><a class="link-dark" href="https://www.instagram.com/"><img src="/images/whatsapp.png" class ='image' alt="alt"/></a></li>
-                <li class="ms-3"><a class="link-dark" href="https://www.facebook.com/"><img src="/images/twitter.png" class ='image' alt="alt"/></a></li>
-            </ul>
+        <a
+           class="btn btn-primary btn-floating m-1"
+           style="background-color: #0F1A59;"
+           href="https://twitter.com/"
+           role="button"
+           ><img src="/images/twitter.png" class ='image' alt="facebook" width="20" height="20"/>
+          </a>
+
+        <a
+           class="btn btn-primary btn-floating m-1"
+           style="background-color: #0F1A59;"
+           href="https://www.instagram.com/"
+           role="button"
+           ><img src="/images/instagram.png" class ='image' alt="facebook" width="20" height="20"/>
+          </a>
+
+        <a
+           class="btn btn-primary btn-floating m-1"
+           style="background-color: #0F1A59;"
+           href="https://github.com/osacr6/Proyecto_Oracle.git"
+           role="button"
+           ><img src="/images/github.png" class ='image' alt="facebook" width="20" height="20"/></a>
+        
+      </section>
+    </div>
+    <div  style="background-color: rgba(0, 0, 0, 0.2);">
+        <div class="container">
+            <section class="row">
+            <p class="col-4"></p>
+            <p th:text="#{footer1}" class="col-4"></p>  
+            <p sec:authorize="hasRole('ROLE_USER')" th:text="#{footer3}" class="col-4"></p>
+            <p sec:authorize="hasRole('ROLE_ADMIN')" th:text="#{footer2}" class="col-4"></p>
+            </section>
+            
         </div>
-        <script>
+            
+    </div>
+     <script>
             $(document).ready(function () {
                 if ($('#carsTable')) {
                     $('#carsTable').DataTable({
@@ -109,5 +146,6 @@
                 }
             });
         </script>
-    </footer>              
+  </footer>
+
 </html>
