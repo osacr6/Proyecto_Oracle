@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
     <head>
         <title>Administrar Usuarios</title>
         <link th:replace="plantilla/layout :: imports"/>
@@ -8,43 +8,7 @@
         <!-- Header -->
         <div th:replace="plantilla/layout :: header">            
         </div>
-        <br>
-        <div class="container">
-            <div class="card">                            
-                <div class="card-header"></div>
-                <div class="card-body">
-                    <!--------------- Esto es un formulario --------------->
-                    <div class="p-4">
-                        <table class="table table-striped" id="carsTable">
-                            <thead class="thead-green">
-                                <tr>   
-                                    <th scope="col" class='text-center'>User Name</th>
-                                    <th scope="col" class='text-center'>Rol</th>
-                                    <th scope="col" class='text-center'>Estado</th>
-                                    <th scope="col" class='text-center'> </th>                                                                 
-                                </tr>
-                            </thead>
-                            <tbody>
-                            <th:block th:each="usuario:${usuarios}">  
-                                <tr>
-                                    <td class="text-center align-middle" th:text="${usuario.getUsername}"></td>  
-                                    <td class="text-center align-middle" th:text="${usuario.getRol}"></td>
-                                    <td class="text-center align-middle" th:text="${usuario.getActive == 1  ? 'Activo' : 'Inactivo'}"></td>  
-                                    <td class="text-center align-middle">
-                                        <div class="btn-group" role="group">
-                                            <a class="btn btn-secondary" th:href="@{/usuario/delete/{id}(id=${usuario.getUsuario_id})}">Eliminar</a> 
-                                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" th:data-bs-target="'#updateModal-'+${usuario.getUsuario_id}">Actualizar</button>
-                                            <div th:replace="editUsuarioModal :: EDIT_USUAURIOS_MODAL (usuario = ${usuario})"/>
-                                        </div>
-                                    </td>                                                                     
-                                </tr>
-                            </th:block>
-                            </tbody>
-                        </table>                    
-                    </div>
-                </div>
-            </div>
-        </div>
+
         <!-- Footer -->
         <div th:replace="plantilla/layout :: footer">            
         </div>
