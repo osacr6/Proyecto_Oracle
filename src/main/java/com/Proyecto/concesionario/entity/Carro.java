@@ -31,7 +31,7 @@ public class Carro implements Serializable {
    // private String ruta_Imagen;
 
     //public String getRuta_Imagen() {
-    //    return ruta_Imagen;
+    //    return null;
     //}
 
     //public void setRuta_Imagen(String ruta_Imagen) {
