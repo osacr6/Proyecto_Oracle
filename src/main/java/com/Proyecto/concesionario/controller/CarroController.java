@@ -62,7 +62,7 @@ public class CarroController {
         Usuario usuario = (Usuario) SecurityContextHolder.getContext().getAuthentication().getPrincipal();                
         if(usuario.hasRole("ADMIN")){
             List<Carro> listaCarro = carroService.getAllCarro();
-            List<Marca> listaMarcas = marcaService.listMarcas();
+            List<Marca> listaMarcas = marcaService.getAllMarca();
             model.addAttribute("titulo", "Tabla Carros");
             model.addAttribute("carros", listaCarro);
             model.addAttribute("marcas", listaMarcas);
@@ -97,7 +97,7 @@ public class CarroController {
         //tomar la info del usuario logueado para validar si es administrador
         Usuario usuario = (Usuario) SecurityContextHolder.getContext().getAuthentication().getPrincipal();                
         if(usuario.hasRole("ADMIN")){
-            List<Marca> listaMarcas = marcaService.listMarcas();
+            List<Marca> listaMarcas = marcaService.getAllMarca();
             model.addAttribute("titulo", "Tabla Carros");
             model.addAttribute("marcas", listaMarcas);
             return "getAllMarca";
@@ -196,9 +196,9 @@ public class CarroController {
 
     @GetMapping("/carro/create")
     public String create(Model model) {
-        List<Marca> listaMarcas = marcaService.listMarcas(); 
+        List<Marca> listaMarcas = marcaService.getAllMarca(); 
         model.addAttribute("marcas", listaMarcas);     
-        List<EstadoVehiculo> listaMarcas2 = estadoVehiculoService.getAll(); 
+        List<EstadoVehiculo> listaMarcas2 = estadoVehiculoService.getAllEstadoVehiculo(); 
         model.addAttribute("marcas2", listaMarcas2);    
         List<Provincia> provincias = provinciaService.getAllProvincia(); 
         model.addAttribute("provincias", provincias);   

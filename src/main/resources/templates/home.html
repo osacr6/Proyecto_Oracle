@@ -46,22 +46,104 @@
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Next</span>
                 </button> 
-                <div class="card" style="width: 18rem;">
-                    <img src="toyotahilux.jpg" class="d-block w-100" alt="...">
-                        <div class="card-body">
-                            <p class="card-text">El vehiculo del dia, el mas visto, el mas deseado....</p>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="thumbnail">
+                            <a href="../images/toyotahilux.jpg">
+                                <img src="../images/toyotahilux.jpg" alt="Hilux" style="width:80%">
+                                    <div class="caption">
+                                        <p>El vehiculo del dia, el mas visto, el mas deseado....</p>
+                                    </div>
+                            </a>
                         </div>
-                        <div class="card" style=  "width: 25rem;" >
-                            <img src="toyotacorolla.jpg" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <p class="card-text"> El vehiculo del año, el mas visto, el mas deseado....</p>
-                                </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="thumbnail">
+                            <a href="../images/toyotacorolla.jpg">
+                                <img src="../images/toyotacorolla.jpg" alt="Corolla" style="width:80%">
+                                    <div class="caption">
+                                        <p>El vehiculo del año, el mas visto, el mas deseado....</p>
+                                    </div>
+                            </a>
                         </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="thumbnail">
+                            <a href="../images/Cherokee.jpg">
+                                <img src="../images/Cherokee.jpg" alt="Cherokee" style="width:80%">
+                                    <div class="caption">
+                                        <p>El vehiculo favorito, el mas nuevo....</p>
+                                    </div>
+                            </a>
+                        </div>
+                    </div>
                 </div>
+
             </div>
+        </div>
         </div>          
-        <!-- Footer -->
-        <div th:replace="plantilla/layout :: footer">            
+        <footer class="text-center text-white bottom" style="background-color:#0F1A59;font-family: 'Monda', sans-serif" th:fragment="footer">
+            <div class="container p-1">
+                <section class="mb-1">
+                    <a
+                        class="btn btn-primary btn-floating m-1"
+                        style="background-color: #0F1A59;"
+                        href="https://www.facebook.com/"
+                        role="button"
+                        ><img src="/images/facebook.png" class ='image' alt="facebook" width="20" height="20"/></a>
+
+                    <a
+                        class="btn btn-primary btn-floating m-1"
+                        style="background-color: #0F1A59;"
+                        href="https://twitter.com/"
+                        role="button"
+                        ><img src="/images/twitter.png" class ='image' alt="facebook" width="20" height="20"/>
+                    </a>
+
+                    <a
+                        class="btn btn-primary btn-floating m-1"
+                        style="background-color: #0F1A59;"
+                        href="https://www.instagram.com/"
+                        role="button"
+                        ><img src="/images/instagram.png" class ='image' alt="facebook" width="20" height="20"/>
+                    </a>
+
+                    <a
+                        class="btn btn-primary btn-floating m-1"
+                        style="background-color: #0F1A59;"
+                        href="https://github.com/osacr6/Proyecto_Oracle.git"
+                        role="button"
+                        ><img src="/images/github.png" class ='image' alt="facebook" width="20" height="20"/></a>
+
+                </section>
+            </div>
+            <div  style="background-color: rgba(0, 0, 0, 0.2);">
+                <div class="container">
+                    <section class="row">
+                        <p class="col-4"></p>
+                        <p th:text="#{footer1}" class="col-4"></p>  
+                        <p sec:authorize="hasRole('ROLE_USER')" th:text="#{footer3}" class="col-4"></p>
+                        <p sec:authorize="hasRole('ROLE_ADMIN')" th:text="#{footer2}" class="col-4"></p>
+                    </section>
+
+                </div>
+
+            </div>
+            <script>
+                $(document).ready(function () {
+                    if ($('#carsTable')) {
+                        $('#carsTable').DataTable({
+                            dom: 'Bfrtip',
+                            'iDisplayLength': 10,
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.11.5/i18n/es-ES.json"
+                            },
+                        });
+                    }
+
+                });
+            </script>
+        </footer>          
         </div> 
 
     </body>    

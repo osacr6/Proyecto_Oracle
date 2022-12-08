@@ -8,13 +8,13 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class DistritoService implements IDistritoService {
-    
+
     @Autowired
     private DistritoRepository distritoRepository;
 
     @Override
     public List<Distrito> getAllDistrito() {
-       return (List<Distrito>)distritoRepository.findAll();
+        return (List<Distrito>) distritoRepository.findAll();
     }
 
     @Override

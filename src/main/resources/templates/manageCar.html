@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Administrar Carros</title>
+        <link th:replace="plantilla/layout :: imports"/>
+        <link rel="stylesheet" href="/css/tab.css"/>
+
+    </head>
+    <body>     
+        <!-- Header -->
+        <div th:replace="plantilla/layout :: header">            
+        </div>
+        <div class="container text-center">
+            <div class="row align-items-center">
+                <div class="col">
+                    <button type="button" class="btn btn-primary p-3" data-bs-toggle="modal" data-bs-target="#modalMarca">
+                        Marca
+                    </button>
+                </div>
+                <div class="col">
+                    <button type="button" class="btn btn-primary p-3" data-bs-toggle="modal" data-bs-target="#modalTransmision">
+                        Transmision
+                    </button>
+                </div>
+                <div class="col">
+                    <button type="button" class="btn btn-primary p-3" data-bs-toggle="modal" data-bs-target="#modalEstado">
+                        Estado
+                    </button>
+                </div>
+                <div class="col">
+                    <button type="button" class="btn btn-primary p-3" data-bs-toggle="modal" data-bs-target="#modalModelo">
+                        Modelo
+                    </button>
+                </div>
+                <div class="col">
+                    <button type="button" class="btn btn-primary p-3" data-bs-toggle="modal" data-bs-target="#modalMotor">
+                        Motor
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <h2>Listas</h2>
+            <div class="tab">
+                <button class="tablinks" onclick="tabs(event, 'Marcas')">Marcas</button>
+                <button class="tablinks" onclick="tabs(event, 'Modelos')">Modelos</button>
+                <button class="tablinks" onclick="tabs(event, 'Transmision')">Transmision</button>
+                <button class="tablinks" onclick="tabs(event, 'Motor')">Motor</button>
+                <button class="tablinks" onclick="tabs(event, 'Estado')">Estado</button>
+            </div>
+            <div id="Marcas" class="tabcontent">
+                <h2>Lista de Marcas</h2>
+                <table class="table table-striped" id="tableOffice">
+                    <thead class="thead-green">
+                        <tr>   
+                            <th scope="col" class='text-center'> Marca ID </th>
+                            <th scope="col" class='text-center'> Marca  </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <th:block th:each="marca:${marca}">  
+                            <tr>
+                                <td class="text-center align-middle" th:text="${marca.marca_id}"></td>
+                                <td class="text-center align-middle" th:text="${marca.marca}"></td>                                                               
+                            </tr>
+                        </th:block>
+                    </tbody>
+                </table>      
+            </div>
+
+            <div id="Modelos" class="tabcontent">
+                <h2>Lista de Modelos</h2>
+                <table class="table table-striped" id="tableCanton">
+                    <thead class="thead-green">
+                        <tr>   
+                            <th scope="col" class='text-center'> Modelo ID </th>
+                            <th scope="col" class='text-center'> Modelo  </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <th:block th:each="modelo:${modelo}">  
+                            <tr>
+                                <td class="text-center align-middle" th:text="${modelo.modelo_id}"></td>
+                                <td class="text-center align-middle" th:text="${modelo.modelo}"></td>                                                              
+                            </tr>
+                        </th:block>
+                    </tbody>
+                </table>      
+            </div>
+
+            <div id="Transmision" class="tabcontent">
+                <h2>Lista de Trasmisiones</h2>
+                <table class="table table-striped" id="tableOffice">
+                    <thead class="thead-green">
+                        <tr>   
+                            <th scope="col" class='text-center'> Distrito ID </th>
+                            <th scope="col" class='text-center'> Distrito  </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <th:block th:each="transmision:${transmision}">  
+                            <tr>
+                                <td class="text-center align-middle" th:text="${transmision.transmision_id}"></td>
+                                <td class="text-center align-middle" th:text="${transmision.transmision}"></td>                                                                   
+                            </tr>
+                        </th:block>
+                    </tbody>
+                </table>      
+            </div>
+
+            <div id="Motor" class="tabcontent">
+                <h2>Lista de Motores</h2>
+                <table class="table table-striped" id="tableOffice">
+                    <thead class="thead-green">
+                        <tr>   
+                            <th scope="col" class='text-center'> Motor ID </th>
+                            <th scope="col" class='text-center'> Cilindraje </th>
+                            <th scope="col" class='text-center'> Marca ID</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <th:block th:each="motor:${motor}">  
+                            <tr>
+                                <td class="text-center align-middle" th:text="${motor.motor_id}"></td>
+                                <td class="text-center align-middle" th:text="${motor.cilindraje}"></td>
+                                <td class="text-center align-middle" th:text="${motor.marca_id}"></td>                                                             
+                            </tr>
+                        </th:block>
+                    </tbody>
+                </table>      
+            </div>
+
+            <div id="Estado" class="tabcontent">
+                <h2>Lista de Estados</h2>
+                <table class="table table-striped" id="tableOffice">
+                    <thead class="thead-green">
+                        <tr>   
+                            <th scope="col" class='text-center'> Sucursal ID </th>
+                            <th scope="col" class='text-center'> Numero</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <th:block th:each="estado:${estado}">  
+                            <tr>
+                                <td class="text-center align-middle" th:text="${estado.estado_id}"></td>
+                                <td class="text-center align-middle" th:text="${estado.estado}"></td>                                                    
+                            </tr>
+                        </th:block>
+                    </tbody>
+                </table>      
+            </div>
+        </div>
+
+        <!-- Modal1 -->
+        <div class="modal fade" id="modalMarca" tabindex="-1" aria-labelledby="modalMarca" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" >Marcas de Vehiculos</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <form th:action="@{/marcaAgregar}" class="my-2" method="POST" enctype="multipart/form-data">
+                        <div class="modal-body">
+                            <div class="container">
+                                <input type="text" placeholder="Marca del Vehiculo" class="form-control"name="marca" id="marca">
+                                    <br/>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary">Save changes</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal2 -->
+        <div class="modal fade" id="modalTransmision" tabindex="-1" aria-labelledby="modalTransmision" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" >Transmisiones</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <form th:action="@{/transmisionAgregar}" class="my-2" method="POST">
+                        <div class="modal-body">
+                            <div class="container">
+                                <input type="text" placeholder="Tranmisiones" class="form-control"name="transmision" id="transmision">
+                                    <br/>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary">Save changes</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal3 -->
+        <div class="modal fade" id="modalModelo" tabindex="-1" aria-labelledby="modalModelo" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" >Modelos</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <form th:action="@{/modeloAgregar}" class="my-2" method="POST">
+                        <div class="modal-body">
+                            <div class="container">
+                                <input type="text" placeholder="Modelo del vehiculo" class="form-control"name="modelo" id="modelos">
+                                    <br/>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary">Save changes</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal4 -->
+        <div class="modal fade" id="modalMotor" tabindex="-1" aria-labelledby="modalMotor" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" >Motores</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <form th:action="@{/motorAgregar}" class="my-2" method="POST">
+                        <div class="modal-body">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="align-items-start">
+                                        <select class="form-control col" id="marca_id" name="marca_id" >
+                                            <option selected="selected">Select Marca</option>
+                                            <option th:each="marca : ${marca}" th:value="${marca.marca_id}" th:text="${marca.marca}"></option>
+                                        </select>
+                                    </div>
+                                    <div class="row align-items-center">
+                                        <input type="number" placeholder="Cilindraje" class="form-control col"name="cilindraje" id="cilindraje"> 
+                                        <br/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary">Save changes</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal5 -->
+        <div class="modal fade" id="modalEstado" tabindex="-1" aria-labelledby="modalEstado" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" >Estado Vehiculo</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <form th:action="@{/estadoAgregar}" class="my-2" method="POST">
+                        <div class="modal-body">
+                            <div class="container">
+                                  <div class="row">
+                                <div class="row align-items-center">
+                                <input type="text" placeholder="Estado del Vehiculo" class="form-control col justify-content-center"name="estado" id="estado">
+                                <br/>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary">Save changes</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Footer -->
+        <div th:replace="plantilla/layout :: footer">            
+        </div>
+    </body>   
+    <script>
+        function tabs(evt, tabName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.className += " active";
+            
+        };
+        $('table').DataTable();
+        
+    </script>
+</html>

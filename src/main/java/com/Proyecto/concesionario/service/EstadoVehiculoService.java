@@ -12,9 +12,30 @@ public class EstadoVehiculoService implements IEstadoVehiculoService {
     
     @Autowired
     private EstadoVehiculoRepository estadoVehiculoRepository;
-    
+
     @Override
-    public List<EstadoVehiculo> getAll(){
-        return (List<EstadoVehiculo>)estadoVehiculoRepository.findAll();
+    public List<EstadoVehiculo> getAllEstadoVehiculo() {
+         return (List<EstadoVehiculo>)estadoVehiculoRepository.findAll();
     }
+
+    @Override
+    public void saveEstadoVehiculo(String estado) {
+        estadoVehiculoRepository.save(estado);
+    }
+
+    @Override
+    public EstadoVehiculo getEstadoVehiculoById(long estado_id) {
+        return estadoVehiculoRepository.findById(estado_id);
+    }
+
+    @Override
+    public void deleteEstadoVehiculo(long estado_id) {
+        estadoVehiculoRepository.delete(estado_id);
+    }
+
+    @Override
+    public void updateEstadoVehiculo(long estado_id, String estado) {
+        estadoVehiculoRepository.update(estado_id, estado);
+    }
+
 }
