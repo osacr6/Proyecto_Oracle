@@ -25,16 +25,20 @@
                                 </tr>
                             </thead>
                             <tbody>
-                            <th:block th:each="usuario:${usuarios}">  
+                            <th:block th:each="usuario : ${usuarios}">  
                                 <tr>
                                     <td class="text-center align-middle" th:text="${usuario.getUsername}"></td>  
-                                    <td class="text-center align-middle" th:text="${usuario.getRol}"></td>
-                                    <td class="text-center align-middle" th:text="${usuario.getActive == 1  ? 'Activo' : 'Inactivo'}"></td>  
+                                    <td class="text-center align-middle">
+                                        <th:block th:each="rol : ${roles}">
+                                            <span th:if="${rol.getRolId == usuario.getRolId }" th:text="${rol.getRol}"></span>
+                                        </th:block>
+                                    </td>
+                                    <td class="text-center align-middle" th:text="${usuario.getActive ? 'Activo' : 'Inactivo'}"></td>  
                                     <td class="text-center align-middle">
                                         <div class="btn-group" role="group">
                                             <a class="btn btn-secondary" th:href="@{/usuario/delete/{id}(id=${usuario.getUsuario_id})}">Eliminar</a> 
                                             <button type="button" class="btn btn-primary" data-bs-toggle="modal" th:data-bs-target="'#updateModal-'+${usuario.getUsuario_id}">Actualizar</button>
-                                            <div th:replace="editUsuarioModal :: EDIT_USUAURIOS_MODAL (usuario = ${usuario})"/>
+                                            <div th:replace="editUsuarioModal :: EDIT_USUAURIOS_MODAL (usuario = ${usuario}, roles = ${roles})"/>
                                         </div>
                                     </td>                                                                     
                                 </tr>

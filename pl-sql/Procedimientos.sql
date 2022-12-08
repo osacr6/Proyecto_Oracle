@@ -88,8 +88,8 @@ END;
 
 
 
-CREATE OR REPLACE PROCEDURE sp_actualizar_usuario (
-    p_usuario_id     NUMBER,
+CREATE OR REPLACE PROCEDURE sp_actualizar_persona (
+    p_persona_id     NUMBER,
     p_rol_id         NUMBER,
     p_identificacion VARCHAR2,
     p_nombre         VARCHAR2,
@@ -99,7 +99,7 @@ CREATE OR REPLACE PROCEDURE sp_actualizar_usuario (
     p_direccion_id   NUMBER
 ) AS
 BEGIN
-    UPDATE t_usuario
+    UPDATE t_persona
     SET
         rol_id = p_rol_id,
         identificacion = p_identificacion,
@@ -109,7 +109,7 @@ BEGIN
         telefono = p_telefono,
         direccion_id = p_direccion_id
     WHERE
-        usuario_id = p_usuario_id;
+        persona_id = p_persona_id;
 
 END;
 
@@ -127,7 +127,6 @@ BEGIN
     DELETE FROM t_usuario
     WHERE
         usuario_id = p_usuario_id;
-
 END;
 
 CREATE OR REPLACE PROCEDURE SP_CREAR_CARRO(

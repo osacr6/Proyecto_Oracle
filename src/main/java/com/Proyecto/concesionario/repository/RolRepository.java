@@ -17,6 +17,9 @@ public interface RolRepository extends JpaRepository<Rol,Long>{
     @Query(value = "SELECT * FROM T_ROL", nativeQuery = true)
     public List<Rol> findAll();
     
+    @Query(value = "SELECT * FROM T_ROL R WHERE r.rol = :name", nativeQuery = true)
+    public Rol findByName(@Param("name") String name);
+    
     @Query(value = "SELECT * FROM T_ROL R WHERE r.rol_id = :id", nativeQuery = true)
     public Rol findById(@Param("id") String id);
 }

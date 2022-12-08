@@ -1,5 +1,8 @@
 package com.Proyecto.concesionario.controller;
 
+import com.Proyecto.concesionario.entity.Rol;
+import com.Proyecto.concesionario.repository.RolRepository;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -18,6 +21,8 @@ public class LoginController {
 
     @Autowired
     private JdbcTemplate jdbcTemplate;
+    @Autowired
+    private RolRepository rolRepository;
     
     @GetMapping("/login")
     public String login(){
@@ -30,18 +35,31 @@ public class LoginController {
     }
     
     @PostMapping("/registro")
-    public ModelAndView registro(
+    public String registro(
         @RequestBody String payload,
         @RequestParam("username") String username,
         @RequestParam("password") String password, 
         @RequestParam("passwordcheck") String passwordcheck
-    ){
-        PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
-        String encodedPassword = passwordEncoder.encode(password);
-        System.out.println("encodedPassword --> " + password + " = " + encodedPassword);
+    ) {
+        Rol rol = (Rol)this.rolRepository.findByName("USER");
+        long rolId = rol.getRolId();
         
-        // USERNAME, PASSWORD, ROL_ID, ACTIVE
-        this.jdbcTemplate.update("CALL sp_crear_usuario(?, ?, 3, 1)", username, encodedPassword); 
-        return new ModelAndView("/login");
+        if(rol != null)  {
+            rolId = rol.getRolId();
+            PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+            String encodedPassword = passwordEncoder.encode(password);
+            System.out.println("encodedPassword --> " + password + " = " + encodedPassword);
+
+            // USERNAME, PASSWORD, ROL_ID, ACTIVE
+            this.jdbcTemplate.update(
+                "CALL sp_crear_usuario(?, ?, 3, 1)",
+                username, 
+                encodedPassword
+            );
+
+            return "redirect:/usuarios";
+        } else {
+            return "redirect:/usuarios";
+        }
     }
 }

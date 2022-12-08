@@ -18,8 +18,8 @@ public class UsuarioService implements IUsuarioService {
     }
 
     @Override
-    public Usuario getUsuarioById(long id) {
-        return usuarioRepository.findById(id).orElse(null);
+    public Usuario getUsuarioById(String id) {
+        return usuarioRepository.findById(id);
     }
 
     @Override

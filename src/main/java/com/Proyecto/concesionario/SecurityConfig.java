@@ -67,10 +67,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 "VENDEDOR",
                 "ADMIN"
             )
-            .anyRequest().authenticated()
+            .anyRequest()
+            .authenticated()
             .and()
             .formLogin()
-            .loginPage("/login").permitAll()
+            .loginPage("/login")
+            .permitAll()
             .defaultSuccessUrl("/", true);
     }
 }

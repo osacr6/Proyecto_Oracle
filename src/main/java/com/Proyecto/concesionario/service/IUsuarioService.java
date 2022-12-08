@@ -6,7 +6,7 @@ import java.util.List;
 public interface IUsuarioService {
     public List<Usuario> getAllUsuario();
     public void saveUsuario(Usuario usuario);
-    public Usuario getUsuarioById (long id);
+    public Usuario getUsuarioById (String id);
     public void delete (long id);
     public Usuario findByUsername (String username);
 }

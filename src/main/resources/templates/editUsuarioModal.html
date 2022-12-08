@@ -1,5 +1,5 @@
 <html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
-    <div th:fragment="EDIT_USUAURIOS_MODAL (usuario)">
+    <div th:fragment="EDIT_USUAURIOS_MODAL (usuario, roles)">
         <div class="modal fade" th:id="'updateModal-'+${usuario.getUsuario_id}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -9,7 +9,7 @@
                     </div>
                     <div class="modal-body">
                         <div class="container">
-                            <form action="/usuario/update" class="my-2" method="POST">
+                            <form th:action="@{/usuario/update}" class="my-2" method="POST">
                                 <input
                                     type="hidden"
                                     name="id"
@@ -31,25 +31,19 @@
                                     placeholder="Contraseña"
                                     >
                                 <br/>
-                                <select   class="form-control">
-                                    <option value> </option>
+                                <P  style="text-align: left;">Roles:</P>
+                                <select class="form-control" name="rol">
+                                    <th:block th:each="rol : ${roles}">
+                                        <option th:value="${rol.getRolId}" th:selected="${rol.getRolId == usuario.getRolId}" th:text="${rol.getRol}"></option>
+                                    </th:block>
                                 </select>
-                                <input 
-                                    type="text" 
-                                    class="form-control" 
-                                    name="rol"
-                                    placeholder="Rol"
-                                    th:value="${usuario.getRol}"
-                                    >
                                 <br/>
-                                <input
-                                    type="text" 
-                                    class="form-control" 
-                                    name="active"
-                                    placeholder="estado"
-                                    th:value="${usuario.getActive ? 'Activo' : 'Innactivo'}"
-                                    >
-                               <br/>
+                                <P style="text-align: left;">Estado</P>
+                                <select class="form-control" name="active">
+                                    <option value="1">Activo</option>
+                                    <option value="0">Inactivo</option>
+                                </select>
+                                <br/>
                                 <button type="submit" class="btn btn-primary">Actulizar</button>
                             </form>
                         </div>

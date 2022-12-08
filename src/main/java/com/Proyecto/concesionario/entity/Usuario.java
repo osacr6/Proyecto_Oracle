@@ -80,8 +80,8 @@ public class Usuario implements UserDetails {
         this.usuarioId = usuarioId;
     }
 
-    public String getRolId() {
-        return rolId;
+    public Long getRolId() {
+        return Long.parseLong(rolId);
     }
 
     public void setRolId(String rolId) {

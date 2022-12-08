@@ -13,4 +13,7 @@ public interface UsuarioRepository extends JpaRepository<Usuario,Long>{
     
     @Query(value = "SELECT * FROM T_USUARIO WHERE username = :username", nativeQuery = true)
     public Usuario findByUsername(@Param("username") String username);
+    
+    @Query(value = "SELECT * FROM T_USUARIO WHERE usuario_id = :id", nativeQuery = true)
+    public Usuario findById(@Param("id") String id);
 }
