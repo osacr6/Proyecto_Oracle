@@ -10,14 +10,19 @@
         </div>
         <br>
         <div class="container">
+            <div class="btn-group" role="group" aria-label="Basic example">
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" th:data-bs-target="'#createcarroModal'">Registrar Vehiculo</button>
+                        
+            </div>
+           
+        </div>   
+        <div class="container">
             <div class="card">                            
                 <div class="card-header"></div>
                 <div class="card-body">
                     <!--------------- Esto es un formulario --------------->
                     <div class="p-4">
-                        <a class="btn btn-success" th:href="@{/carro/create}" >Registrar vehículo</a>
-                        <br>
-                        <br>
+                   
                         <table class="table table-striped" id="carsTable">
                             <thead class="thead-green">
                                 <tr>   
@@ -37,10 +42,14 @@
                                     <td class="text-center align-middle" ><th:block th:each="marca : ${marcas}">
                                     <span th:if="${marca.getMarca_id == carro.getCarro_id }" th:text="${marca.getMarca}"></span>
                                 </th:block></td>
-                                    <td class="text-center align-middle" th:text="${carro.getModelo_id}"></td>
+                                    <td class="text-center align-middle" ><th:block th:each="modelo : ${modelo}">
+                                    <span th:if="${modelo.getModelo_id == carro.getCarro_id }" th:text="${modelo.getModelo}"></span>
+                                </th:block></td>
                                     <td class="text-center align-middle" th:text="${carro.getKilometraje}"></td>
                                     <td class="text-center align-middle" th:text="@{₡} + ${carro.getPrecio}"></td>
-                                    <td class="text-center align-middle" th:text="${carro.getEstado_id}"></td>
+                                    <td class="text-center align-middle" ><th:block th:each="modelo : ${modelo}">
+                                    <span th:if="${modelo.getModelo_id == carro.getCarro_id }" th:text="${modelo.getModelo}"></span>
+                                </th:block></td></td>
                                     <td class="text-center align-middle">
                                         <div class="btn-group" role="group">
                                         <a class="btn btn-secondary" th:href="@{/carro/delete/{id}(id=${carro.getCarro_id})}">Eliminar</a> 

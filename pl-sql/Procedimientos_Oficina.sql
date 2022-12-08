@@ -1,4 +1,4 @@
---CREAR
+
 CREATE OR REPLACE PROCEDURE sp_crear_provincia (
     provinciaDato IN VARCHAR2 
 ) AS

@@ -2,10 +2,10 @@ package com.Proyecto.concesionario.repository;
 
 import com.Proyecto.concesionario.entity.Carro;
 import java.util.List;
+import org.springframework.data.jpa.repository.*;
 import org.springframework.stereotype.Repository;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
-import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.transaction.annotation.Transactional;
 //https://www.baeldung.com/spring-data-jpa-query
@@ -29,10 +29,10 @@ public interface CarroRepository extends JpaRepository<Carro, Long> {
 @Modifying
     @Query(value = "CALL sp_update_carro(:marca_id, :modelo_id,:kilometraje,:precio,:estado_id,:carro_id)", nativeQuery = true)
 @Transactional
-    public Carro update(@Param("carro_id") String carro_id, @Param("marca_id") long marca_id, @Param("modelo_id") long modelo_id,
+    public Carro update(@Param("carro_id") long carro_id, @Param("marca_id") long marca_id, @Param("modelo_id") long modelo_id,
              @Param("estado_id") long estado_id,@Param("kilometraje") int kilometraje, @Param("precio") int precio);
 
 
     @Query(value = "SELECT * FROM T_CARRO WHERE CARRO_ID = :carro_id", nativeQuery = true)
-    public Carro findById(@Param("carro_id") String carro_id);
+    public Carro findById(@Param("carro_id") long carro_id);
 }

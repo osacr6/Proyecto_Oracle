@@ -40,6 +40,8 @@ public class CarroController {
     private IMarcaService marcaService;
     
     @Autowired
+    private IModeloService modeloService;
+    @Autowired
     private IProvinciaService provinciaService;
     
     @Autowired
@@ -63,27 +65,50 @@ public class CarroController {
         if(usuario.hasRole("ADMIN")){
             List<Carro> listaCarro = carroService.getAllCarro();
             List<Marca> listaMarcas = marcaService.getAllMarca();
+            List<Modelo> listaModelo = modeloService.getAllModelo();
             model.addAttribute("titulo", "Tabla Carros");
             model.addAttribute("carros", listaCarro);
             model.addAttribute("marcas", listaMarcas);
+            model.addAttribute("modelo", listaModelo);
             return "getAllCarros";
         }        
         return "redirect:/home";  
     }
     
+     @GetMapping("/carro/create")
+    public String create(
+        @RequestBody String payload,
+        @RequestParam("Placa") String placa,
+        @RequestParam("Marca_id") String marca_id, 
+        @RequestParam("Modelo_id") String modelo_id,
+        @RequestParam("Trim_id") String trim_id,
+        @RequestParam("Color_interior") String color_interior,
+        @RequestParam("Sucursal_id") String sucursal_id,
+        @RequestParam("Estado_id") String  estado_id,
+        @RequestParam("kilometraje") String kilometraje,
+        @RequestParam("precio") String precio,
+        @RequestParam("vin") String vin
+    ){
+        
+        
+        
+       
+ 
+        return "redirect:/getAllCarros";
+    }
     
      @Transactional
      @PostMapping("/carro/update")
     public String update(
         @RequestBody String payload,
-        @RequestParam( "carro_id")String carro_id,
+        @RequestParam( "carro_id")long carro_id,
         @RequestParam("marca") long marca_id,
         @RequestParam("modelo_id") long modelo_id, 
         @RequestParam("kilometraje") int kilometraje,
         @RequestParam("precio") int precio,
         @RequestParam("estado") long estado_id
     ){
-        Carro carro = carroService.getCarroById(carro_id); 
+         
         carroService.UpdateCarro(carro_id ,marca_id, modelo_id,estado_id,kilometraje,
                 precio);
         
@@ -194,17 +219,7 @@ public class CarroController {
         return "getMarca";
     }
 
-    @GetMapping("/carro/create")
-    public String create(Model model) {
-        List<Marca> listaMarcas = marcaService.getAllMarca(); 
-        model.addAttribute("marcas", listaMarcas);     
-        List<EstadoVehiculo> listaMarcas2 = estadoVehiculoService.getAllEstadoVehiculo(); 
-        model.addAttribute("marcas2", listaMarcas2);    
-        List<Provincia> provincias = provinciaService.getAllProvincia(); 
-        model.addAttribute("provincias", provincias);   
-        model.addAttribute("carro", new Carro());           
-        return "createCarro";
-    }
+ 
 
    /* @PostMapping("/carro/create")
     public String create(@ModelAttribute Carro carro, @RequestParam("image") MultipartFile multipartFile) throws IOException {        
