@@ -21,12 +21,12 @@ public interface ProvinciaRepository extends JpaRepository<Provincia, Long> {
     public void insert(@Param("provincia") String provincia);
 
     @Modifying
-    @Query(value = "DELETE FROM T_PROVINCIA WHERE provincia_id =:provincia_id", nativeQuery = true)
+    @Query(value = "CALL sp_delete_provincia(:provincia_id)", nativeQuery = true)
     @Transactional
     public void delete(@Param("provincia_id") long provincia_id);
 
     @Modifying
-    @Query(value = "UPDATE T_PROVINCIA SET provincia=:provincia where provincia_id =:provincia_id", nativeQuery = true)
+    @Query(value = "CALL sp_actualizar_provincia(:provincia,:provincia_id)", nativeQuery = true)
     @Transactional
     public void update(@Param("provincia_id") long provincia_id, @Param("provincia") String provincia);
 

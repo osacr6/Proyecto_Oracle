@@ -247,22 +247,28 @@
                     <form th:action="@{/direccionAgregar}" class="my-2" method="POST">
                         <div class="modal-body">
                             <div class="container">
-                                <select class="form-control" id="canton_id" name="canton_id" >
-                                    <option selected="selected">Select Canton</option>
-                                    <option th:each="canton : ${canton}" th:value="${canton.canton_id}" th:text="${canton.canton}"></option>
-                                </select>
-                                <select class="form-control" id="provincia_id" name="provincia_id" >
-                                    <option selected="selected">Select Provincia</option>
-                                    <option th:each="provincia : ${provincia}" th:value="${provincia.provincia_id}" th:text="${provincia.provincia}"></option>
-                                </select>
-                                <select class="form-control" id="distrito_id" name="distrito_id" >
-                                    <option selected="selected">Select Distrito</option>
-                                    <option th:each="distrito : ${distrito}" th:value="${distrito.distrito_id}" th:text="${distrito.distrito}"></option>
-                                </select>
-                                <textarea type="text" placeholder="Detalles" class="form-control"name="detalles" id="detalles"></textarea> 
-                                <br/>
-                                <textarea type="text" placeholder="Ubicacion" class="form-control"name="ubicacion" id="ubicacion"></textarea> 
-                                <br/>
+                                <div class="row">
+                                    <div class="align-items-start">
+                                        <select class="form-control col" id="provincia_id" name="provincia_id" >
+                                            <option selected="selected">Select Provincia</option>
+                                            <option th:each="provincia : ${provincia}" th:value="${provincia.provincia_id}" th:text="${provincia.provincia}"></option>
+                                        </select>
+                                        <select class="form-control col" id="canton_id" name="canton_id" >
+                                            <option selected="selected">Select Canton</option>
+                                            <option th:each="canton : ${canton}" th:value="${canton.canton_id}" th:text="${canton.canton}"></option>
+                                        </select>
+                                        <select class="form-control col" id="distrito_id" name="distrito_id" >
+                                            <option selected="selected">Select Distrito</option>
+                                            <option th:each="distrito : ${distrito}" th:value="${distrito.distrito_id}" th:text="${distrito.distrito}"></option>
+                                        </select>  
+                                    </div>
+                                    <div class="row align-items-center">
+                                        <textarea type="text" placeholder="Detalles" class="form-control col"name="detalles" id="detalles"></textarea> 
+                                        <br/>
+                                        <textarea type="text" placeholder="Ubicacion" class="form-control col"name="ubicacion" id="ubicacion"></textarea> 
+                                        <br/>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div class="modal-footer">
@@ -285,15 +291,21 @@
                     <form th:action="@{/sucursalAgregar}" class="my-2" method="POST">
                         <div class="modal-body">
                             <div class="container">
-                                <select class="form-control" id="direccion_id" name="direccion_id" >
+                                  <div class="row">
+                                    <div class="align-items-start justify-content-start">
+                                <select class="form-control col" id="direccion_id" name="direccion_id" >
                                     <option selected="selected">Select direction</option>
                                     <option th:each="direccion : ${direccion}" th:value="${direccion.direccion_id}" th:text="${direccion.ubicacion}"></option>
                                 </select>
-                                <input type="text" placeholder="Numero de sucursal" class="form-control"name="numero" id="numero">
+                                </div>
+                                <div class="row align-items-center">
+                                <input type="text" placeholder="Numero de sucursal" class="form-control col justify-content-center"name="numero" id="numero">
                                 <br/>
-                                <input type="text" placeholder="Telefono" class="form-control"name="telefono" id="telefono">
+                                <input type="text" placeholder="Telefono" class="form-control col justify-content-center"name="telefono" id="telefono">
                                 <br/>
-                                <input type="text" placeholder="Nombre" class="form-control"name="nombre" id="nombre">
+                                <input type="text" placeholder="Nombre" class="form-control col justify-content-center"name="nombre" id="nombre">
+                                </div>
+                                </div>
                             </div>
                         </div>
                         <div class="modal-footer">

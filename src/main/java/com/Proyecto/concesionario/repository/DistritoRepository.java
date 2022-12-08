@@ -17,17 +17,17 @@ public interface DistritoRepository extends JpaRepository<Distrito, Long> {
     public List<Distrito> findAll();
 
     @Modifying
-    @Query(value = "insert into T_DISTRITO (distrito) values (:distrito)", nativeQuery = true)
+    @Query(value = "CALL sp_crear_distrito(:distrito)", nativeQuery = true)
     @Transactional
     public void save(@Param("distrito") String distrito);
 
     @Modifying
-    @Query(value = "DELETE FROM T_DISTRITO WHERE distrito_id =:distrito_id", nativeQuery = true)
+    @Query(value = "CALL sp_delete_distrito(:distrito_id)", nativeQuery = true)
     @Transactional
     public void delete(@Param("distrito_id") long distrito_id);
 
     @Modifying
-    @Query(value = "update T_DISTRITO set distrito=:distrito where distrito_id =:distrito_id", nativeQuery = true)
+    @Query(value = "CALL sp_actualizar_distrito(:distrito,:distrito_id)", nativeQuery = true)
     @Transactional
     public void update(@Param("distrito_id") long distrito_id, @Param("distrito") String distrito);
 

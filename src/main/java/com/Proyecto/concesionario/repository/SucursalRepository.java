@@ -17,18 +17,18 @@ public interface SucursalRepository extends JpaRepository<Sucursal, Long> {
     public List<Sucursal> findAll();
 
     @Modifying
-    @Query(value = "insert into T_SUCURSAL (direccion_id, numero,nombre,telefono) values (:direccion_id,:numero,:nombre,:telefono)", nativeQuery = true)
+    @Query(value = "CALL sp_crear_sucursal(:numero,:nombre,:telefono,:direccion_id)", nativeQuery = true)
     @Transactional
     public void save(@Param("direccion_id") long direccion_id, @Param("numero") int numero, @Param("nombre") String nombre,
             @Param("telefono") String telefono);
 
     @Modifying
-    @Query(value = "DELETE FROM T_SUCURSAL WHERE sucursal_id =:sucursal_id", nativeQuery = true)
+    @Query(value = "CALL sp_delete_sucursal(:sucursal_id)", nativeQuery = true)
     @Transactional
     public void delete(@Param("sucursal_id") long sucursal_id);
 
     @Modifying
-    @Query(value = "update T_SUCURSAL set direccion_id=:direccion_id, numero=:numero,nombre=:nombre, telefono=:telefono where sucursal_id =:sucursal_id", nativeQuery = true)
+    @Query(value = "CALL sp_actualizar_sucursal(:numero,:nombre,:telefono,:direccion_id,:sucursal_id)", nativeQuery = true)
     @Transactional
     public void update(@Param("sucursal_id") long sucursal_id,
             @Param("direccion_id") long direccion_id, @Param("numero") int numero, @Param("nombre") String nombre, @Param("telefono") String telefono);

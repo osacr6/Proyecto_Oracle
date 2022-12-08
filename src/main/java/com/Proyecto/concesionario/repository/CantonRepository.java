@@ -16,17 +16,17 @@ public interface CantonRepository extends JpaRepository<Canton, Long> {
     public List<Canton> findAll();
 
     @Modifying
-    @Query(value = "INSERT INTO T_CANTON (canton) VALUES(:canton)", nativeQuery = true)
+    @Query(value = "CALL sp_crear_canton(:canton)", nativeQuery = true)
     @Transactional
     public void save(@Param("canton") String canton);
 
     @Modifying
-    @Query(value = "DELETE FROM T_CANTON WHERE canton_id =:canton_id", nativeQuery = true)
+    @Query(value = "CALL sp_delete_canton(:canton_id)", nativeQuery = true)
     @Transactional
     public Canton delete(@Param("canton_id") long canton_id);
 
     @Modifying
-    @Query(value = "update T_CANTON set canton=:canton where canton_id =:canton_id", nativeQuery = true)
+    @Query(value = "CALL sp_actualizar_canton(:canton,:canton_id)", nativeQuery = true)
     @Transactional
     public Canton update(@Param("canton_id") long canton_id, @Param("canton") String canton);
 

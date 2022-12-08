@@ -17,8 +17,7 @@ public interface DireccionRepository extends JpaRepository<Direccion, Long> {
     public List<Direccion> findAll();
 
     @Modifying
-    @Query(value = "insert into T_DIRECCION (provincia_id, canton_id,distrito_id,detalles,ubicacion) "
-            + "values (:provincia_id,:canton_id,:distrito_id,:detalles,:ubicacion)", nativeQuery = true)
+    @Query(value = "CALL sp_crear_direccion(:provincia_id,:canton_id,:distrito_id,:detalles,:ubicacion)", nativeQuery = true)
     @Transactional
     public void save(
             @Param("provincia_id") long provincia_id,
@@ -27,15 +26,13 @@ public interface DireccionRepository extends JpaRepository<Direccion, Long> {
             @Param("detalles") String detalles,
             @Param("ubicacion") String ubicacion
     );
-
     @Modifying
-    @Query(value = "DELETE FROM T_DIRECCION WHERE direccion_id =:direccion_id", nativeQuery = true)
+    @Query(value = "CALL sp_delete_direccion(:direccion_id)", nativeQuery = true)
     @Transactional
     public void delete(@Param("direccion_id") long direccion_id);
 
     @Modifying
-    @Query(value = "update T_DIRECCION set provincia_id=:provincia_id, canton_id=:canton_id, distrito_id=:distrito_id, detalles=:detalles, "
-            + "ubicacion=:ubicacion where direccion_id =:direccion_id", nativeQuery = true)
+    @Query(value = "CALL sp_actualizar_direccion(:provincia_id,:canton_id,:distrito_id,:detalles,:ubicacion,:direccion_id)", nativeQuery = true)
     @Transactional
     public void update(
             @Param("direccion_id") long direccion_id,
