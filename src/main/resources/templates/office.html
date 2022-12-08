@@ -23,7 +23,7 @@
                     </button>
                 </div>
                 <div class="col">
-                    <button type="button" class="btn btn-primary p-3" data-bs-toggle="modal" data-bs-target="#modalDistrito">
+                    <button type="button" class="btn btn-primary p-3" data-bs-toggle="modal" data-bs-target="#modalDitrito">
                         Distrito
                     </button>
                 </div>
@@ -156,7 +156,7 @@
                                 <td class="text-center align-middle" th:text="${sucursal.numero}"></td>
                                 <td class="text-center align-middle" th:text="${sucursal.nombre}"></td>
                                 <td class="text-center align-middle" th:text="${sucursal.telefono}"></td>
-                                <td class="text-center align-middle" th:text="${provincia.direccion_id}"></td>                                                      
+                                <td class="text-center align-middle" th:text="${sucursal.direccion_id}"></td>                                                      
                             </tr>
                         </th:block>
                     </tbody>
@@ -282,12 +282,12 @@
                         <h1 class="modal-title fs-5" >Sucursal</h1>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <form th:action="@{/SucursalAgregar}" class="my-2" method="POST">
+                    <form th:action="@{/sucursalAgregar}" class="my-2" method="POST">
                         <div class="modal-body">
                             <div class="container">
-                                <select class="form-control" id="direccion_id">
+                                <select class="form-control" id="direccion_id" name="direccion_id" >
                                     <option selected="selected">Select direction</option>
-                                    <option th:each="direccion : ${direccion}" th:value="${direccion.direccion_id}" th:text="${direccion.detalles}"></option>
+                                    <option th:each="direccion : ${direccion}" th:value="${direccion.direccion_id}" th:text="${direccion.ubicacion}"></option>
                                 </select>
                                 <input type="text" placeholder="Numero de sucursal" class="form-control"name="numero" id="numero">
                                 <br/>

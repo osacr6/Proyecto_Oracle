@@ -19,7 +19,7 @@ public class ProvinciaService implements IProvinciaService {
 
     @Override
     public void saveProvincia(String provincia) {
-         provinciaRepository.save(provincia);
+         provinciaRepository.insert(provincia);
     }
 
     @Override

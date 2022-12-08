@@ -14,8 +14,9 @@ public class Provincia implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column
     private long provincia_id;
-    @Column(name = "provincia")
+    @Column
     private String provincia;
 
     public long getProvincia_id() {

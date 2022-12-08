@@ -1,6 +1,7 @@
  package com.Proyecto.concesionario.entity;
 
 import java.io.Serializable;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -13,11 +14,17 @@ public class Direccion implements Serializable {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column
     private long direccion_id;
+    @Column
     private long provincia_id;
+    @Column
     private long canton_id;
+    @Column
     private long distrito_id;
+    @Column
     private String detalles;
+    @Column
     private String ubicacion;
 
     public long getDireccion_id() {

@@ -58,11 +58,9 @@ public class SucursalController {
 
     @Transactional
     @PostMapping("/provinciaAgregar")
-    public String agregarProvincia(
-            @RequestParam("provincia") String provincia
-    ) {
+    public String agregarProvincia(@RequestParam("provincia") String provincia) {
         provinciaService.saveProvincia(provincia);
-        return "office";
+        return "redirect:/office";
     }
 
     @Transactional

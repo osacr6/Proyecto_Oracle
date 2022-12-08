@@ -14,8 +14,9 @@ public class Canton implements Serializable {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column
     private long canton_id;
-    @Column(name = "canton")
+    @Column
     private String canton;  
 
     public long getCanton_id() {
