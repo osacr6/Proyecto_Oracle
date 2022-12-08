@@ -1,0 +1,54 @@
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
+    <div th:fragment="CREATE_TRIM_MODAL (motor,transmision)">
+                <div class="modal fade" th:id="createtrimModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Actualizar Vehiculo</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container">
+                           <form th:action="@{/trimCrear}" class="my-2" method="POST">
+                                <P  style="text-align: left;">Motor</P>
+                                <select class="form-control" name="motor_id">
+                                    <th:block th:each="motor : ${motor}">
+                                        <option th:value="${motor.motor_id}"  
+                                                th:text="${motor.cilindraje}"></option>
+                                    </th:block>
+                                </select>
+                                <br/>
+                                <P  style="text-align: left;">Transmision</P>
+                                <select class="form-control" name="transmision_id" >
+                                    <th:block th:each="transmision : ${transmision}">
+                                        <option th:value="${transmision.transmision_id}"  
+                                                th:text="${transmision.transmision}"></option>
+                                    </th:block>
+                                </select>
+                                <P  style="text-align: left;">Codigo</P>
+                                <input 
+                                    type="text" 
+                                    class="form-control" 
+                                    name="codigo"
+                                    placeholder="Codigo de Trim"
+                                    />
+                                <br/>
+                                <P  style="text-align: left;">Numero de puertas</P>
+                                <input 
+                                    type="number" 
+                                    class="form-control" 
+                                    name="numero_puertas"
+                                    placeholder="numero de puertas"
+                                    />
+                                <br/>
+                                <br/>
+                                <button type="submit" class="btn btn-primary">Guardar</button>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</html>

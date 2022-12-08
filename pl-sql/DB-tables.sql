@@ -260,12 +260,6 @@ CREATE TABLE T_CARRO (
     CONSTRAINT FK_CARRO_TRIM
         FOREIGN KEY (trim_id)
         REFERENCES T_TRIM (trim_id),
-    CONSTRAINT FK_CARRO_COLOR_INTERIOR
-        FOREIGN KEY (color_interior)
-        REFERENCES T_COLOR (color_id),
-    CONSTRAINT FK_CARRO_COLOR_EXTERIOR
-        FOREIGN KEY (color_exterior)
-        REFERENCES T_COLOR (color_id),
     CONSTRAINT FK_CARRO_SUCURSAL
         FOREIGN KEY (sucursal_id)
         REFERENCES T_SUCURSAL (sucursal_id),

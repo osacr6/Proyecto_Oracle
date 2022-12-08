@@ -15,23 +15,29 @@ public interface CarroRepository extends JpaRepository<Carro, Long> {
 
     @Query(value = "SELECT * FROM T_CARRO", nativeQuery = true)
     public List<Carro> findAll();
-
-    @Query(value = "insert into T_CARRO (marca_id, modelo_id, trim_id,sucursal_id,estado_id,placa,color_interior,color_exterior,kilometraje,precio,vin)"
+    
+    @Modifying
+    @Query(value = "INSERT INTO T_CARRO (marca_id, modelo_id, trim_id,sucursal_id,estado_id,placa,color_interior,color_exterior,kilometraje,precio,vin)"
             + "values (:marca_id, :modelo_id, :trim_id,:sucursal_id,:estado_id,:placa,:color_interior,:color_exterior,:kilometraje,:precio,:vin)",
             nativeQuery = true)
-    public Carro save(@Param("marca_id") long marca_id, @Param("modelo_id") long modelo_id,
+    @Transactional
+    public void save(@Param("marca_id") long marca_id, @Param("modelo_id") long modelo_id,
             @Param("trim_id") long trim_id, @Param("sucursal_id") long sucursal_id, @Param("estado_id") long estado_id,
             @Param("placa") String placa, @Param("color_interior") int color_interior, @Param("color_exterior") int color_exterior,
             @Param("kilometraje") int kilometraje, @Param("precio") int precio, @Param("vin") String vin);
-
+    
+    @Modifying
     @Query(value = "DELETE FROM T_CARRO WHERE CARRO_ID =:carro_id", nativeQuery = true)
-    public Carro delete(@Param("carro_id") long carro_id);
-@Modifying
-    @Query(value = "CALL sp_update_carro(:marca_id, :modelo_id,:kilometraje,:precio,:estado_id,:carro_id)", nativeQuery = true)
-@Transactional
-    public Carro update(@Param("carro_id") long carro_id, @Param("marca_id") long marca_id, @Param("modelo_id") long modelo_id,
-             @Param("estado_id") long estado_id,@Param("kilometraje") int kilometraje, @Param("precio") int precio);
+    @Transactional
+    public void delete(@Param("carro_id") long carro_id);
 
+    @Modifying
+    @Query(value = "CALL sp_update_carro()", nativeQuery = true)
+    @Transactional
+    public void update(@Param("carro_id") long carro_id,@Param("marca_id") long marca_id, @Param("modelo_id") long modelo_id,
+            @Param("trim_id") long trim_id, @Param("sucursal_id") long sucursal_id, @Param("estado_id") long estado_id,
+            @Param("placa") String placa, @Param("color_interior") int color_interior, @Param("color_exterior") int color_exterior,
+            @Param("kilometraje") int kilometraje, @Param("precio") int precio, @Param("vin") String vin);
 
     @Query(value = "SELECT * FROM T_CARRO WHERE CARRO_ID = :carro_id", nativeQuery = true)
     public Carro findById(@Param("carro_id") long carro_id);

@@ -13,12 +13,12 @@ import java.io.IOException;
 @Service
 public class CarroService implements ICarroService{
     
-    @Autowired                                //dependencias
+    @Autowired                                
     private CarroRepository carroRepository;
 
     @Override
     public List<Carro> getAllCarro() {
-      return (List<Carro>)carroRepository.findAll();             //Devuelve toda la lista de carros
+      return (List<Carro>)carroRepository.findAll();            
     }   
 
     @Override
@@ -27,21 +27,20 @@ public class CarroService implements ICarroService{
     }
 
     @Override
-    public void UpdateCarro(long carro_id,long marca_id, long modelo_id, 
-            long estado_id, int kilometraje, int precio
-    ) {
-        carroRepository.update(carro_id,marca_id,modelo_id,estado_id,kilometraje,precio);
-    }
-
-    @Override
     public void delete(long id) {
        carroRepository.delete(id);
     }
-  
-  /*      
-    public void uploadImageCarro(MultipartFile file) throws IllegalStateException, IOException{
-        //file.transferTo(new File("\\src\\main\\resources\\static\\images\\" + file.getOriginalFilename()));
+
+    @Override
+    public void UpdateCarro(long carro_id, long marca_id, long modelo_id, long trim_id, 
+            long sucursal_id, long estado_id, String placa, int color_interior, int color_exterior, int kilometraje, int precio, String vin) {
+        carroRepository.update(carro_id, marca_id, modelo_id, trim_id, sucursal_id, estado_id, placa, color_interior, color_exterior, kilometraje, precio, vin);
     }
-*/
+
+    @Override
+    public void save(long marca_id, long modelo_id, long trim_id, long sucursal_id,
+            long estado_id, String placa, int color_interior, int color_exterior, int kilometraje, int precio, String vin) {
+        carroRepository.save(marca_id, modelo_id, trim_id, sucursal_id, estado_id, placa, color_interior, color_exterior, kilometraje, precio, vin);
+    }
 
 }

@@ -6,11 +6,17 @@ import java.util.List;
 import org.springframework.web.multipart.MultipartFile;
 
 public interface ICarroService {
-    public List<Carro> getAllCarro();           //Lista de objetos de tipo carro 
-    public Carro getCarroById (long id);
-    public void UpdateCarro(long carro_id,long marca_id, long modelo_id, long estado_id 
-            ,int kilometraje, int precio);         //Nueva fila en la tabla
-    public void delete (long id);               //Eliminar fila dado un id        
 
-   
+    public List<Carro> getAllCarro();
+
+    public Carro getCarroById(long id);
+
+    public void UpdateCarro(long carro_id, long marca_id, long modelo_id, long trim_id, long sucursal_id, long estado_id, String placa,
+            int color_interior, int color_exterior, int kilometraje, int precio, String vin);
+
+    public void delete(long id);
+
+    public void save(long marca_id, long modelo_id, long trim_id, long sucursal_id, long estado_id, String placa,
+            int color_interior, int color_exterior, int kilometraje, int precio, String vin);
+
 }

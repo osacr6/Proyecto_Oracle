@@ -1,6 +1,6 @@
 <html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
-    <div th:fragment="EDIT_CARRO_MODAL (carro,modelo,trim,marca,estado,sucursal)">
-        <div class="modal fade" th:id="'updateModal-'+${carro.carro_id}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div th:fragment="CREATE_CARRO_MODAL (carro,modelo,trim,marca,estado,sucursal)">
+        <div class="modal fade" th:id="createcarroModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -9,20 +9,12 @@
                     </div>
                     <div class="modal-body">
                         <div class="container">
-                            <form th:action="@{/carroUpdate}" class="my-2" method="POST">
-                                <input 
-                                    type="hidden" 
-                                    class="form-control" 
-                                    name="carro_id"
-                                    placeholder="Codigo de carro"
-                                    th:value="${carro.carro_id}"
-                                    />
-                                <br/>
+                            <form th:action="@{/carroCrear}" class="my-2" method="POST">
                                 <P  style="text-align: left;">Marca</P>
-                                <select class="form-control" name="getMarca_id">
+                                <select class="form-control" name="marca_id">
                                     <th:block th:each="marca : ${marca}">
-                                        <option th:value="${marca.getMarca_id}"  
-                                                th:text="${marca.getMarca}"></option>
+                                        <option th:value="${marca.marca_id}"  
+                                                th:text="${marca.marca_id}"></option>
                                     </th:block>
                                 </select>
                                 <br/>
@@ -34,7 +26,7 @@
                                     </th:block>
                                 </select>
                                 <P  style="text-align: left;">Trim</P>
-                                <select class="form-control" name="codigo" >
+                                <select class="form-control" name="trim_id" >
                                     <th:block th:each="trim : ${trim}">
                                         <option th:value="${trim.trim_id}"  
                                                 th:text="${trim.codigo}"></option>
@@ -61,7 +53,6 @@
                                     class="form-control" 
                                     name="kilometraje"
                                     placeholder="kilometraje"
-                                    th:value="${carro.getKilometraje}"
                                     />
                                 <br/>
                                 <P  style="text-align: left;">Precio</P>
@@ -70,7 +61,6 @@
                                     class="form-control" 
                                     name="precio"
                                     placeholder="precio"
-                                    th:value="${carro.getPrecio}"
                                     />
                                 <br/>
                                 <P  style="text-align: left;">Color Externo</P>
@@ -78,8 +68,7 @@
                                     type="number" 
                                     class="form-control" 
                                     name="color_exterior"
-                                    placeholder="Numero de color interno"
-                                    th:value="${carro.color_externo}"
+                                    placeholder="Nuermo de color interno"
                                     />
                                 <br/>
                                 <P  style="text-align: left;">Color Interno</P>
@@ -87,8 +76,7 @@
                                     type="number" 
                                     class="form-control" 
                                     name="color_interior"
-                                    placeholder="Numero de color externo"
-                                    th:value="${carro.color_interno}"
+                                    placeholder="numero de color externo"
                                     />
                                 <br/>
                                 <P  style="text-align: left;">Placa</P>
@@ -96,8 +84,7 @@
                                     type="number" 
                                     class="form-control" 
                                     name="placa"
-                                    placeholder="numero de pkaca"
-                                    th:value="${carro.placa}"
+                                    placeholder="numero de placa"
                                     />
                                 <br/>
                                 <P  style="text-align: left;">Vin</P>
@@ -105,8 +92,7 @@
                                     type="number" 
                                     class="form-control" 
                                     name="vin"
-                                    placeholder="numero de pkaca"
-                                    th:value="${carro.vin}"
+                                    placeholder="numero de vin"
                                     />
                                 <br/>
                                 <br/>

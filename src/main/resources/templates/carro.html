@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Manage Carro</title>
+        <link th:replace="plantilla/layout :: imports"/>
+    </head>
+    <body>     
+        <!-- Header -->
+        <div th:replace="plantilla/layout :: header">            
+        </div>
+        <br>
+        <div class="container">
+            <div class="btn-group" role="group" aria-label="Basic example">
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" th:data-bs-target="'#createcarroModal'">Registrar Vehiculo</button>
+                <div th:replace="crearCarroModal :: CREATE_CARRO_MODAL (carro=${carro}, marca = ${marca}, modelo = ${modelo},
+                     trim = ${trim}, estado = ${estado}, sucursal = ${sucursal})"/>
+            </div> 
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" th:data-bs-target="'#createtrimModal'">Registrar Trim</button>
+            <div th:replace="crearTrimModal :: CREATE_TRIM_MODAL (motor = ${motor}, transmision = ${transmision})"/>
+        </div> 
+    </div>
+</div>
+<div class="container">                       
+    <div class="container text-center">
+        <div class="row align-items-center">
+            <!--------------- Esto es un formulario --------------->
+            <div class="p-4">
+                <table class="table table-striped" >
+                    <thead class="thead-green">
+                        <tr>   
+                            <th scope="col" class='text-center'> Carro ID </th>
+                            <th scope="col" class='text-center'> Marca  </th>
+                            <th scope="col" class='text-center'> Modelo  </th>
+                            <th scope="col" class='text-center'> Kilometraje  </th>
+                            <th scope="col" class='text-center'> Precio  </th>
+                            <th scope="col" class='text-center'> Estado  </th>
+                            <th scope="col" class='text-center'> Trim  </th>
+                            <th scope="col" class='text-center'> Detalles  </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <th:block th:each="carro:${carro}">  
+                        <tr>
+                            <td class="text-center align-middle" th:text="${carro.getCarro_id}"></td>
+                            <td class="text-center align-middle" ><th:block th:each="marca : ${marca}">
+                            <span th:if="${marca.marca_id == carro.marca_id}" th:text="${marca.marca}"></span>
+                        </th:block></td>
+                        <td class="text-center align-middle" ><th:block th:each="modelo : ${modelo}">
+                            <span th:if="${modelo.modelo_id == carro.modelo_id }" th:text="${modelo.modelo}"></span>
+                        </th:block></td>
+                        <td class="text-center align-middle" th:text="${carro.kilometraje}"></td>
+                        <td class="text-center align-middle" th:text="@{₡} + ${carro.precio}"></td>
+                        <td class="text-center align-middle" ><th:block th:each="estado : ${estado}">
+                            <span th:if="${estado.estado_id == carro.estado_id }" th:text="${estado.estado}"></span>
+                        </th:block></td>
+                        <td class="text-center align-middle" ><th:block th:each="trim : ${trim}">
+                            <span th:if="${trim.trim_id == carro.trim_id }" th:text="${trim.codigo}"></span>
+                        </th:block></td>
+                        <td class="text-center align-middle">
+                            <div class="btn-group" role="group">
+                                <a class="btn btn-secondary" th:href="@{/carroDelete/{carro_id}(carro_id=${carro.carro_id})}">Eliminar</a> 
+                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" th:data-bs-target="'#updateModal-'+${carro.carro_id}">Actualizar</button>
+                                <div th:replace="editCarroModal :: EDIT_CARRO_MODAL (carro = ${carro}, marca = ${marca},modelo = ${modelo},
+                                     trim = ${trim},estado = ${estado},sucursal=${sucursal})"/>
+                            </div>
+                            </div>
+                        </td>                                                                     
+                        </tr>
+                    </th:block>
+                    </tbody>
+                </table>                    
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Footer -->
+<div th:replace="plantilla/layout :: footer">            
+</div>
+</body> 
+</html>

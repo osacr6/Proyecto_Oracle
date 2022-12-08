@@ -6,8 +6,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -16,46 +14,30 @@ public class Carro implements Serializable {
    
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
+    @Column
     private long carro_id;
+    @Column
     private long marca_id; 
-    private long modelo_id; 
+    @Column
+    private long modelo_id;
+    @Column
     private long trim_id; 
+    @Column
     private long sucursal_id; 
-    private long estado_id;     
+    @Column
+    private long estado_id;    
+    @Column
     private String placa;
+    @Column
     private int color_interior;
+    @Column
     private int color_exterior;
+    @Column
     private int kilometraje;
+    @Column
     private int precio;
+    @Column
     private String vin;
-   // private String ruta_Imagen;
-
-    //public String getRuta_Imagen() {
-    //    return null;
-    //}
-
-    //public void setRuta_Imagen(String ruta_Imagen) {
-    //    this.ruta_Imagen = ruta_Imagen;
-    //}
-     public Carro() {
-    }
-
-    public Carro(long carroId, long marcaId, long modeloId, int kilometraje, int precio,
-    long estadoId) {
-        this.carro_id = carroId;
-        this.marca_id = marcaId;
-        this.modelo_id = modeloId;
-        this.kilometraje = kilometraje;
-        this.precio = precio;
-        this.estado_id = estadoId;
-    }
-//    @ManyToOne 
-//    @JoinColumn(name="marca_id")
-//    private Marca marca;      
-//
-//    @ManyToOne 
-//    @JoinColumn(name="estado_id")
-//    private EstadoVehiculo estadoVehiculo;  
 
     public long getCarro_id() {
         return carro_id;
@@ -153,22 +135,4 @@ public class Carro implements Serializable {
         this.vin = vin;
     }
 
-//    public Marca getMarca() {
-//        return marca;
-//    }
-//
-//    public void setMarca(Marca marca) {
-//        this.marca = marca;
-//    }
-//
-//    public EstadoVehiculo getEstadoVehiculo() {
-//        return estadoVehiculo;
-//    }
-//
-//    public void setEstadoVehiculo(EstadoVehiculo estadoVehiculo) {
-//        this.estadoVehiculo = estadoVehiculo;
-//    }
-     
- 
-    
 }
