@@ -1,10 +1,10 @@
 <html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
-    <div th:fragment="EDIT_USUAURIOS_MODAL (usuario)">
+    <div th:fragment="EDIT_CARRO_MODAL (carro)">
         <div class="modal fade" th:id="'updateModal-'+${usuario.getUsuario_id}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="exampleModalLabel">Actualizar Usuario</h1>
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Actualizar Vehiculo</h1>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
                     </div>
                     <div class="modal-body">
@@ -50,7 +50,7 @@
                                     th:value="${usuario.getActive ? 'Activo' : 'Innactivo'}"
                                     >
                                <br/>
-                                <button type="submit" class="btn btn-primary">Actulizar</button>
+                                <button type="submit" class="btn btn-primary">Actualizar</button>
                             </form>
                         </div>
                     </div>

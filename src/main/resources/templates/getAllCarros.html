@@ -1,100 +1,61 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns:th="http://www.thymeleaf.org">
     <head>
-        <title>Catalogo</title>
+        <title>Manage Carro</title>
         <link th:replace="plantilla/layout :: imports"/>
     </head>
-    <body>    
+    <body>     
         <!-- Header -->
         <div th:replace="plantilla/layout :: header">            
         </div>
         <br>
         <div class="container">
             <div class="card">                            
-                <div class="card-header" th:text="#{dos}"></div>
+                <div class="card-header"></div>
                 <div class="card-body">
                     <!--------------- Esto es un formulario --------------->
                     <div class="p-4">
+                        <a class="btn btn-success" th:href="@{/carro/create}" >Registrar vehículo</a>
+                        <br>
+                        <br>
                         <table class="table table-striped" id="carsTable">
                             <thead class="thead-green">
                                 <tr>   
-                                    <th scope="col" class='text-center'>Id </th>
-                                    <th scope="col" class='text-center'> </th>
-                                    <th scope="col" class='text-center' th:text="#{titulo_marca}"> </th>
-                                    <th scope="col" class='text-center' th:text="#{c_4}"> </th>
-                                    <th scope="col" class='text-center' th:text="#{c_5}"> </th>                                    
-                                    <th scope="col" class='text-center' th:text="#{c_9}"> </th>                                                                         
-                                    <th scope="col" class="text-center" th:text="#{c_22}"> </th>                                   
+                                    <th scope="col" class='text-center'> Carro ID </th>
+                                    <th scope="col" class='text-center'> Marca  </th>
+                                    <th scope="col" class='text-center'> Modelo  </th>
+                                    <th scope="col" class='text-center'> Kilometraje  </th>
+                                    <th scope="col" class='text-center'> Precio  </th>
+                                    <th scope="col" class='text-center'> Estado  </th>
+                                    <th scope="col" class='text-center'> Detalles  </th>
                                 </tr>
                             </thead>
                             <tbody>
                             <th:block th:each="carro:${carros}">  
                                 <tr>
-                                    <td class="text-center align-middle" th:text="${carro.getId}"></td>  
+                                    <td class="text-center align-middle" th:text="${carro.getCarro_id}"></td>
+                                    <td class="text-center align-middle" th:text="${carro.getMarca_id}"></td>
+                                    <td class="text-center align-middle" th:text="${carro.getModelo_id}"></td>
+                                    <td class="text-center align-middle" th:text="${carro.getKilometraje}"></td>
+                                    <td class="text-center align-middle" th:text="${carro.getPrecio}"></td>
+                                    <td class="text-center align-middle" th:text="${carro.getEstado_id}"></td>
                                     <td class="text-center align-middle">
-                                        <img th:src="@{../Images/} + ${carro.getRuta_Imagen}" alt="alt" style="width: 300px; height: 175px"/>
-                                    </td>  
-                                    <td class="text-center align-middle" th:text="${carro.getMarca.getNombre}"></td>
-                                    <td class="text-center align-middle" th:text="${carro.getModelo}"></td>  
-                                    <td class="text-center align-middle" th:text="${carro.getTransmision}"></td>                                     
-                                    <td class="text-center align-middle" th:text="@{₡} + ${carro.getPrecio}"></td>                                     
-                                    <td class="text-center align-middle">
-                                        <div class="row">
-                                            <div class="col-4">
-                                                <a th:href="@{/carro/details/}+${carro.getId}" class="btn btn-primary">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-info" viewBox="0 0 16 16">
-                                                        <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
-                                                    </svg>
-                                                </a>
-                                            </div>
-                                            <div class="col-4">
-                                                <a th:href="@{/carro/edit/{id}(id=${carro.getId})}" class="btn btn-warning">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
-                                                        <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
-                                                        <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
-                                                    </svg>
-                                                </a>
-                                            </div>
-                                            <div class="col-4">                                                                                                                                                 
-                                                <!-- Button trigger modal -->
-                                                <button type="button" class="btn btn-danger" data-bs-toggle="modal" th:data-bs-target="@{#modal} + ${carro.getId}">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
-                                                        <path d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z"/>
-                                                    </svg>
-                                                </button>
-
-                                                <!-- Modal -->
-                                                <div class="modal fade" th:id="@{modal}+ ${carro.getId}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                                  <div class="modal-dialog">
-                                                    <div class="modal-content">
-                                                      <div class="modal-header">
-                                                        <h5 class="modal-title" id="exampleModalLabel" th:text="#{c_37}"></h5>
-                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                                      </div>
-                                                      <div class="modal-body" >
-                                                        ¿Estás seguro de que deseas eliminar este vehículo?
-                                                      </div>
-                                                      <div class="modal-footer">
-                                                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal" th:text="#{c_15}"></button>
-                                                        <a th:href="@{/carro/delete/{id}(id=${carro.getId})}" class="btn btn-success" th:text="#{c_16}"></a>   
-                                                      </div>
-                                                    </div>
-                                                  </div>
-                                                </div>
-                                            </div>
-                                        </div>                                                                                
-                                    </td>                                  
+                                        <div class="btn-group" role="group">
+                                        <a class="btn btn-secondary" th:href="@{/carro/delete/{id}(id=${carro.getCarro_id})}">Eliminar</a> 
+                                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" th:data-bs-target="'#updateModal-'+${carro.getCarro_id}">Actualizar</button>
+                                        
+                                        </div>
+                                    </td>                                                                     
                                 </tr>
                             </th:block>
-                        </tbody>
-                    </table>                    
-                     </div>
-                 </div>
+                            </tbody>
+                        </table>                    
+                    </div>
+                </div>
             </div>
         </div>
         <!-- Footer -->
         <div th:replace="plantilla/layout :: footer">            
         </div>
-    </body>
-    
+    </body> 
 </html>
