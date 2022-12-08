@@ -7,6 +7,8 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
+import javax.transaction.Transactional;
+import static org.hibernate.criterion.Projections.id;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -19,6 +21,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.servlet.ModelAndView;
 
 
 @Controller
@@ -42,7 +48,8 @@ public class CarroController {
     @Autowired
     private JdbcTemplate jdbcTemplete;
     //prueba con el JDBC
-    /*@GetMapping("/carro")
+    /*
+    @GetMapping("/carro")
     public String index(Model model) {
         List<Carro> listaCarro = jdbcTemplete.query("SELECT * FROM T_CARRO", BeanPropertyRowMapper.newInstance(Carro.class));        
         model.addAttribute("carros", listaCarro);
@@ -55,13 +62,36 @@ public class CarroController {
         Usuario usuario = (Usuario) SecurityContextHolder.getContext().getAuthentication().getPrincipal();                
         if(usuario.hasRole("ADMIN")){
             List<Carro> listaCarro = carroService.getAllCarro();
+            List<Marca> listaMarcas = marcaService.listMarcas();
             model.addAttribute("titulo", "Tabla Carros");
             model.addAttribute("carros", listaCarro);
+            model.addAttribute("marcas", listaMarcas);
             return "getAllCarros";
         }        
         return "redirect:/home";  
     }
-   
+    
+    
+     @Transactional
+     @PostMapping("/carro/update")
+    public String update(
+        @RequestBody String payload,
+        @RequestParam( "carro_id")String carro_id,
+        @RequestParam("marca") long marca_id,
+        @RequestParam("modelo_id") long modelo_id, 
+        @RequestParam("kilometraje") int kilometraje,
+        @RequestParam("precio") int precio,
+        @RequestParam("estado") long estado_id
+    ){
+        Carro carro = carroService.getCarroById(carro_id); 
+        carroService.UpdateCarro(carro_id ,marca_id, modelo_id,estado_id,kilometraje,
+                precio);
+        
+        return "redirect:getAllCarros";
+    }
+    
+    
+  
         @GetMapping("/marca/getAll")
     public String getAllMarca(Model model) {
         //tomar la info del usuario logueado para validar si es administrador
@@ -74,7 +104,13 @@ public class CarroController {
         }          
         return "redirect:/home";  
      }
-    
+    /*
+      @GetMapping("/carro/delete/{id}")
+    public String deleteCarro(@PathVariable("id") Long C) {
+        carroService.delete(Long C);
+        return "redirect:/carro/getAll";
+    }
+    */
     @GetMapping("/carro/misCarros")
     public String getMyCars(Model model) {
         //tomar el id del usuario logueado
@@ -308,11 +344,7 @@ public class CarroController {
         return "detailsCarro";
     }  
     
-    @GetMapping("/carro/delete/{id}")
-    public String deleteCarro(@PathVariable("id") Long idCarro) {
-        carroService.delete(idCarro);
-        return "redirect:/carro/getAll";
-    }
+  
     
     @GetMapping("/carro/deleteMyCar/{id}")
     public String deleteMyCar(@PathVariable("id") Long idCarro) {
@@ -320,6 +352,8 @@ public class CarroController {
         return "redirect:/carro/misCarros";
     }
 */
+
+   
 }
     
 

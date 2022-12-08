@@ -37,7 +37,18 @@ public class Carro implements Serializable {
     //public void setRuta_Imagen(String ruta_Imagen) {
     //    this.ruta_Imagen = ruta_Imagen;
     //}
-    
+     public Carro() {
+    }
+
+    public Carro(long carroId, long marcaId, long modeloId, int kilometraje, int precio,
+    long estadoId) {
+        this.carro_id = carroId;
+        this.marca_id = marcaId;
+        this.modelo_id = modeloId;
+        this.kilometraje = kilometraje;
+        this.precio = precio;
+        this.estado_id = estadoId;
+    }
 //    @ManyToOne 
 //    @JoinColumn(name="marca_id")
 //    private Marca marca;      

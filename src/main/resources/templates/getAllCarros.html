@@ -34,16 +34,18 @@
                             <th:block th:each="carro:${carros}">  
                                 <tr>
                                     <td class="text-center align-middle" th:text="${carro.getCarro_id}"></td>
-                                    <td class="text-center align-middle" th:text="${carro.getMarca_id}"></td>
+                                    <td class="text-center align-middle" ><th:block th:each="marca : ${marcas}">
+                                    <span th:if="${marca.getMarca_id == carro.getCarro_id }" th:text="${marca.getMarca}"></span>
+                                </th:block></td>
                                     <td class="text-center align-middle" th:text="${carro.getModelo_id}"></td>
                                     <td class="text-center align-middle" th:text="${carro.getKilometraje}"></td>
-                                    <td class="text-center align-middle" th:text="${carro.getPrecio}"></td>
+                                    <td class="text-center align-middle" th:text="@{₡} + ${carro.getPrecio}"></td>
                                     <td class="text-center align-middle" th:text="${carro.getEstado_id}"></td>
                                     <td class="text-center align-middle">
                                         <div class="btn-group" role="group">
                                         <a class="btn btn-secondary" th:href="@{/carro/delete/{id}(id=${carro.getCarro_id})}">Eliminar</a> 
                                         <button type="button" class="btn btn-primary" data-bs-toggle="modal" th:data-bs-target="'#updateModal-'+${carro.getCarro_id}">Actualizar</button>
-                                        
+                                        <div th:replace="editCarroModal :: EDIT_CARRO_MODAL (carro = ${carro}, marcas = ${marcas})"/>
                                         </div>
                                     </td>                                                                     
                                 </tr>
