@@ -8,10 +8,17 @@
         <!-- Header -->
         <div th:replace="plantilla/layout :: header">            
         </div>
-        <br>
+        <br/>
+        <div class="container">
+            <div class="btn-group" role="group" aria-label="Basic example">
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" th:data-bs-target="'#createusuarioModal'">Add a User to the platform</button>
+            </div>
+            <div th:replace="addUsuarioModal :: CREATE_USUAURIOS_MODAL (roles = ${roles})"></div>
+        </div>
+        <br/>
         <div class="container">
             <div class="card">                            
-                <div class="card-header"></div>
+                <div class="card-header">Users</div>
                 <div class="card-body">
                     <!--------------- Esto es un formulario --------------->
                     <div class="p-4">
@@ -25,24 +32,24 @@
                                 </tr>
                             </thead>
                             <tbody>
-                            <th:block th:each="usuario : ${usuarios}">  
-                                <tr>
-                                    <td class="text-center align-middle" th:text="${usuario.getUsername}"></td>  
-                                    <td class="text-center align-middle">
-                                        <th:block th:each="rol : ${roles}">
-                                            <span th:if="${rol.getRolId == usuario.getRolId }" th:text="${rol.getRol}"></span>
-                                        </th:block>
-                                    </td>
-                                    <td class="text-center align-middle" th:text="${usuario.getActive ? 'Activo' : 'Inactivo'}"></td>  
-                                    <td class="text-center align-middle">
-                                        <div class="btn-group" role="group">
-                                            <a class="btn btn-secondary" th:href="@{/usuario/delete/{id}(id=${usuario.getUsuario_id})}">Eliminar</a> 
-                                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" th:data-bs-target="'#updateModal-'+${usuario.getUsuario_id}">Actualizar</button>
-                                            <div th:replace="editUsuarioModal :: EDIT_USUAURIOS_MODAL (usuario = ${usuario}, roles = ${roles})"/>
-                                        </div>
-                                    </td>                                                                     
-                                </tr>
-                            </th:block>
+                                <th:block th:each="usuario : ${usuarios}">  
+                                    <tr>
+                                        <td class="text-center align-middle" th:text="${usuario.getUsername}"></td>  
+                                        <td class="text-center align-middle">
+                                            <th:block th:each="rol : ${roles}">
+                                                <span th:if="${rol.getRolId == usuario.getRolId }" th:text="${rol.getRol}"></span>
+                                            </th:block>
+                                        </td>
+                                        <td class="text-center align-middle" th:text="${usuario.getActive ? 'Activo' : 'Inactivo'}"></td>  
+                                        <td class="text-center align-middle">
+                                            <div class="btn-group" role="group">
+                                                <a class="btn btn-secondary" th:href="@{/usuario/delete/{id}(id=${usuario.getUsuario_id})}">Eliminar</a> 
+                                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" th:data-bs-target="'#updateModal-'+${usuario.getUsuario_id}">Actualizar</button>
+                                                <div th:replace="editUsuarioModal :: EDIT_USUAURIOS_MODAL (usuario = ${usuario}, roles = ${roles})"></div>
+                                            </div>
+                                        </td>                                                                     
+                                    </tr>
+                                </th:block>
                             </tbody>
                         </table>                    
                     </div>

@@ -1,27 +1,20 @@
 <html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
-    <div th:fragment="EDIT_USUAURIOS_MODAL (usuario, roles)">
-        <div class="modal fade" th:id="'updateModal-'+${usuario.getUsuario_id}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div th:fragment="CREATE_USUAURIOS_MODAL (roles)">
+        <div class="modal fade" th:id="createusuarioModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="exampleModalLabel">Actualizar Usuario</h1>
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Crear Usuario</h1>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
                     </div>
                     <div class="modal-body">
                         <div class="container">
-                            <form th:action="@{/usuario/update}" class="my-2" method="POST">
-                                <input
-                                    type="hidden"
-                                    name="id"
-                                    th:value="${usuario.getUsuario_id}"
-                                    >
-                                <br/>
+                            <form th:action="@{/usuario/create}" class="my-2" method="POST">
                                 <input
                                     type="text"
                                     placeholder="username"
                                     class="form-control"
                                     name="username"
-                                    th:value="${usuario.getUsername}"
                                     >
                                 <br/>
                                 <input 
@@ -34,17 +27,17 @@
                                 <P  style="text-align: left;">Roles:</P>
                                 <select class="form-control" name="rol">
                                     <th:block th:each="rol : ${roles}">
-                                        <option th:value="${rol.getRolId}" th:selected="${rol.getRolId == usuario.getRolId}" th:text="${rol.getRol}"></option>
+                                        <option th:value="${rol.getRolId}" th:text="${rol.getRol}"></option>
                                     </th:block>
                                 </select>
                                 <br/>
                                 <P style="text-align: left;">Estado</P>
                                 <select class="form-control" name="active">
-                                    <option value="1" th:selected="${usuario.getActive}">Activo</option>
-                                    <option value="0" th:selected="${!usuario.getActive}">Inactivo</option>
+                                    <option value="1">Activo</option>
+                                    <option value="0">Inactivo</option>
                                 </select>
                                 <br/>
-                                <button type="submit" class="btn btn-primary">Actulizar</button>
+                                <button type="submit" class="btn btn-primary">Crear</button>
                             </form>
                         </div>
                     </div>

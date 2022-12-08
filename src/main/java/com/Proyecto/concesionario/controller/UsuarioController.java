@@ -38,6 +38,33 @@ public class UsuarioController {
         model.addAttribute("roles",listaRoles);
         return "usuarios";
     }
+    
+    @PostMapping("/usuario/create")
+    public String create(
+        @RequestBody String payload,
+        @RequestParam("username") String username,
+        @RequestParam("password") String password, 
+        @RequestParam("rol") String rol,
+        @RequestParam("active") String active
+    ){
+        String encodedPassword = null;
+        
+
+        PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+        encodedPassword = passwordEncoder.encode(password);
+        System.out.println("encodedPassword --> " + password + " = " + encodedPassword);
+        
+        // ID, USERNAME, PASSWORD, ROL_ID, ACTIVE
+        this.jdbcTemplate.update(
+            "CALL sp_crear_usuario(?, ?, ?, ?)",
+            username, 
+            encodedPassword,
+            rol,
+            active
+        );
+ 
+        return "redirect:/usuarios";
+    }
         
     @PostMapping("/usuario/update")
     public String update(
